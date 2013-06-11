@@ -1,0 +1,112 @@
+/*
+ * UWT Global partial
+ */
+@import "base";
+/* 
+ * SPRITES 
+ */
+/* icons */
+$icons-sprite-dimensions:true;
+$icons-layout:smart;
+@import "icons/*.png";
+@include all-icons-sprites;
+/* images */
+$graphics-sprite-dimensions:true;
+$graphics-layout:smart;
+@import "graphics/*.png";
+@include all-graphics-sprites;
+
+/* COLORS */
+@import "_colors.scss";
+
+
+
+/* FONTS */
+@font-face {
+	font-family: 'LindenHillRegular';
+	src: url('fonts/lindenhill-regular-webfont.eot');
+	src: url('fonts/lindenhill-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/lindenhill-regular-webfont.woff') format('woff'),
+	url('fonts/lindenhill-regular-webfont.ttf') format('truetype'),
+	url('fonts/lindenhill-regular-webfont.svg#linden_hillregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+	@font-face {
+	font-family: 'nexa_xboldregular';
+	src: url('fonts/Nexa_XBold-webfont.eot');
+	src: url('fonts/Nexa_XBold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/Nexa_XBold-webfont.woff') format('woff'),
+	url('fonts/Nexa_XBold-webfont.ttf') format('truetype'),
+	url('fonts/Nexa_XBold-webfont.svg#nexa_xboldregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+	@font-face {
+	font-family: 'nexa_boldregular';
+	src: url('fonts/Nexa_Bold-webfont.eot');
+	src: url('fonts/Nexa_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/Nexa_Bold-webfont.woff') format('woff'),
+	url('fonts/Nexa_Bold-webfont.ttf') format('truetype'),
+	url('fonts/Nexa_Bold-webfont.svg#nexa_boldregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body{
+background-color: $grey_light;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-family:LindenHillRegular;
+}
+
+/**
+* LINKS
+*/
+a:link,a:visited{
+color:$purple_dark;
+}
+a:hover{
+color:$purple_light;
+}
+
+a.active {
+	font-weight:bold;
+}
+
+/* Flexslider */
+.node ol.slides,
+.node ul.slides {
+  padding-left:0;
+}
+
+.node-links ul li a{
+background: -moz-linear-gradient(center top , $purple_dark 0%, $purple_light 100%) repeat scroll 0 0 transparent;
+color:$grey_light;
+border-radius: 3px 11px 3px 11px;
+text-shadow:none;
+}
+
+/* Keep images from getting too big for their britches...er...containers... */
+img {
+  max-width:100%;
+  height:auto;
+}
+
+
+/*
+ * Navigation bar
+ */
+
+/*
+ * UW Tacoma upper-left elements (patch home logo)
+ */
+
+
+
+
+
