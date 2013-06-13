@@ -14,7 +14,7 @@
 @import "_colors";
 // We are going to create a 980px wide, 5 column grid with 20px gutters between
 // columns (applied as 10px of left/right padding on each column).
-$zen-column-count:  24;
+$zen-column-count:  10;
 $zen-gutter-width:  10px;
 
 
@@ -72,153 +72,62 @@ $zen-auto-include-item-base: false;
   @include zen-grid-container();
 }
 
+#band{
+  width:100%;
+  height:35px;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+  background-color:black;
+}
 
-@media all and (max-width: 479px) {
-  #header{
-    background-color:black;
-  }
-  .breadcrumb,
-  #site_home_link{
-    display:none;
-  }
-  #header,
-  #navigation{
-    padding-left:0;
-    padding-right:0;
-    #patch {
-      @include zen-grid-item(4,1);
-    }
-    #logo_text{
-      @include zen-grid-item(18,5);
-      padding-top:5px;
-      
-    }
-    #main-menu{
-      display:none;
-    }
-    // Hide the desktop site header graphics
-    .graphics-uwt_logo_patch,
-    .graphics-uwt_logo_text{
-      display:none;
-    }
-
+#header {  
+  background-color: #aaa;
+}
+#header-left{
+  @include zen-grid-item(1,1);
+  background-color:#ccffcc;
+  #patch {
+    background-color:#ccc;
   }
 }
 
-
-
-@media all and (min-width: 480px) {
-  $header-height: 250px;
-  #header{
-    height:$header-height;
-    /*overflow:hidden;*/
-  }
-  #band{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    background-color:black;
-    height:35px;
-    z-index: -1;
-  }
+#header-center{
+  @include zen-grid-item(7,2);
+  @include zen-nested-container;
   #global-menu{
-    @include zen-grid-item(4,5);
-    #main-menu .block{
-      margin-bottom:0;
-    }
-    #main-menu a:link,
-    #main-menu a:visited{
-      color:white;
-      background-color:black;
-      text-decoration: none;
-      font-weight: lighter;
-      font-size:12px;
-    }
-    #main-menu a:after{
-      content: " |";
-    }
-    ul li{
-      padding-right:0;
-    }
-    #main-menu .last a:after{
-      content:"";
-    }
+    @include zen-grid-item(9,2);
+    background-color:#888;
   }
-  #global-search-container{
-    @include zen-grid-item(4,9);
-    input[type=text]{
-      height:30px;
-      margin-top:15px;
-      border:2px solid $grey_dark;
-      @include border-radius(5px);
-    }
+  #logo_text {
+    @include zen-clear();
+    @include zen-grid-item(5,1);
+    background-color:#eee;
   }
-  #home-links{
-    @include zen-grid-container();
-    @include zen-grid-item(8,1);
-    #patch{
-      @include zen-grid-item(1,1,left);
-    }
-    #logo_text{
-      @include zen-grid-item(7,2,left);
-    }
-    #site_home_link{
-      @include zen-grid-item(7,2,left);
-    }
-
+  #site_home_link {
+    @include zen-clear();
+    @include zen-grid-item(5,1);
+    background-color:#444;
   }
-
-  /*
-   * The layout when there is only one sidebar, the left one.
-   */
-   #home-links {
-    .graphics-uwt_logo_patch_mobile,
-    .graphics-uwt_logo_text_white{
-      display:none;
-    }
-   }
-
-
-  .sidebar-first {
-    #content { /* Span 2 columns, starting in 2nd column from left. */
-      @include zen-grid-item(18, 7);
-    }
-
-    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
-      @include zen-grid-item(6, 1);
-    }
+}
+#header-right{
+  @include zen-grid-item(3,8);
+  @include zen-nested-container;
+  #global-search{
+    @include zen-grid-item(10,1);
+    background-color: #313131;
   }
-
-  /*
-   * The layout when there is only one sidebar, the right one.
-   */
-
-  .sidebar-second {
-    #content { /* Span 2 columns, starting in 1st column from left. */
-      @include zen-grid-item(18, 1);
-    }
-
-    .region-sidebar-second { /* Span 1 column, starting in 3rd column from left. */
-      @include zen-grid-item(6, 19);
-    }
+  #global-secondary{
+    @include zen-clear();
+    @include zen-grid-item(10,1);
+    background-color:#767676;
   }
+}
 
-  /*
-   * The layout when there are two sidebars.
-   */
-
-  .two-sidebars {
-    #content { /* Span 2 columns, starting in 2nd column from left. */
-      @include zen-grid-item(12, 7);
-    }
-
-    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
-      @include zen-grid-item(6, 1);
-    }
-
-    .region-sidebar-second { /* Start a new row and span all 3 columns. */
-      @include zen-grid-item(6, 19);
-    }
+@media all and (max-width : 400px) {
+  .graphics-uwt_logo_text_white,
+  .graphics-uwt_logo_patch_mobile{
+    display:none;
   }
 }

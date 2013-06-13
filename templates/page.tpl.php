@@ -71,7 +71,6 @@
 ?>
 
 <?php
-dpm($variables);
   /**
   * The point of this custom template file is to insert the patch and 
   * textual site logo on any site that uses this theme, irrespective of
@@ -141,37 +140,43 @@ dpm($variables);
 
 
 <div id="page">
-  <header id="header" role="banner">
     <div id="band">
     </div> <!-- /band -->
+  <header id="header" role="banner">
 
-    <div id="home-links">
+    <div id="header-left">
       <div id="patch">
-        <?php echo $patch_link; ?>
+        <?php //echo $patch_link; ?>#patch #patch #patch #patch #patch
       </div>
-      <div id="logo_text">
-        <?php echo $logo_text_link; ?>
-      </div>
-      <div id="site_home_link">
-        <?php echo $site_home_link; ?>
-      </div>    
-    </div> <!-- /home-links -->
-    
-    <div id="global-menu">
-    <?php if ($main_menu): ?>
-      <nav id="main-menu" role="navigation">
-        <?php print render($page['navigation']); ?>
-      </nav>
-    <?php endif; ?>
+  </div> <!-- /header-left -->
+
+  <div id="header-center">
+    <div id="global-menu">#global-menu
+      <?php if ($main_menu): ?>
+        <nav id="main-menu" role="navigation">
+          <?php //print render($page['navigation']); ?>
+        </nav>
+      <?php endif; ?>
     </div> <!-- /global-menu -->
-
-
-    <div id="global-search-container">
+    <div id="logo_text">
+      <?php //echo $logo_text_link; ?>#logo_text
+    </div>
+    <div id="site_home_link">
+      <?php //echo $site_home_link; ?>#site_home_link
+    </div>
+  </div><!-- /header-center -->
+  <div id="header-right">
+    <div id="global-search">#global-search
+      <!-- 
       <form id="global-search-form">
         <input type="text" />
       </form>
+    -->
     </div> <!-- /global-search -->
-
+    <div id="global-secondary">
+      #global-secondary
+    </div>
+  </div>
 
 
 
