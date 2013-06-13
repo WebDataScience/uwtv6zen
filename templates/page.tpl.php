@@ -70,108 +70,121 @@
  */
 ?>
 
-<div id="page">
-  <header id="header" role="banner">
-
-    <!-- MAIN MENU -->
-    <?php if ($main_menu): ?>
-      <nav id="main-menu" role="navigation">
-        <?php
-        // This code snippet is hard to modify. We recommend turning off the
-        // "Main menu" on your sub-theme's settings form, deleting this PHP
-        // code block, and, instead, using the "Menu block" module.
-        // @see http://drupal.org/project/menu_block
-        print theme('links__system_main_menu', array(
-          'links' => $main_menu,
-          'attributes' => array(
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => t('Main menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </nav>
-    <?php endif; ?> <!-- /MAIN MENU -->
-
-    <!-- PATCH and LOGO -->
-    <div id="navigation">
-
 <?php
-    /**
-    * The point of this custom template file is to insert the patch and 
-    * textual site logo on any site that uses this theme, irrespective of
-    * the presence of a block of content or whatever.
-    * If a site uses the uwt_v6 theme, it will have the patch and textual
-    * site logo. Period.
-    *
-    * I guess we should have some logic that will determine which textual
-    * logo to display (the big or small one) and whether or not we have a
-    * a subsite link to display.
-    */
-    // create link to UWT Home
-    $path = '<front>';
-    $href = url($path);
+dpm($variables);
+  /**
+  * The point of this custom template file is to insert the patch and 
+  * textual site logo on any site that uses this theme, irrespective of
+  * the presence of a block of content or whatever.
+  * If a site uses the uwt_v6 theme, it will have the patch and textual
+  * site logo. Period.
+  *
+  * I guess we should have some logic that will determine which textual
+  * logo to display (the big or small one) and whether or not we have a
+  * a subsite link to display.
+  */
+  // create link to UWT Home
+  $path = '<front>';
+  $href = url($path);
 
-    $patch_link = '<a href="' . $href . '">';
-    $patch_link .= '<span class="graphics-uwt_logo_patch"><span class="element-invisible">UW Tacoma patch icon</span></span></a>';
-
-
-    $logo_text_link = '<a href="' . $href . '">';
-    $logo_text_link .= '<span class="graphics-uwt_logo_text"><span class="element-invisible">University of washington | Tacoma</span></span></a>';
-
-    $site_home_link = '';
-
-    if(arg(0) == 'node' && is_numeric(arg(1))) {
-      $node = node_load(arg(1));
-      //dpm($node);
-      $wrapper = entity_metadata_wrapper('node', $node);
-      if ($wrapper->field_site->value()->tid) {
-        $siteid = $wrapper->field_site->value()->tid;
-        $logo_text_link = '<a href="' . $href . '">';
-        $logo_text_link .= '<span class="graphics-uwt_logo_text_small"><span class="element-invisible">University of washington | Tacoma</span></span></a>';
-        //dpm('we have a site, right?');
+  $patch_link = '<a href="' . $href . '">';
+  $patch_link .= '<span class="graphics-uwt_logo_patch"><span class="element-invisible">UW Tacoma patch icon</span></span>';
+  $patch_link .= '<span class="graphics-uwt_logo_patch_mobile"><span class="element-invisible">UW Tacoma patch icon</span>';
+  $patch_link .= '</a>';
 
 
-        $parents = taxonomy_get_parents_all($siteid);
-        $parent = end($parents);
-        //dpm($parent);
-        // Get the menu for the parent site
-        $results = db_query("SELECT menu FROM uwt_menu_admin WHERE tid = :tid", array(':tid' => $parent->tid));
-        $menu_name = $results->fetchObject()->menu;
-        //dpm($menu_name, '$menu_name');
-        $menu = menu_tree_all_data($menu_name, NULL, 1);
-        //dpm($menu, '$menu');
-        $home_menu_item = array_slice($menu, 0, 1); // Yes, use the first menu item in the menu
-        foreach($home_menu_item as $link) { // There will only be one...the Highlander pattern.
-          //dpm($link, '$link');
-          $label = $link['link']['link_title'];
-          $href = $link['link']['href'];
-          $options = array('attributes' => array('class' => 'site-home-link'));
-          //dpm($label, '$label');
-          //dpm($href, '$href');
-          //dpm($options, '$options');
-             $site_home_link = '<span id="site-home-link">';
-             $site_home_link .= l($label, $href);
-             $site_home_link .= '</span>';
-          /*
-           */
-        }
+  $logo_text_link = '<a href="' . $href . '">';
+  $logo_text_link .= '<span class="graphics-uwt_logo_text"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $logo_text_link .= '<span class="graphics-uwt_logo_text_white"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $logo_text_link .= '</a>';
+  $site_home_link = '';
+
+  if(arg(0) == 'node' && is_numeric(arg(1))) {
+    $node = node_load(arg(1));
+    //dpm($node);
+    $wrapper = entity_metadata_wrapper('node', $node);
+    if ($wrapper->field_site->value()->tid) {
+      $siteid = $wrapper->field_site->value()->tid;
+      //$logo_text_link = '<a href="' . $href . '">';
+      //$logo_text_link .= '<span class="graphics-uwt_logo_text_small"><span class="element-invisible">University of washington | Tacoma</span></span></a>';
+      //dpm('we have a site, right?');
+
+
+      $parents = taxonomy_get_parents_all($siteid);
+      $parent = end($parents);
+      //dpm($parent);
+      // Get the menu for the parent site
+      $results = db_query("SELECT menu FROM uwt_menu_admin WHERE tid = :tid", array(':tid' => $parent->tid));
+      $menu_name = $results->fetchObject()->menu;
+      //dpm($menu_name, '$menu_name');
+      $menu = menu_tree_all_data($menu_name, NULL, 1);
+      //dpm($menu, '$menu');
+      $home_menu_item = array_slice($menu, 0, 1); // Yes, use the first menu item in the menu
+      foreach($home_menu_item as $link) { // There will only be one...the Highlander pattern.
+        //dpm($link, '$link');
+        $label = $link['link']['link_title'];
+        $href = $link['link']['href'];
+        $options = array('attributes' => array('class' => 'site-home-link'));
+        //dpm($label, '$label');
+        //dpm($href, '$href');
+        //dpm($options, '$options');
+           $site_home_link = '<span id="site-home-link">';
+           $site_home_link .= l($label, $href);
+           $site_home_link .= '</span>';
+        /*
+         */
       }
     }
+  }
 
-   ?>
-    <div id="patch-links">
-    <?php echo $patch_link; ?>
-    <?php echo $logo_text_link; ?>
-    <?php echo $site_home_link; ?>
-    </div>
+ ?>
 
-    </div><!-- /#navigation -->
-    <!-- /PATCH and LOGO -->
+
+<div id="page">
+  <header id="header" role="banner">
+    <div id="band">
+    </div> <!-- /band -->
+
+    <div id="home-links">
+      <div id="patch">
+        <?php echo $patch_link; ?>
+      </div>
+      <div id="logo_text">
+        <?php echo $logo_text_link; ?>
+      </div>
+      <div id="site_home_link">
+        <?php echo $site_home_link; ?>
+      </div>    
+    </div> <!-- /home-links -->
+    
+    <div id="global-menu">
+    <?php if ($main_menu): ?>
+      <nav id="main-menu" role="navigation">
+        <?php print render($page['navigation']); ?>
+      </nav>
+    <?php endif; ?>
+    </div> <!-- /global-menu -->
+
+
+    <div id="global-search-container">
+      <form id="global-search-form">
+        <input type="text" />
+      </form>
+    </div> <!-- /global-search -->
+
+
+
+
+
+  
+
+  
 
   </header>
+
+    <div id="header-botom">
+      <?php print render($page['header_bottom']); ?>
+    </div>
 
   <div id="main">
 

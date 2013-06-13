@@ -10,7 +10,8 @@
  */
 
 @import "base";
-
+/* COLORS */
+@import "_colors";
 // We are going to create a 980px wide, 5 column grid with 20px gutters between
 // columns (applied as 10px of left/right padding on each column).
 $zen-column-count:  24;
@@ -45,7 +46,7 @@ $zen-auto-include-item-base: false;
      by setting a max-width. */
   margin-left: auto;
   margin-right: auto;
-  max-width: 960px;
+  max-width: 1200px;
 }
 
 /*
@@ -54,8 +55,7 @@ $zen-auto-include-item-base: false;
 // See the note about $zen-auto-include-item-base above.
 
 #header,
-#content,
-#navigation,
+#content, 
 .region-sidebar-first,
 .region-sidebar-second,
 #footer {
@@ -75,17 +75,109 @@ $zen-auto-include-item-base: false;
 
 @media all and (max-width: 479px) {
   #header{
+    background-color:black;
+  }
+  .breadcrumb,
+  #site_home_link{
+    display:none;
+  }
+  #header,
+  #navigation{
+    padding-left:0;
+    padding-right:0;
+    #patch {
+      @include zen-grid-item(4,1);
+    }
+    #logo_text{
+      @include zen-grid-item(18,5);
+      padding-top:5px;
+      
+    }
     #main-menu{
       display:none;
     }
+    // Hide the desktop site header graphics
+    .graphics-uwt_logo_patch,
+    .graphics-uwt_logo_text{
+      display:none;
+    }
+
   }
 }
 
+
+
 @media all and (min-width: 480px) {
+  $header-height: 250px;
+  #header{
+    height:$header-height;
+    /*overflow:hidden;*/
+  }
+  #band{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    background-color:black;
+    height:35px;
+    z-index: -1;
+  }
+  #global-menu{
+    @include zen-grid-item(4,5);
+    #main-menu .block{
+      margin-bottom:0;
+    }
+    #main-menu a:link,
+    #main-menu a:visited{
+      color:white;
+      background-color:black;
+      text-decoration: none;
+      font-weight: lighter;
+      font-size:12px;
+    }
+    #main-menu a:after{
+      content: " |";
+    }
+    ul li{
+      padding-right:0;
+    }
+    #main-menu .last a:after{
+      content:"";
+    }
+  }
+  #global-search-container{
+    @include zen-grid-item(4,9);
+    input[type=text]{
+      height:30px;
+      margin-top:15px;
+      border:2px solid $grey_dark;
+      @include border-radius(5px);
+    }
+  }
+  #home-links{
+    @include zen-grid-container();
+    @include zen-grid-item(8,1);
+    #patch{
+      @include zen-grid-item(1,1,left);
+    }
+    #logo_text{
+      @include zen-grid-item(7,2,left);
+    }
+    #site_home_link{
+      @include zen-grid-item(7,2,left);
+    }
+
+  }
+
   /*
    * The layout when there is only one sidebar, the left one.
    */
-
+   #home-links {
+    .graphics-uwt_logo_patch_mobile,
+    .graphics-uwt_logo_text_white{
+      display:none;
+    }
+   }
 
 
   .sidebar-first {

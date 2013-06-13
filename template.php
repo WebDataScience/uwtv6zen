@@ -146,11 +146,11 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function uwtv6zen_preprocess_page(&$variables, $hook) {
   $variables['sample_variable'] = t('Lorem ipsum.');
 }
-// */
+
 
 /**
  * Override or insert variables into the node templates.
