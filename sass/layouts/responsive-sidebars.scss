@@ -12,9 +12,8 @@
 @import "base";
 /* COLORS */
 @import "_colors";
-// We are going to create a 980px wide, 5 column grid with 20px gutters between
-// columns (applied as 10px of left/right padding on each column).
-$zen-column-count:  10;
+
+$zen-column-count:  40;
 $zen-gutter-width:  10px;
 
 
@@ -82,52 +81,98 @@ $zen-auto-include-item-base: false;
   background-color:black;
 }
 
-#header {  
-  background-color: #aaa;
-}
-#header-left{
-  @include zen-grid-item(1,1);
-  background-color:#ccffcc;
-  #patch {
-    background-color:#ccc;
-  }
-}
 
-#header-center{
-  @include zen-grid-item(7,2);
-  @include zen-nested-container;
+//
+// Mobile first?
+//
+
+
+//
+// Below was 'laid out' for desktop
+//
+
+  #header {  
+    //background-color: #aaa;
+    a span{
+      display:block;
+    }
+  }
+  #header-left{
+    @include zen-grid-item(3,1);
+    //background-color:#ccffcc;
+    #patch {
+      //background-color:#ccc;
+    }
+  }
+
+  #header-center{
+    @include zen-grid-item(27,4);
+    @include zen-nested-container;
+  }
   #global-menu{
-    @include zen-grid-item(9,2);
-    background-color:#888;
+    //@include zen-grid-item(29,11);
+    @include zen-grid-item(30,10);
+    //background-color:#888;
+    .block{
+      margin-bottom: 0; // Not totally sure why this is needed, but it is.
+    }
+    ul li a:link,
+    ul li a:visited{
+      font-size:90%;
+      text-decoration: none;
+      color:white;
+      padding-top:10px;
+    }
   }
   #logo_text {
+    padding-top:30px;
     @include zen-clear();
-    @include zen-grid-item(5,1);
-    background-color:#eee;
+    @include zen-grid-item(30,1);
+    //background-color:#eee;
   }
   #site_home_link {
     @include zen-clear();
-    @include zen-grid-item(5,1);
-    background-color:#444;
+    @include zen-grid-item(30,1);
+    //background-color:#444;
   }
-}
-#header-right{
-  @include zen-grid-item(3,8);
-  @include zen-nested-container;
+  #header-right{
+    @include zen-grid-item(10,31);
+    @include zen-nested-container;
+
+
+  }
   #global-search{
-    @include zen-grid-item(10,1);
-    background-color: #313131;
+    padding-top:15px;
+    @include zen-grid-item(40,1);
+    //background-color: #313131;
+    input[type="text"]{
+      height:35px;
+      border:2px solid $grey_dark;
+      @include border-radius(5px);
+    }
   }
   #global-secondary{
     @include zen-clear();
-    @include zen-grid-item(10,1);
-    background-color:#767676;
+    @include zen-grid-item(40,1);
+    //background-color:#767676;
+    ul.menu{
+      padding:0;
+      margin:0;
+    }
+    ul.menu li{
+      width:48%;
+      display:block;
+      float:left;
+      font-size:80%;
+      a:link,
+      a:visited{
+        text-decoration: none;
+      }
+    }
+    ul.menu{
+      li {
+        list-style-image: none;
+        list-style-type: none;
+      }
+    }
   }
-}
-
-@media all and (max-width : 400px) {
-  .graphics-uwt_logo_text_white,
-  .graphics-uwt_logo_patch_mobile{
-    display:none;
-  }
-}

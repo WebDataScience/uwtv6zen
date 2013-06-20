@@ -97,15 +97,16 @@ stylesheets[all][] = css/uwt_global.css
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
-regions[navigation]     = Global navigation
-regions[header_bottom]  = Header bottom
-regions[highlighted]    = Highlighted
-regions[help]           = Help
-regions[content]        = Content
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
-regions[footer]         = Footer
-regions[bottom]         = Page bottom
+regions[navigation]       = Global navigation
+regions[global_secondary] = Global secondary
+regions[header_bottom]    = Header bottom
+regions[highlighted]      = Highlighted
+regions[help]             = Help
+regions[content]          = Content
+regions[sidebar_first]    = First sidebar
+regions[sidebar_second]   = Second sidebar
+regions[footer]           = Footer
+regions[bottom]           = Page bottom
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for

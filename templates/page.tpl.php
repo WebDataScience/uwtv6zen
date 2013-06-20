@@ -88,13 +88,13 @@
 
   $patch_link = '<a href="' . $href . '">';
   $patch_link .= '<span class="graphics-uwt_logo_patch"><span class="element-invisible">UW Tacoma patch icon</span></span>';
-  $patch_link .= '<span class="graphics-uwt_logo_patch_mobile"><span class="element-invisible">UW Tacoma patch icon</span>';
+  //$patch_link .= '<span class="graphics-uwt_logo_patch_mobile"><span class="element-invisible">UW Tacoma patch icon</span>';
   $patch_link .= '</a>';
 
 
   $logo_text_link = '<a href="' . $href . '">';
   $logo_text_link .= '<span class="graphics-uwt_logo_text"><span class="element-invisible">University of washington | Tacoma</span></span>';
-  $logo_text_link .= '<span class="graphics-uwt_logo_text_white"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  //$logo_text_link .= '<span class="graphics-uwt_logo_text_white"><span class="element-invisible">University of washington | Tacoma</span></span>';
   $logo_text_link .= '</a>';
   $site_home_link = '';
 
@@ -146,44 +146,35 @@
 
     <div id="header-left">
       <div id="patch">
-        <?php //echo $patch_link; ?>#patch #patch #patch #patch #patch
+        <?php echo $patch_link; ?>
       </div>
   </div> <!-- /header-left -->
 
   <div id="header-center">
-    <div id="global-menu">#global-menu
+    <div id="global-menu">
       <?php if ($main_menu): ?>
         <nav id="main-menu" role="navigation">
-          <?php //print render($page['navigation']); ?>
+          <?php print render($page['navigation']); ?>
         </nav>
       <?php endif; ?>
     </div> <!-- /global-menu -->
     <div id="logo_text">
-      <?php //echo $logo_text_link; ?>#logo_text
+      <?php echo $logo_text_link; ?>
     </div>
     <div id="site_home_link">
-      <?php //echo $site_home_link; ?>#site_home_link
+      <?php echo $site_home_link; ?>
     </div>
   </div><!-- /header-center -->
   <div id="header-right">
-    <div id="global-search">#global-search
-      <!-- 
+    <div id="global-search">
       <form id="global-search-form">
         <input type="text" />
       </form>
-    -->
     </div> <!-- /global-search -->
     <div id="global-secondary">
-      #global-secondary
+      <?php print render($page['global_secondary']); ?>
     </div>
   </div>
-
-
-
-
-  
-
-  
 
   </header>
 
