@@ -149,8 +149,22 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
 
 function uwtv6zen_preprocess_page(&$variables, $hook) {
   $variables['sample_variable'] = t('Lorem ipsum.');
+  $shiblink = _get_shiblink();
+  $variables['shiblink'] = $shiblink;
 }
 
+function _get_shiblink() {
+  if (module_exists('shib_auth')) {
+    $shibblock = module_invoke('shib_auth', 'block_view', 'login_box');
+    $shiblink = $shibblock['content'];
+    if(!user_is_logged_in()) {
+      $shiblink .= ' | ';
+    }
+    return $shiblink;
+  } else {
+    return 'duuude...';
+  }
+}
 
 
 /**

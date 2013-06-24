@@ -178,9 +178,11 @@
 
   </header>
 
-    <div id="header-botom">
-      <?php print render($page['header_bottom']); ?>
-    </div>
+    <div id="site-menu">
+      <div class="inner">
+        <?php print render($page['site_menu']); ?>
+      </div><!-- /.inner -->
+    </div><!-- /#site-menu -->
 
   <div id="main">
 
@@ -222,8 +224,28 @@
 
   </div><!-- /#main -->
 
-  <?php print render($page['footer']); ?>
 
 </div><!-- /#page -->
 
+  <div id="footer">
+    <div id="footer_top">
+      <div class="graphics-uwt_logo_horiz_white">&nbsp;</div>
+    </div><!-- /#footer_top -->
+
+    <div id="footer_middle">
+      <?php print render($page['footer_menus']); ?>
+    </div><!-- /#footer_middle -->
+
+  </div><!-- /#footer -->
+  
+  <div id="footer-bottom">
+    <div class="inner">
+      <div class="left">
+        <span class="inner">&copy; <?php echo date('Y'); ?> University of Washignton Tacoma</span>
+      </div>
+      <div class="right">
+        <?php echo $shiblink; ?> <?php if(!user_is_logged_in()) {echo l('Non-UW login', 'user');}?>
+      </div>
+    </div><!-- /.inner -->
+  </div><!-- /#footer-bottom -->
 <?php print render($page['bottom']); ?>

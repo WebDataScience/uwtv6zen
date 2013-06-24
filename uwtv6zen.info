@@ -99,13 +99,13 @@ stylesheets[all][] = css/uwt_global.css
 
 regions[navigation]       = Global navigation
 regions[global_secondary] = Global secondary
-regions[header_bottom]    = Header bottom
+regions[site_menu]        = Site Menu
 regions[highlighted]      = Highlighted
 regions[help]             = Help
 regions[content]          = Content
 regions[sidebar_first]    = First sidebar
 regions[sidebar_second]   = Second sidebar
-regions[footer]           = Footer
+regions[footer_menus]     = Footer Menus
 regions[bottom]           = Page bottom
 
 ; The page_top and page_bottom regions are hidden, which means they will not

@@ -38,9 +38,13 @@ $zen-auto-include-item-base: false;
 /*
  * Center the page.
  */
-
-#page,
-.region-bottom {
+#header,
+#site-menu .inner,
+#main,
+.region-bottom,
+#footer_top,
+#footer_middle,
+#footer-bottom .inner {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
      by setting a max-width. */
   margin-left: auto;
@@ -67,7 +71,10 @@ $zen-auto-include-item-base: false;
 
 #header,
 #main,
-#footer {
+#footer,
+#footer_top,
+#footer_middle,
+#footer-bottom{
   @include zen-grid-container();
 }
 
@@ -82,13 +89,15 @@ $zen-auto-include-item-base: false;
 }
 
 
+
+
 //
 // Mobile first?
 //
 
 
 //
-// Below was 'laid out' for desktop
+// Below is 'laid out' for desktop
 //
 
   #header {  
@@ -110,7 +119,6 @@ $zen-auto-include-item-base: false;
     @include zen-nested-container;
   }
   #global-menu{
-    //@include zen-grid-item(29,11);
     @include zen-grid-item(30,10);
     //background-color:#888;
     .block{
@@ -147,7 +155,8 @@ $zen-auto-include-item-base: false;
     //background-color: #313131;
     input[type="text"]{
       height:35px;
-      border:2px solid $grey_dark;
+      width:250px;
+      border:2px solid $grey_medium;
       @include border-radius(5px);
     }
   }
@@ -169,10 +178,62 @@ $zen-auto-include-item-base: false;
         text-decoration: none;
       }
     }
-    ul.menu{
-      li {
-        list-style-image: none;
-        list-style-type: none;
+  }
+
+  #footer{
+    .region-footer-menus{
+      $zen-column-count:5;
+      .block {
+        @for $i from 1 through 5 {
+          &:nth-child( #{$i}) {
+            @include zen-grid-item(1, $i);
+          }
+        }
+      }
+      .block:nth-child(1) p{
+        padding-left:40px;
       }
     }
   }
+  #footer-bottom{
+    $zen-column-count:10;
+    @include zen-clear();
+    .left {
+      @include zen-grid-item(4,1);
+      .inner{
+        padding-left:40px;
+      }
+    }
+    .right{
+      @include zen-grid-item(2,8);
+      #shib_login_url{
+        display:inline;
+        a:link,a:visited{
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+/** Width max 1025px */
+@media all AND (max-width:1025px){
+#global-menu{
+    //@include zen-grid-item(29,11);
+    @include zen-grid-item(31,3);
+  }
+
+}
+
+/** Width max 993px */
+@media all AND (max-width:993px){
+#global-menu{
+    @include zen-grid-item(34,2);
+  }
+  #logo_text {
+    padding-top:30px;
+    @include zen-grid-item(30,2);
+  }
+  #site_home_link {
+    @include zen-grid-item(30,2);
+  }
+}
