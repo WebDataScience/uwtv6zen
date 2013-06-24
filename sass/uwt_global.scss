@@ -123,32 +123,39 @@ img {
 	background-color:$purple_light;
 	@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
 	.menu{
+		margin-bottom:0;
 		li.first{
 			border-left:none;
 		}
 		li{
+			height: 100%;
+			vertical-align:top;
+			max-width: 10em;
 			margin-left:-4px;
 			background-color:transparent;
 			@include transition-property(all);
 			@include transition-duration(1s);
-			display:inline-block;
+			display:table-cell;
+			vertical-align: middle;
 			border-left:1px solid $grey_dark;
 			a{
 				padding: 0.5em 1em;
 				font-weight: normal;
 				display:inline-block;
+				text-align: center;
 			}
-
 		}
 		li:hover{
 			background-color:$purple_dark;
 		}
-		li.active-trail a{
+		li.active-trail{
 			@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
 			background-color: $grey_light;
+		}
+		li.active-trail a{
+
 			color:$purple_dark;
 			padding:0.5em 0.75em;
-			display: inline-block;
 		}
 	}
 	a:link,a:visited{

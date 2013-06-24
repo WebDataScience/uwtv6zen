@@ -57,11 +57,10 @@ $zen-auto-include-item-base: false;
  */
 // See the note about $zen-auto-include-item-base above.
 
-#header,
+
 #content, 
 .region-sidebar-first,
-.region-sidebar-second,
-#footer {
+.region-sidebar-second{
   @include zen-grid-item-base();
 }
 
