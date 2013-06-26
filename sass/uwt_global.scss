@@ -117,11 +117,89 @@ img {
 /*
  * Site Navigation bar
  */
+
+#site-menu{
+	width:100%;
+	background-color:$purple_light;
+	@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+	.menu{
+		margin-bottom:0;
+		vertical-align: middle;
+	}
+	ul ul{
+		display:none;
+		position: absolute;
+		top:100%;
+	}
+	ul ul li{
+		float:none;
+		position:relative;
+		background-color:$purple_light;
+	}
+	ul ul li a{
+		padding:1em;
+		color:$grey_light;
+		@include transition-property(all);
+		@include transition-duration(1s);
+	}
+	ul ul li a:hover{
+		background:$purple_dark;
+	}
+	ul li:hover > ul{
+		display:block;
+	}
+	
+	ul{
+		list-style:none;
+		position: relative;
+		display: inline-table;
+	}
+	ul:after{
+		content: "";
+		clear:both;
+		display:block;
+	}
+	// The root level menu item
+	ul li{
+		float: left;
+		list-style: none;
+		list-style-image: none;
+		@include transition-property(all);
+		@include transition-duration(1s);
+	}
+	ul li:hover{
+		background-color:$purple_dark;
+	}
+	ul li a{
+		display:block;
+		padding:10px;
+		color:$grey_light;
+		text-decoration: none;
+	}
+	li.active-trail{
+		@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+		background-color: $grey_light;
+	}
+	li.active-trail a{
+		color:$purple_dark;
+	}
+	li.active-trail a:hover{
+		color:$grey_light;
+	}
+}
+
+
+ /*
+
+
+
 #site-menu{
 	width:100%;
 	font-size: 90%;
 	background-color:$purple_light;
 	@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+	height:auto;
+	max-height:4.5em;
 	.menu{
 		margin-bottom:0;
 		li.first{
@@ -139,7 +217,7 @@ img {
 			vertical-align: middle;
 			border-left:1px solid $grey_dark;
 			a{
-				padding: 0.5em 1em;
+				padding: 0 1em;
 				font-weight: normal;
 				display:inline-block;
 				text-align: center;
@@ -155,15 +233,21 @@ img {
 		li.active-trail a{
 
 			color:$purple_dark;
-			padding:0.5em 0.75em;
+			//padding:0.5em 0.75em;
 		}
 	}
 	a:link,a:visited{
 		color:$grey_light;
 		text-decoration: none;
 	}
+	ul ul{
+		display:none;
+	}
+	ul li:hover > ul{
+		display:table-cell;
+	}
 }
-
+/*
 /*
  * UW Tacoma upper-left elements (patch home logo)
  */
