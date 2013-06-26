@@ -129,7 +129,6 @@ img {
 	ul ul{
 		display:none;
 		position: absolute;
-		top:100%;
 	}
 	ul ul li{
 		float:none;
@@ -137,7 +136,6 @@ img {
 		background-color:$purple_light;
 	}
 	ul ul li a{
-		padding:1em;
 		color:$grey_light;
 		@include transition-property(all);
 		@include transition-duration(1s);
@@ -161,6 +159,7 @@ img {
 	}
 	// The root level menu item
 	ul li{
+		max-width:10em;
 		float: left;
 		list-style: none;
 		list-style-image: none;
@@ -172,7 +171,7 @@ img {
 	}
 	ul li a{
 		display:block;
-		padding:10px;
+		padding:5px 10px;
 		color:$grey_light;
 		text-decoration: none;
 	}
