@@ -4,6 +4,8 @@
  */
 
 @import "base";
+@import "compass/css3";
+@import "_colors.scss";/* COLORS */
 
 
 /*
@@ -71,33 +73,216 @@ li a.active {
   }
 }
 
-.region-navigation {
+/*
+ * - Cleaning up default list styling (padding and list-style-*)
+ * - Base flyout menu styling
+ */
+.menu{
+  padding-left:0;
+  margin-top:0;
+  margin-bottom:0;
+  li,li.leaf,li.expanded,li.collapsed{
+    @include transition-property(all);
+    @include transition-duration(1s);
+    list-style-type: none;
+    list-style-image: none;
+
+    .outerContainer{
+      display: table;
+      height: 4em;
+      overflow: hidden;
+      width:100%;
+      .innerContainer{
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        .element a{
+          display:block;
+        }
+      }
+    }
+    a:link,a:visited{
+      text-decoration: none;
+      padding:0 1em;
+
+    }
+  }
+  li:hover > div div ul{
+    display:block;
+  }
+  ul{
+    display: none;
+    position:absolute;
+    li{
+      clear:both;
+      width:100%;
+      a{
+        text-align: left;
+      }
+    }
+  }
+}
+.menu:after{
+  content: "";
+  clear:both;
+  display:block;
 }
 
 /*
- * Main menu and Secondary menu links
+ * Global band menu
  */
-
-#main-menu {
-}
-
-#secondary-menu {
-  float: right;
-}
+ #global-menu {
+  font-size: 70%;
+  .menu{
+    li{
+      float:left;
+      .outerContainer{
+        height:35px;
+        a:link,a:visited{
+          text-decoration: none;
+          color:white;
+        }
+      }
+    }
+    li:hover > div div ul{
+      background-color:black;
+      color:white;
+    }
+  }
+ }
 
 /*
- * Menu blocks
+ * Global secondary menu
  */
-
-.block-menu {
-}
+ #global-secondary{
+  font-size:80%;
+  text-transform: uppercase;
+  .menu{
+    li{
+      float:left;
+    }
+  }
+ }
 
 /*
- * "Menu block" blocks
- *
- * Drupal core has limited ways in which it can display its menus. To get around
- * these limitations, see http://drupal.org/project/menu_block
+ * Site Navigation bar
  */
 
-.block-menu-block {
+
+#site-menu{
+  font-size:80%;
+  background-color:$purple_light;
+  @include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+  .menu {
+    li{ // Root menu items
+      float:left;
+      a:link,a:visited{
+        color:$grey_light;
+      }
+      .outerContainer{
+        max-width: 10em;
+      }
+
+    }
+    li.active-trail{ 
+      @include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+      background-color: $grey_light;
+      a:link,a:visited{
+        color:$purple_dark;
+      }
+      li.active-trail {
+        a:link,a:visited{
+          color:$purple_dark;
+        }
+      }
+      li.active-trail:hover{
+        a:link,a:visited{
+          color:$grey_light;
+        }
+      }
+    }
+    li:hover{
+      background-color:$purple_dark;
+      a:link,a:visited{
+        color: $grey_light;
+      }
+    }
+    li:hover > div div ul{
+      background-color:$purple_dark;
+    }
+    // Nested menu items
+    ul{
+
+      li{
+
+      }
+      li:hover{
+        background-color:$purple_light;
+        a:link,a:visited{
+          color:$grey_light;
+        }
+        a.active:hover{
+          color: $grey_light;
+        }
+      }
+      li.active a:link,li.active a:visited{
+        color:$purple_dark;
+      }
+    }
+  }
+}
+
+/**
+  * Subsite navigation (vertical)
+  */
+
+.region-sidebar-first{
+  .block-menu-block.first{
+    .block-title{
+      line-height: 1.5em;
+    }
+  }
+  ul.menu{
+    @include single-box-shadow(rgba(black, 0.5), -5px, -5px, 10px, -7px, inset);
+    li{
+      a{
+        padding:0.25em;
+        display:block;
+        border-bottom:1px dotted $grey_medium;
+        @include transition-property(all);
+        @include transition-duration(1s);
+      }
+      a.active{
+        background-color:$grey_medium;
+        border-right:0.5em solid $purple_dark;
+      }
+      a:hover{
+        background-color:$purple_light;
+        color: $grey_light;
+      }
+    }
+    .outerContainer{
+      height:auto;
+      .innerContainer{
+        text-align: left;
+        .element{
+          a{
+            display:block;
+          }
+        }
+      }
+    }
+
+    ul{
+      margin-left:0.5em;
+      box-shadow: none;
+      display:block;
+      position:relative;
+      li{
+        padding-right:0;
+      }
+    }
+  }
 }
