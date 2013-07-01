@@ -94,11 +94,18 @@ $zen-auto-include-item-base: false;
 // Mobile first?
 //
 
-
 //
 // Below is 'laid out' for desktop
 //
+.one-sidebar.sidebar-first{
+  .region-sidebar-first{
+    @include zen-grid-item(6,1);
+  }
+  #content{
+    @include zen-grid-item(34,7);
+  }
 
+}
   #header {  
     //background-color: #aaa;
     a span{
@@ -179,6 +186,8 @@ $zen-auto-include-item-base: false;
     }
   }
 
+
+
   #footer{
     .region-footer-menus{
       $zen-column-count:5;
@@ -213,6 +222,8 @@ $zen-auto-include-item-base: false;
       }
     }
   }
+
+
 
 /** Width max 1025px */
 @media all AND (max-width:1025px){

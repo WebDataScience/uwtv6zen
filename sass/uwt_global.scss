@@ -80,6 +80,16 @@ a.active {
 	font-weight:bold;
 }
 
+/**
+  * Site home link (in header, below text logo)
+  */
+#site-home-link a:link,
+#site-home-link a:visited{
+	color:$purple_dark;
+	text-transform: uppercase;
+	text-decoration:none;
+}
+
 /* Flexslider */
 .node ol.slides,
 .node ul.slides {
@@ -105,7 +115,7 @@ img {
 .menu{
 	padding-left:0;
 	margin-top:0;
-	li,li.leaf{
+	li,li.leaf,li.expanded{
 		list-style-type: none;
 		list-style-image: none;
 		a:link,a:visited{
@@ -119,134 +129,124 @@ img {
  */
 
 #site-menu{
-	width:100%;
+	font-size:80%;
 	background-color:$purple_light;
 	@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
-	.menu{
-		margin-bottom:0;
-		vertical-align: middle;
-	}
-	ul ul{
-		display:none;
-		position: absolute;
-	}
-	ul ul li{
-		float:none;
-		position:relative;
-		background-color:$purple_light;
-	}
-	ul ul li a{
-		color:$grey_light;
-		@include transition-property(all);
-		@include transition-duration(1s);
-	}
-	ul ul li a:hover{
-		background:$purple_dark;
-	}
-	ul li:hover > ul{
-		display:block;
-	}
-	
-	ul{
-		list-style:none;
-		position: relative;
-		display: inline-table;
+	ul {
+		li{ // Root menu items
+			@include transition-property(all);
+			@include transition-duration(1s);
+			float: left;
+			list-style: none;
+			list-style-image: none;
+			a:link,a:visited{
+				padding:0 1em;
+				color:$grey_light;
+			}
+			.outerContainer{
+				display: table;
+				height: 4em;
+				overflow: hidden;
+				max-width: 10em;
+				.innerContainer{
+					display: table-cell;
+					vertical-align: middle;
+					width: 100%;
+					margin: 0 auto;
+					text-align: center;
+					.element a{
+						display:block;
+					}
+				}
+			}
+		}
+		li.active-trail{ 
+			@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+			background-color: $grey_light;
+			a:link,a:visited{
+				color:$purple_dark;
+			}
+		}
+		li:hover{
+			background-color:$purple_dark;
+			a:link,a:visited{
+				color: $grey_light;
+			}
+		}
+		li:hover > div div ul{
+			display:block;
+			background-color:$purple_dark;
+		}
+		// Nested menu items
+		ul{
+			display: none;
+			position:absolute;
+			li{
+				clear:both;
+				width:100%;
+			}
+			li:hover{
+				background-color:$purple_light;
+				a:link,a:visited{
+					color:$grey_light;
+				}
+				a.active:hover{
+					color: $grey_light;
+				}
+			}
+			li.active a:link,li.active a:visited{
+				color:$purple_dark;
+			}
+		}
 	}
 	ul:after{
 		content: "";
 		clear:both;
 		display:block;
 	}
-	// The root level menu item
-	ul li{
-		max-width:10em;
-		float: left;
-		list-style: none;
-		list-style-image: none;
-		@include transition-property(all);
-		@include transition-duration(1s);
-	}
-	ul li:hover{
-		background-color:$purple_dark;
-	}
-	ul li a{
-		display:block;
-		padding:5px 10px;
-		color:$grey_light;
-		text-decoration: none;
-	}
-	li.active-trail{
-		@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
-		background-color: $grey_light;
-	}
-	li.active-trail a{
-		color:$purple_dark;
-	}
-	li.active-trail a:hover{
-		color:$grey_light;
-	}
 }
 
+/**
+  * Subsite navigation
+  */
 
- /*
-
-
-
-#site-menu{
-	width:100%;
-	font-size: 90%;
-	background-color:$purple_light;
-	@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
-	height:auto;
-	max-height:4.5em;
-	.menu{
-		margin-bottom:0;
-		li.first{
-			border-left:none;
+.region-sidebar-first{
+	.block-menu-block.first{
+		.block-title{
+			line-height: 1.5em;
 		}
+	}
+	ul.menu{
+		@include single-box-shadow(rgba(black, 0.5), -5px, -5px, 10px, -7px, inset);
 		li{
-			height: 100%;
-			vertical-align:top;
-			max-width: 10em;
-			margin-left:-4px;
-			background-color:transparent;
-			@include transition-property(all);
-			@include transition-duration(1s);
-			display:table-cell;
-			vertical-align: middle;
-			border-left:1px solid $grey_dark;
 			a{
-				padding: 0 1em;
-				font-weight: normal;
-				display:inline-block;
-				text-align: center;
+				padding:0.25em;
+				display:block;
+				border-bottom:1px dotted $grey_medium;
+				@include transition-property(all);
+				@include transition-duration(1s);
+			}
+			a.active{
+				background-color:$grey_medium;
+				border-right:0.5em solid $purple_dark;
+			}
+			a:hover{
+				background-color:$purple_light;
+				color: $grey_light;
 			}
 		}
-		li:hover{
-			background-color:$purple_dark;
-		}
-		li.active-trail{
-			@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
-			background-color: $grey_light;
-		}
-		li.active-trail a{
 
-			color:$purple_dark;
-			//padding:0.5em 0.75em;
+		ul{
+			margin-left:0.5em;
+			box-shadow: none;
+			li{
+				padding-right:0;
+			}
 		}
-	}
-	a:link,a:visited{
-		color:$grey_light;
-		text-decoration: none;
-	}
-	ul ul{
-		display:none;
-	}
-	ul li:hover > ul{
-		display:table-cell;
 	}
 }
-/*
+
+
 /*
  * UW Tacoma upper-left elements (patch home logo)
  */
