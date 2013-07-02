@@ -167,9 +167,7 @@
   </div><!-- /header-center -->
   <div id="header-right">
     <div id="global-search">
-      <form id="global-search-form">
-        <input type="text" />
-      </form>
+      <?php print render($page['global_search']); ?>
     </div> <!-- /global-search -->
     <div id="global-secondary">
       <?php print render($page['global_secondary']); ?>

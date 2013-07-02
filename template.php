@@ -167,6 +167,26 @@ function _get_shiblink() {
 }
 
 
+function uwtv6zen_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  
+  $ret ='<li' . drupal_attributes($element['#attributes']) . '>'; 
+  $ret .= '<div class="outerContainer">';
+  $ret .= '<div class="innerContainer">';
+  $ret .= '<div class="element">';
+  $ret .= $output . $sub_menu;
+  $ret .= "</div></div></div>";
+  $ret .= "</li>\n";
+  return $ret;
+}
+
+
 /**
  * Override or insert variables into the node templates.
  *
