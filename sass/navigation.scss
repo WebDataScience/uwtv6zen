@@ -115,9 +115,15 @@ li a.active {
   ul{
     display: none;
     position:absolute;
-    li{
+    li.leaf,li.expanded,li.collapsed{
       clear:both;
       width:100%;
+      .outerContainer{
+        height: auto;
+        .innerContainer{
+          text-align: left;
+        }
+      }
       a{
         text-align: left;
       }
@@ -143,6 +149,11 @@ li a.active {
         a:link,a:visited{
           text-decoration: none;
           color:white;
+        }
+      }
+      ul li{
+        .outerContainer{
+          height:auto;
         }
       }
     }
@@ -216,7 +227,7 @@ li a.active {
     ul{
 
       li{
-
+        border-bottom:1px dotted $grey_light;
       }
       li:hover{
         background-color:$purple_light;
@@ -282,6 +293,20 @@ li a.active {
       position:relative;
       li{
         padding-right:0;
+      }
+    }
+  }
+}
+
+/*
+ * Foter menus
+ */
+ #footer{ 
+  .menu{
+    .outerContainer{
+      height:auto;
+      .innerContainer{
+        text-align:left;
       }
     }
   }
