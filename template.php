@@ -175,7 +175,7 @@ function _get_shiblink() {
     }
     return $shiblink;
   } else {
-    return 'duuude...';
+    return '';
   }
 }
 
