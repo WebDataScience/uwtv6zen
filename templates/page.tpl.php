@@ -70,73 +70,7 @@
  */
 ?>
 
-<?php
-  /**
-  * The point of this custom template file is to insert the patch and 
-  * textual site logo on any site that uses this theme, irrespective of
-  * the presence of a block of content or whatever.
-  * If a site uses the uwt_v6 theme, it will have the patch and textual
-  * site logo. Period.
-  *
-  * I guess we should have some logic that will determine which textual
-  * logo to display (the big or small one) and whether or not we have a
-  * a subsite link to display.
-  */
-  // create link to UWT Home
-  $path = '<front>';
-  $href = url($path);
 
-  $patch_link = '<a href="' . $href . '">';
-  $patch_link .= '<span class="graphics-uwt_logo_patch"><span class="element-invisible">UW Tacoma patch icon</span></span>';
-  //$patch_link .= '<span class="graphics-uwt_logo_patch_mobile"><span class="element-invisible">UW Tacoma patch icon</span>';
-  $patch_link .= '</a>';
-
-
-  $logo_text_link = '<a href="' . $href . '">';
-  $logo_text_link .= '<span class="graphics-uwt_logo_text"><span class="element-invisible">University of washington | Tacoma</span></span>';
-  //$logo_text_link .= '<span class="graphics-uwt_logo_text_white"><span class="element-invisible">University of washington | Tacoma</span></span>';
-  $logo_text_link .= '</a>';
-  $site_home_link = '';
-
-  if(arg(0) == 'node' && is_numeric(arg(1))) {
-    $node = node_load(arg(1));
-    //dpm($node);
-    $wrapper = entity_metadata_wrapper('node', $node);
-    if ($wrapper->field_site->value()->tid) {
-      $siteid = $wrapper->field_site->value()->tid;
-      //$logo_text_link = '<a href="' . $href . '">';
-      //$logo_text_link .= '<span class="graphics-uwt_logo_text_small"><span class="element-invisible">University of washington | Tacoma</span></span></a>';
-      //dpm('we have a site, right?');
-
-
-      $parents = taxonomy_get_parents_all($siteid);
-      $parent = end($parents);
-      //dpm($parent);
-      // Get the menu for the parent site
-      $results = db_query("SELECT menu FROM uwt_menu_admin WHERE tid = :tid", array(':tid' => $parent->tid));
-      $menu_name = $results->fetchObject()->menu;
-      //dpm($menu_name, '$menu_name');
-      $menu = menu_tree_all_data($menu_name, NULL, 1);
-      //dpm($menu, '$menu');
-      $home_menu_item = array_slice($menu, 0, 1); // Yes, use the first menu item in the menu
-      foreach($home_menu_item as $link) { // There will only be one...the Highlander pattern.
-        //dpm($link, '$link');
-        $label = $link['link']['link_title'];
-        $href = $link['link']['href'];
-        $options = array('attributes' => array('class' => 'site-home-link'));
-        //dpm($label, '$label');
-        //dpm($href, '$href');
-        //dpm($options, '$options');
-           $site_home_link = '<span id="site-home-link">';
-           $site_home_link .= l($label, $href);
-           $site_home_link .= '</span>';
-        /*
-         */
-      }
-    }
-  }
-
- ?>
 
 
 <div id="page">
@@ -146,7 +80,7 @@
 
     <div id="header-left">
       <div id="patch">
-        <?php echo $patch_link; ?>
+        <?php echo $patch; ?>
       </div>
   </div> <!-- /header-left -->
 
@@ -157,10 +91,14 @@
         </nav>
     </div> <!-- /global-menu -->
     <div id="logo_text">
-      <?php echo $logo_text_link; ?>
+      <?php echo $logo_text; ?>
     </div>
     <div id="site_home_link">
-      <?php echo $site_home_link; ?>
+      <?php 
+        if(isset($site_home)){
+          echo $site_home;
+        } 
+      ?>
     </div>
   </div><!-- /header-center -->
   <div id="header-right">

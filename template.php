@@ -152,8 +152,18 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
 
 function uwtv6zen_preprocess_page(&$variables, $hook) {
   $variables['sample_variable'] = t('Lorem ipsum.');
+  // Get the Shibboleth authentication link
   $shiblink = _get_shiblink();
   $variables['shiblink'] = $shiblink;
+  // Get the Home/site links for the current site
+  $sitelinks = _get_site_links();
+  
+  // Send the Home/site links to the templates
+  $variables['patch'] = $sitelinks['patch'];
+  $variables['logo_text'] = $sitelinks['logo_text'];
+  if(isset($sitelinks['site_home'])) {
+    $variables['site_home'] = $sitelinks['site_home'];
+  }
 }
 
 function _get_shiblink() {
@@ -188,6 +198,75 @@ function uwtv6zen_menu_link(array $variables) {
   $ret .= "</li>\n";
   return $ret;
 }
+
+/**
+ * Returns an array of HTML snippets for the Patch link, Text-logo link, and 
+ * site home link.
+ * 
+ */
+function _get_site_links(){
+  /**
+  * The point of this custom template file is to insert the patch and 
+  * textual site logo on any site that uses this theme, irrespective of
+  * the presence of a block of content or whatever.
+  * If a site uses the uwt_v6 theme, it will have the patch and textual
+  * site logo. Period.
+  *
+  * I guess we should have some logic that will determine which textual
+  * logo to display (the big or small one) and whether or not we have a
+  * a subsite link to display.
+  */
+
+  $links = array();
+
+  // create link to UWT Home
+  $path = '<front>';
+  $href = url($path);
+
+  $patch_link = '<a href="' . $href . '">';
+  $patch_link .= '<span class="graphics-uwt_logo_patch"><span class="element-invisible">UW Tacoma patch icon</span></span>';
+  $patch_link .= '</a>';
+
+  $links['patch'] = $patch_link;
+
+  $logo_text_link = '<a href="' . $href . '">';
+  $logo_text_link .= '<span class="graphics-uwt_logo_text"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $logo_text_link .= '</a>';
+
+  $links['logo_text'] = $logo_text_link;
+
+  $site_home_link = '';
+
+  if(arg(0) == 'node' && is_numeric(arg(1))) {
+    $node = node_load(arg(1));
+    $wrapper = entity_metadata_wrapper('node', $node);
+    if ($wrapper->field_site->value()->tid) {
+      $siteid = $wrapper->field_site->value()->tid;
+
+      $parents = taxonomy_get_parents_all($siteid);
+      $parent = end($parents);
+      // Get the menu for the parent site
+      $results = db_query("SELECT menu FROM uwt_menu_admin WHERE tid = :tid", array(':tid' => $parent->tid));
+      if ($results->rowCount() > 0) {
+        $menu_name = $results->fetchObject()->menu;
+        $menu = menu_tree_all_data($menu_name, NULL, 1);
+        $home_menu_item = array_slice($menu, 0, 1); // Yes, use the first menu item in the menu
+        foreach($home_menu_item as $link) { // There will only be one...the Highlander pattern.
+          $label = $link['link']['link_title'];
+          $href = $link['link']['href'];
+          $options = array('attributes' => array('class' => 'site-home-link'));
+          $site_home_link = '<span id="site-home-link">';
+          $site_home_link .= l($label, $href);
+          $site_home_link .= '</span>';
+
+          $links['site_home'] = $site_home_link;
+        }
+      }
+    }
+  }
+  return $links;
+}
+
 
 
 /**
