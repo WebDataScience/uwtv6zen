@@ -234,35 +234,17 @@ function _get_site_links(){
   $logo_text_link .= '</a>';
 
   $links['logo_text'] = $logo_text_link;
-
+  // Get the link to the site home
   $site_home_link = '';
-
-  if(arg(0) == 'node' && is_numeric(arg(1))) {
-    $node = node_load(arg(1));
-    $wrapper = entity_metadata_wrapper('node', $node);
-    if ($wrapper->field_site->value()->tid) {
-      $siteid = $wrapper->field_site->value()->tid;
-
-      $parents = taxonomy_get_parents_all($siteid);
-      $parent = end($parents);
-      // Get the menu for the parent site
-      $results = db_query("SELECT menu FROM uwt_menu_admin WHERE tid = :tid", array(':tid' => $parent->tid));
-      if ($results->rowCount() > 0) {
-        $menu_name = $results->fetchObject()->menu;
-        $menu = menu_tree_all_data($menu_name, NULL, 1);
-        $home_menu_item = array_slice($menu, 0, 1); // Yes, use the first menu item in the menu
-        foreach($home_menu_item as $link) { // There will only be one...the Highlander pattern.
-          $label = $link['link']['link_title'];
-          $href = $link['link']['href'];
-          $options = array('attributes' => array('class' => 'site-home-link'));
-          $site_home_link = '<span id="site-home-link">';
-          $site_home_link .= l($label, $href);
-          $site_home_link .= '</span>';
-
-          $links['site_home'] = $site_home_link;
-        }
-      }
-    }
+  $active_menu_trail = menu_get_active_trail();
+  if(count($active_menu_trail) > 1){
+    $label = $active_menu_trail[1]['link_title'];
+    $href = $active_menu_trail[1]['link_path'];
+    $options = array('attributes' => array('class' => 'site-home-link'));
+    $site_home_link = '<span id="site-home-link">';
+    $site_home_link .= l($label, $href);
+    $site_home_link .= '</span>';
+    $links['site_home'] = $site_home_link;
   }
   return $links;
 }
