@@ -152,11 +152,9 @@
 
   <div id="header-center">
     <div id="global-menu">
-      <?php if ($main_menu): ?>
         <nav id="main-menu" role="navigation">
-          <?php print render($page['navigation']); ?>
+          <?php print render($page['global_navigation']); ?>
         </nav>
-      <?php endif; ?>
     </div> <!-- /global-menu -->
     <div id="logo_text">
       <?php echo $logo_text_link; ?>
