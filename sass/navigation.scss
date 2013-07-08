@@ -98,14 +98,19 @@ li a.active {
         width: 100%;
         margin: 0 auto;
         text-align: center;
-        .element a{
-          display:block;
+        .element {
+          a{
+            display:block;
+          }
+          a.active{
+            font-weight: normal;
+          }
         }
       }
     }
     a:link,a:visited{
       text-decoration: none;
-      padding:0 1em;
+      padding:0 0em;
 
     }
   }
@@ -179,27 +184,34 @@ li a.active {
  }
 
 /*
- * Site Navigation bar
+ * Site Navigation bar (horizontal, top level)
  */
 
 
 #site-menu{
   font-size:80%;
-  background-color:$purple_light;
-  @include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+  background-color:$purple_dark;
+  @include single-box-shadow(rgba(black, 0.5), 0px, 6px, 6px, 0px);
   .menu {
     li{ // Root menu items
       float:left;
+
       a:link,a:visited{
         color:$grey_light;
+        padding:0 1em;
       }
       .outerContainer{
         max-width: 10em;
+        .innerContainer{
+          //border colors match background on #site-menu
+          border-top:1px solid $purple_dark;
+          border-bottom:1px solid $purple_dark;
+        }
       }
 
     }
-    li.active-trail{ 
-      @include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+    li.active-trail{
+      //@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
       background-color: $grey_light;
       a:link,a:visited{
         color:$purple_dark;
@@ -254,26 +266,41 @@ li a.active {
   .block-menu-block.first{
     .block-title{
       line-height: 1.5em;
+      font-size:100%;
+      font-family: $base-font-family;
+      font-weight:normal;
+      background-color:$grey_light;
+      border-left:0.5em solid $grey_light;
+      margin-top:5px;
     }
   }
   ul.menu{
-    @include single-box-shadow(rgba(black, 0.5), -5px, -5px, 10px, -7px, inset);
+    //@include single-box-shadow(rgba(black, 0.5), -5px, -5px, 10px, -7px, inset);
     li{
-      a{
-        padding:0.25em;
+        color:$purple_dark;
+        background-color:$grey_light;
+        border-left:0.5em solid $purple_light;
+      a:link,a:visited{
+        padding:0.15em 0 0.15em 0.25em;
         display:block;
         border-bottom:1px dotted $grey_medium;
+
         @include transition-property(all);
         @include transition-duration(1s);
+
       }
       a.active{
-        background-color:$grey_medium;
-        border-right:0.5em solid $purple_dark;
+        color:$purple_dark;
+        background-color:$purple_light;
+        border-bottom:none;
       }
       a:hover{
-        background-color:$purple_light;
+        background-color:$purple_medium;
         color: $grey_light;
       }
+    }
+    li.active{
+      border-left:0.5em solid $purple_dark;
     }
     .outerContainer{
       height:auto;
@@ -286,7 +313,7 @@ li a.active {
         }
       }
     }
-
+    // Nested
     ul{
       margin-left:0.5em;
       box-shadow: none;
@@ -294,6 +321,7 @@ li a.active {
       position:relative;
       li{
         padding-right:0;
+        border-left:0.5em solid $grey_light;
       }
     }
   }
