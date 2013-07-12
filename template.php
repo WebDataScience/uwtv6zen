@@ -131,12 +131,18 @@ function uwtv6zen_preprocess_maintenance_page(&$variables, $hook) {
 
 function uwtv6zen_preprocess_html(&$variables, $hook) {
   
+  // Adding the trumba spud code for calendars  
   drupal_add_js('http://www.trumba.com/scripts/spuds.js','external');
-
-  //$variables['sample_variable'] = t('Lorem ipsum.');
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
+  
+  // Put the section class in the body.
+  $obj = menu_get_object();
+  if (isset($obj->workbench_access) && count($obj->workbench_access)) {
+    $wbid = reset($obj->workbench_access);
+    $variables['classes_array'][] = 'section-' . $wbid;
+  }
   //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
 }
 // */

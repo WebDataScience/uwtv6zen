@@ -5,7 +5,7 @@
 
 @import "base";
 @import "compass/css3";
-@import "_colors.scss";/* COLORS */
+
 
 
 /*
@@ -217,8 +217,7 @@ li a.active {
       }
 
     }
-    li.active-trail{
-      //@include single-box-shadow(rgba(black, 0.5), 0, 0, 7px, 3px, inset);
+    li.active-trail{ // Root menu items in the active trail
       background-color: $grey_light;
       a:link,a:visited{
         color:$purple_dark;
@@ -271,6 +270,22 @@ li a.active {
       }
       li.active-trail:hover a.active:link, li.active-trail:hover a.active:visited{
         color: $purple_dark;
+      }
+    }
+  }
+  .menu li.expanded{
+    .innerContainer{
+      a:after{
+        content:" \21D3";
+      }
+      li{
+        .innerContainer{
+          border-top:0;
+          border-bottom:0;
+        }
+        a:after{
+          content:"";
+        }
       }
     }
   }
@@ -360,5 +375,16 @@ li a.active {
         text-align:left;
       }
     }
+  }
+}
+
+/*******************************************************************************
+ ******************** Per Section Navigation Customizations ********************
+ ******************************************************************************/
+// About UW Tacoma
+.section-875 #site-menu .menu:first-child > li.last{
+  background-color: yellow;
+  a:link,a:visited{
+    color:$purple_dark;
   }
 }
