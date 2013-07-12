@@ -99,10 +99,10 @@ $zen-auto-include-item-base: false;
 //
 .one-sidebar.sidebar-first{
   .region-sidebar-first{
-    @include zen-grid-item(6,1);
+    @include zen-grid-item(10,1);
   }
   #content{
-    @include zen-grid-item(34,7);
+    @include zen-grid-item(30,11);
   }
 
 }

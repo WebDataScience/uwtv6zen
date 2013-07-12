@@ -179,7 +179,10 @@ function _get_shiblink() {
   }
 }
 
-
+/**
+ * Add several containers to the menu links so that they can be properly 
+ *   centered horizontally and vertically and support CSS3 flyout menus.
+ */
 function uwtv6zen_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
@@ -237,7 +240,7 @@ function _get_site_links(){
   // Get the link to the site home
   $site_home_link = '';
   $active_menu_trail = menu_get_active_trail();
-  if(count($active_menu_trail) > 1){
+  if(isset($active_menu_trail[1]['link_title']) && isset($active_menu_trail[1]['link_path'])){
     $label = $active_menu_trail[1]['link_title'];
     $href = $active_menu_trail[1]['link_path'];
     $options = array('attributes' => array('class' => 'site-home-link'));

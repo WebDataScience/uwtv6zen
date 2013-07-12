@@ -68,6 +68,11 @@
  * @see zen_preprocess_page()
  * @see template_process()
  */
+$global_navigation = render($page['global_navigation']);
+$global_search = render($page['global_search']);
+$global_secondary = render($page['global_secondary']);
+$site_menu = render($page['site_menu']);
+$footer_menus = render($page['footer_menus']);
 ?>
 
 
@@ -80,33 +85,29 @@
 
     <div id="header-left">
       <div id="patch">
-        <?php echo $patch; ?>
+        <?php print $patch; ?>
       </div>
   </div> <!-- /header-left -->
 
   <div id="header-center">
     <div id="global-menu">
         <nav id="main-menu" role="navigation">
-          <?php print render($page['global_navigation']); ?>
+          <?php if($global_navigation){print $global_navigation;} ?>
         </nav>
     </div> <!-- /global-menu -->
     <div id="logo_text">
-      <?php echo $logo_text; ?>
+      <?php print $logo_text; ?>
     </div>
     <div id="site_home_link">
-      <?php 
-        if(isset($site_home)){
-          echo $site_home;
-        } 
-      ?>
+      <?php if(isset($site_home)){echo $site_home; } ?>
     </div>
   </div><!-- /header-center -->
   <div id="header-right">
     <div id="global-search">
-      <?php print render($page['global_search']); ?>
+      <?php if($global_search){print $global_search;} ?>
     </div> <!-- /global-search -->
     <div id="global-secondary">
-      <?php print render($page['global_secondary']); ?>
+      <?php if($global_secondary){print $global_secondary;} ?>
     </div>
   </div>
 
@@ -114,7 +115,7 @@
 
     <div id="site-menu">
       <div class="inner">
-        <?php print render($page['site_menu']); ?>
+        <?php if($site_menu){print $site_menu;} ?>
       </div><!-- /.inner -->
     </div><!-- /#site-menu -->
 
@@ -167,7 +168,7 @@
     </div><!-- /#footer_top -->
 
     <div id="footer_middle">
-      <?php print render($page['footer_menus']); ?>
+      <?php if($footer_menus){print $footer_menus;} ?>
     </div><!-- /#footer_middle -->
 
   </div><!-- /#footer -->
