@@ -137,7 +137,7 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
   
-  // Put the section class in the body.
+  // Put the section class in the body 'section-###' where ### is the term id.ß
   $obj = menu_get_object();
   if (isset($obj->workbench_access) && count($obj->workbench_access)) {
     $wbid = reset($obj->workbench_access);

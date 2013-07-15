@@ -71,6 +71,7 @@
 $global_navigation = render($page['global_navigation']);
 $global_search = render($page['global_search']);
 $global_secondary = render($page['global_secondary']);
+$post_header = render($page['post_header']);
 $site_menu = render($page['site_menu']);
 $footer_menus = render($page['footer_menus']);
 ?>
@@ -79,45 +80,49 @@ $footer_menus = render($page['footer_menus']);
 
 
 <div id="page">
-    <div id="band">
-    </div> <!-- /band -->
-  <header id="header" role="banner">
+  <div id="band">
+  </div> <!-- /band -->
 
+  <header id="header" role="banner">
     <div id="header-left">
       <div id="patch">
         <?php print $patch; ?>
       </div>
-  </div> <!-- /header-left -->
+    </div> <!-- /header-left -->
 
-  <div id="header-center">
-    <div id="global-menu">
-        <nav id="main-menu" role="navigation">
-          <?php if($global_navigation){print $global_navigation;} ?>
-        </nav>
-    </div> <!-- /global-menu -->
-    <div id="logo_text">
-      <?php print $logo_text; ?>
+    <div id="header-center">
+      <div id="global-menu">
+          <nav id="main-menu" role="navigation">
+            <?php if($global_navigation){print $global_navigation;} ?>
+          </nav>
+      </div> <!-- /global-menu -->
+      <div id="logo_text">
+        <?php print $logo_text; ?>
+      </div>
+      <div id="site_home_link">
+        <?php if(isset($site_home)){echo $site_home; } ?>
+      </div>
+    </div><!-- /header-center -->
+
+    <div id="header-right">
+      <div id="global-search">
+        <?php if($global_search){print $global_search;} ?>
+      </div> <!-- /global-search -->
+      <div id="global-secondary">
+        <?php if($global_secondary){print $global_secondary;} ?>
+      </div>
     </div>
-    <div id="site_home_link">
-      <?php if(isset($site_home)){echo $site_home; } ?>
-    </div>
-  </div><!-- /header-center -->
-  <div id="header-right">
-    <div id="global-search">
-      <?php if($global_search){print $global_search;} ?>
-    </div> <!-- /global-search -->
-    <div id="global-secondary">
-      <?php if($global_secondary){print $global_secondary;} ?>
-    </div>
+  </header><!-- /#header -->
+
+  <div id="post-header">
+    <?php if($post_header){print $post_header;} ?>
   </div>
 
-  </header>
-
-    <div id="site-menu">
-      <div class="inner">
-        <?php if($site_menu){print $site_menu;} ?>
-      </div><!-- /.inner -->
-    </div><!-- /#site-menu -->
+  <div id="site-menu">
+    <div class="inner">
+      <?php if($site_menu){print $site_menu;} ?>
+    </div><!-- /.inner -->
+  </div><!-- /#site-menu -->
 
   <div id="main">
 
