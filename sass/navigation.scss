@@ -147,10 +147,12 @@ li a.active {
  * Global band menu
  */
  #global-menu {
-  font-size: 80%;
+  font-size: 100%;
   .menu{
     li{
       float:left;
+      padding-right:10px;
+      background-color:black;
       .outerContainer{
         height:35px;
         a:link,a:visited{
@@ -276,7 +278,9 @@ li a.active {
   .menu li.expanded{
     .innerContainer{
       a:after{
-        content:" \21D3";
+        font-family:LindenHillRegular;
+        font-size:1em;
+        content:" \2193";
       }
       li{
         .innerContainer{

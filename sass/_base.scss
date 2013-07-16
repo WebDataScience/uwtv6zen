@@ -32,6 +32,40 @@ $legacy-support-for-ie8: true;
 // Font faces, stacks and sizes.
 //
 
+@font-face {
+	font-family: 'LindenHillRegular';
+	src: url('fonts/lindenhill-regular-webfont.eot');
+	src: url('fonts/lindenhill-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/lindenhill-regular-webfont.woff') format('woff'),
+	url('fonts/lindenhill-regular-webfont.ttf') format('truetype'),
+	url('fonts/lindenhill-regular-webfont.svg#linden_hillregular') format('svg');
+	unicode-range: U+00-FF;
+	font-weight: normal;
+	font-style: normal;
+}
+
+	@font-face {
+	font-family: 'nexa_xboldregular';
+	src: url('fonts/Nexa_XBold-webfont.eot');
+	src: url('fonts/Nexa_XBold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/Nexa_XBold-webfont.woff') format('woff'),
+	url('fonts/Nexa_XBold-webfont.ttf') format('truetype'),
+	url('fonts/Nexa_XBold-webfont.svg#nexa_xboldregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+	@font-face {
+	font-family: 'nexa_boldregular';
+	src: url('fonts/Nexa_Bold-webfont.eot');
+	src: url('fonts/Nexa_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/Nexa_Bold-webfont.woff') format('woff'),
+	url('fonts/Nexa_Bold-webfont.ttf') format('truetype'),
+	url('fonts/Nexa_Bold-webfont.svg#nexa_boldregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 // Compass' vertical_rhythm extension is a powerful tool to set up a vertical
 // rhythm for your entire page. You can see some of its mixins and functions in
 // use in the normalize.scss file.
