@@ -96,6 +96,7 @@ stylesheets[all][] = css/uwt_global.css
 ;   <?php print $header_top; ?>
 
 regions[global_navigation] = Global navigation
+regions[audience_navigation]     = Audience navigation
 regions[global_secondary]  = Global secondary
 regions[global_search]     = Global search
 regions[post_header]       = Post header

@@ -129,6 +129,31 @@ $gold_medium : #FFD300;
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
+@mixin breakpoint($point) {
+  @if $point == narrow {
+    @media only screen and (max-width: 550px) { 
+   		$zen-column-count: 1;
+    	$zen-gutter-width: 10px;
+    	@content;
+    }
+  }
+  @if $point == medium {
+    @media only screen and (max-width : 551px) and (min-width: 767px) { 
+   		$zen-column-count: 40;
+    	$zen-gutter-width: 10px;
+    	@content;
+    }
+  }
+  @if $point == widest {
+    @media only screen and (min-width: 768px) { 
+   		$zen-column-count: 40;
+    	$zen-gutter-width: 10px;
+    	@content;
+    }
+  }
+
+
+}
 
 //
 // Partials to be shared with all .scss files.

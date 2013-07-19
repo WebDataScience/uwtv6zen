@@ -69,6 +69,7 @@
  * @see template_process()
  */
 $global_navigation = render($page['global_navigation']);
+$audience_navigation = render($page['audience_navigation']);
 $global_search = render($page['global_search']);
 $global_secondary = render($page['global_secondary']);
 $post_header = render($page['post_header']);
@@ -89,17 +90,33 @@ $footer_menus = render($page['footer_menus']);
         <?php print $patch; ?>
       </div>
     </div> <!-- /header-left -->
-
     <div id="header-center">
-      <div id="global-menu">
-          <nav id="main-menu" role="navigation">
-            <?php if($global_navigation){print $global_navigation;} ?>
+
+      <?php if($audience_navigation){ ?>
+        <div id="audience-menu">
+          <nav role="navigation" class="menus">
+            <input type="checkbox" id="audience-menu-checkbox">
+            <label for="audience-menu-checkbox" class="icons-audience-menu-button-narrow" onclick></label>
+            <?php print $audience_navigation; ?>
           </nav>
-      </div> <!-- /global-menu -->
-      <div id="logo_text">
-        <?php print $logo_text; ?>
+        </div>
+      <?php } ?>
+
+      <?php if($global_navigation){ ?>
+        <div id="global-menu">
+          <nav role="navigation" class="menus">
+            <!-- Fix for iOS -->
+            <input type="checkbox" id="main-menu-checkbox">
+            <label for="main-menu-checkbox" class="icons-main-menu-button-narrow" onclick></label>
+            <?php print $global_navigation; ?>
+          </nav>
+        </div> <!-- /global-menu -->
+      <?php } ?>
+
+      <div id="wordmark">
+        <?php print $wordmark; ?>
       </div>
-      <div id="site_home_link">
+      <div id="site-home-link-wrapper">
         <?php if(isset($site_home)){echo $site_home; } ?>
       </div>
     </div><!-- /header-center -->
@@ -117,12 +134,16 @@ $footer_menus = render($page['footer_menus']);
   <div id="post-header">
     <?php if($post_header){print $post_header;} ?>
   </div>
-
-  <div id="site-menu">
-    <div class="inner">
-      <?php if($site_menu){print $site_menu;} ?>
-    </div><!-- /.inner -->
-  </div><!-- /#site-menu -->
+  
+  <?php if($site_menu){ ?>
+    <div id="site-menu">
+      <nav role="navigation" class="menus">
+        <input type="checkbox" id="site-menu-checkbox">
+        <label for="site-menu-checkbox" class="icons-site-menu-button-narrow" onclick></label>
+        <?php print $site_menu; ?>
+      </nav>
+    </div><!-- /#site-menu -->
+  <?php } ?>
 
   <div id="main">
 

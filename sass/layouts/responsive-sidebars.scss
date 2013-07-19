@@ -13,8 +13,7 @@
 /* COLORS */
 @import "_colors";
 
-$zen-column-count:  40;
-$zen-gutter-width:  10px;
+
 
 
 // IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
@@ -79,6 +78,31 @@ $zen-auto-include-item-base: false;
 
 
 
+//
+// Default, apply to all, unless overridden.
+//
+body{
+  min-width: 100%;
+  width:100%;
+
+}
+
+#band{
+  width:100%;
+  //position:absolute;
+  //top:0;
+  //left:0;
+  //z-index: -1;
+}
+#patch{
+  span{
+    //position:absolute;
+    //top:0;
+    //left:0;
+  }
+}
+
+
 
 
 
@@ -86,17 +110,97 @@ $zen-auto-include-item-base: false;
 // Mobile first?
 //
 
+@include breakpoint(narrow){
+  #band{
+    display:none;
+  }
+  #header{
+    height:73px;
+    //background-color: #35A6FF;
+    .block{
+      margin-bottom:0;
+    }
+  }
+  #header-left{
+    background-color:$purple_dark;
+  }
+  #patch{
+    height:35px;
+    width:47px;
+
+    span.graphics-uwt_logo_patch_narrow{
+      display:block;
+    }
+    span.graphics-uwt_logo_patch{
+      display:none;
+    }
+  }
+
+  #wordmark{
+    .graphics-uwt_wordmark_narrow{
+      display:block;
+      position:absolute;
+      top:12px; // TODO: Get 35px tall, centered graphic from Brian
+      left:47px;
+    }
+    .graphics-uwt_wordmark{
+      display:none;
+    }
+  }
+  #header-right{
+    //position:absolute;
+    //top:45px;
+    //height:35px;
+  }
+  #global-search{
+    .form-item,
+    .form-actions,
+    .block,
+    h2{
+      margin:0;
+    }
+
+  }
+  #post-header{
+    //margin-top:10px;
+    display:none;
+  }
+  #site-menu{
+    //See navigation.scss
+  }
+  #page #main{
+    background-color:#78FFFF;
+  }
+
+  .graphics-uwt_logo_horiz_white{
+    display:none;
+  }
+}
+
+//
+// Not full mobile, not full desktop
+//
+@include breakpoint(medium){
+  #band{
+    height:1.5em;
+    background-color:maroon;
+  }
+  #patch{
+    span.graphics-uwt_logo_patch_narrow{
+      display:none;
+    }
+    span.graphics-uwt_logo_patch{
+
+    }
+  }
+}
+
 //
 // Below is 'laid out' for desktop
 //
-@media all AND (min-width:1032px){
+@include breakpoint(widest){
   #band{
-    width:100%;
     height:35px;
-    position:absolute;
-    top:0;
-    left:0;
-    z-index: -1;
     background-color:black;
   }
   .one-sidebar.sidebar-first{
@@ -128,7 +232,7 @@ $zen-auto-include-item-base: false;
       margin-bottom: 0; // Not totally sure why this is needed, but it is.
     }
   }
-  #logo_text {
+  #wordmark {
     padding-top:30px;
     @include zen-clear();
     @include zen-grid-item(30,1);
@@ -140,17 +244,15 @@ $zen-auto-include-item-base: false;
   #header-right{
     @include zen-grid-item(10,31);
     @include zen-nested-container;
-
-
   }
   #global-search{
     padding-top:15px;
     @include zen-grid-item(40,1);
     input[type="text"]{
       height:35px;
-      width:250px;
+      //width:250px;
       border:2px solid $grey_medium;
-      @include border-radius(5px);
+      
     }
   }
   #global-secondary{
@@ -195,8 +297,3 @@ $zen-auto-include-item-base: false;
     }
   }
 }/* end widescreen here */
-
-/** Semi-mobile **/
-@media all AND (min-width : 1032px) AND (min-width : 500px){
-
-}

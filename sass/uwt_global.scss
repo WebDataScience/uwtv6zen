@@ -2,7 +2,7 @@
 @import "compass/css3";
 
 /* 
- * SPRITES 
+ * SPRITES
  */
 /* icons */
 $icons-sprite-dimensions:true;
@@ -14,7 +14,6 @@ $graphics-sprite-dimensions:true;
 $graphics-layout:smart;
 @import "graphics/*.png";
 @include all-graphics-sprites;
-
 
 
 body{
@@ -53,6 +52,33 @@ a.active {
 	text-decoration:none;
 }
 
+/* Search */
+#global-search{
+	input[type="submit"]{
+		text-indent:-999px;
+		overflow:hidden;
+		position:absolute;
+		top:45px;
+		left:15px;
+		background-color:$grey_light;
+		border:none;
+	}
+	input[type="text"]{
+		position: absolute;
+		top:45px;
+		left:45px;
+		height:20px;
+		border:0;
+	}
+}
+@include breakpoint(narrow){
+	.breadcrumb{
+		display:none;
+	}
+	#site-home-link{
+		display:none;
+	}
+}
 /* Flexslider */
 .node ol.slides,
 .node ul.slides {

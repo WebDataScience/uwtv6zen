@@ -143,6 +143,7 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
     $wbid = reset($obj->workbench_access);
     $variables['classes_array'][] = 'section-' . $wbid;
   }
+
   //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
 }
 // */
@@ -166,7 +167,7 @@ function uwtv6zen_preprocess_page(&$variables, $hook) {
   
   // Send the Home/site links to the templates
   $variables['patch'] = $sitelinks['patch'];
-  $variables['logo_text'] = $sitelinks['logo_text'];
+  $variables['wordmark'] = $sitelinks['wordmark'];
   if(isset($sitelinks['site_home'])) {
     $variables['site_home'] = $sitelinks['site_home'];
   }
@@ -236,13 +237,21 @@ function _get_site_links(){
   $patch_link .= '<span class="graphics-uwt_logo_patch"><span class="element-invisible">UW Tacoma patch icon</span></span>';
   $patch_link .= '</a>';
 
+  $patch_link .= '<a href="' . $href . '">';
+  $patch_link .= '<span class="graphics-uwt_logo_patch_narrow"><span class="element-invisible">UW Tacoma patch icon</span></span>';
+  $patch_link .= '</a>';
+
   $links['patch'] = $patch_link;
 
-  $logo_text_link = '<a href="' . $href . '">';
-  $logo_text_link .= '<span class="graphics-uwt_logo_text"><span class="element-invisible">University of washington | Tacoma</span></span>';
-  $logo_text_link .= '</a>';
+  $wordmark_link = '<a href="' . $href . '">';
+  $wordmark_link .= '<span class="graphics-uwt_wordmark"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $wordmark_link .= '</a>';
 
-  $links['logo_text'] = $logo_text_link;
+  $wordmark_link .= '<a href="' . $href . '">';
+  $wordmark_link .= '<span class="graphics-uwt_wordmark_narrow"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $wordmark_link .= '</a>';
+
+  $links['wordmark'] = $wordmark_link;
   // Get the link to the site home
   $site_home_link = '';
   $active_menu_trail = menu_get_active_trail();
@@ -332,3 +341,12 @@ function uwtv6zen_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+/**
+  * Implements hook_form_FORM_ID_alter.
+  *
+  * Adds a class to the search button for the search form.
+  */
+function uwtv6zen_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  $form['actions']['submit']['#attributes']['class'][] = 'icons-search-submit-dark';
+}
