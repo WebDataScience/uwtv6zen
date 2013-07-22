@@ -143,6 +143,14 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
     $wbid = reset($obj->workbench_access);
     $variables['classes_array'][] = 'section-' . $wbid;
   }
+  // make the 'section_menu' region turn the content into columns
+  if (isset($variables['page']['section_menu'])) {
+    $variables['classes_array'] = array_diff($variables['classes_array'], array('no-sidebars'));
+    $variables['classes_array'][] = 'one-sidebar';
+    $variables['classes_array'][] = 'sidebar-first';
+
+  }
+  //dpm($variables);
 
   //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
 }
@@ -349,4 +357,31 @@ function uwtv6zen_preprocess_block(&$variables, $hook) {
   */
 function uwtv6zen_form_search_block_form_alter(&$form, &$form_state, $form_id) {
   $form['actions']['submit']['#attributes']['class'][] = 'icons-search-submit-dark';
+}
+/**
+  * On the mobile site, the site and section menus can both show the same
+  *   content, and because they are stacked, it looks dumb to have identical
+  *   menus. This code checks two different menu blocks and returns 'dupe'
+  *   to be used as a class in the mobile style sheet.
+  */
+function _is_menu_dupe($first, $second) {
+  $dupe = '';
+  $first_menu = array();
+  $second_menu = array();
+  foreach($first as $key => $value) {
+    if(stripos($key, 'menu_block_') !== FALSE) {
+      $first_menu['title'] = $value['#block']->subject_array['#title'];
+      $first_menu['href'] = $value['#block']->subject_array['#href'];
+    }
+  }
+  foreach($second as $key => $value) {
+    if(stripos($key, 'menu_block_') !== FALSE) {
+      $second_menu['title'] = $value['#block']->subject_array['#title'];
+      $second_menu['href'] = $value['#block']->subject_array['#href'];
+    }
+  }
+  if ($first_menu == $second_menu) {
+    $dupe = 'dupe';
+  }
+  return $dupe;
 }

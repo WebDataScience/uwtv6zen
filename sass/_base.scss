@@ -138,14 +138,14 @@ $indent-amount: 30px;
     }
   }
   @if $point == medium {
-    @media only screen and (max-width : 551px) and (min-width: 767px) { 
+    @media only screen and (max-width : 551px) and (min-width: 999px) { 
    		$zen-column-count: 40;
     	$zen-gutter-width: 10px;
     	@content;
     }
   }
   @if $point == widest {
-    @media only screen and (min-width: 768px) { 
+    @media only screen and (min-width: 1000px) { 
    		$zen-column-count: 40;
     	$zen-gutter-width: 10px;
     	@content;

@@ -59,7 +59,8 @@ $zen-auto-include-item-base: false;
 
 #content, 
 .region-sidebar-first,
-.region-sidebar-second{
+.region-sidebar-second,
+.region-section-menu{
   @include zen-grid-item-base();
 }
 
@@ -78,31 +79,6 @@ $zen-auto-include-item-base: false;
 
 
 
-//
-// Default, apply to all, unless overridden.
-//
-body{
-  min-width: 100%;
-  width:100%;
-
-}
-
-#band{
-  width:100%;
-  //position:absolute;
-  //top:0;
-  //left:0;
-  //z-index: -1;
-}
-#patch{
-  span{
-    //position:absolute;
-    //top:0;
-    //left:0;
-  }
-}
-
-
 
 
 
@@ -116,25 +92,23 @@ body{
   }
   #header{
     height:73px;
-    //background-color: #35A6FF;
     .block{
       margin-bottom:0;
     }
-  }
+  } // /#header
   #header-left{
     background-color:$purple_dark;
   }
   #patch{
     height:35px;
     width:47px;
-
     span.graphics-uwt_logo_patch_narrow{
       display:block;
     }
     span.graphics-uwt_logo_patch{
       display:none;
     }
-  }
+  } // /#patch
 
   #wordmark{
     .graphics-uwt_wordmark_narrow{
@@ -169,7 +143,6 @@ body{
     //See navigation.scss
   }
   #page #main{
-    background-color:#78FFFF;
   }
 
   .graphics-uwt_logo_horiz_white{
@@ -199,12 +172,9 @@ body{
 // Below is 'laid out' for desktop
 //
 @include breakpoint(widest){
-  #band{
-    height:35px;
-    background-color:black;
-  }
   .one-sidebar.sidebar-first{
-    .region-sidebar-first{
+    .region-sidebar-first,
+    .region-section-menu{
       @include zen-grid-item(10,1);
     }
     #content{
@@ -212,10 +182,8 @@ body{
     }
   }
   #header {  
-    a span{
-      display:block;
-    }
-  }
+
+  } // /#header
   #header-left{
     @include zen-grid-item(3,1);
     #patch {
@@ -246,14 +214,7 @@ body{
     @include zen-nested-container;
   }
   #global-search{
-    padding-top:15px;
     @include zen-grid-item(40,1);
-    input[type="text"]{
-      height:35px;
-      //width:250px;
-      border:2px solid $grey_medium;
-      
-    }
   }
   #global-secondary{
     @include zen-clear();
@@ -296,4 +257,4 @@ body{
       }
     }
   }
-}/* end widescreen here */
+} // /breakpoint(widest)

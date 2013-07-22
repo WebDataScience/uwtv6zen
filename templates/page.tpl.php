@@ -74,6 +74,7 @@ $global_search = render($page['global_search']);
 $global_secondary = render($page['global_secondary']);
 $post_header = render($page['post_header']);
 $site_menu = render($page['site_menu']);
+$section_menu = render($page['section_menu']);
 $footer_menus = render($page['footer_menus']);
 ?>
 
@@ -81,10 +82,8 @@ $footer_menus = render($page['footer_menus']);
 
 
 <div id="page">
-  <div id="band">
-  </div> <!-- /band -->
-
-  <header id="header" role="banner">
+  <div id="band"> </div> <!-- /band -->
+  <header id="header" role="banner">  
     <div id="header-left">
       <div id="patch">
         <?php print $patch; ?>
@@ -134,7 +133,7 @@ $footer_menus = render($page['footer_menus']);
   <div id="post-header">
     <?php if($post_header){print $post_header;} ?>
   </div>
-  
+
   <?php if($site_menu){ ?>
     <div id="site-menu">
       <nav role="navigation" class="menus">
@@ -143,6 +142,16 @@ $footer_menus = render($page['footer_menus']);
         <?php print $site_menu; ?>
       </nav>
     </div><!-- /#site-menu -->
+  <?php } ?>
+
+  <?php if($section_menu){ ?>
+    <div id="section-menu" class="<?php print _is_menu_dupe($page['site_menu'], $page['section_menu'])?>">
+      <nav role="navigation" class="menus">
+        <input type="checkbox" id="section-menu-checkbox">
+        <label for="section-menu-checkbox" class="icons-site-menu-button-narrow" onclick></label>
+        <?php print $section_menu; ?>
+      </nav>
+    </div><!-- /#section-menu -->
   <?php } ?>
 
   <div id="main">
@@ -176,8 +185,9 @@ $footer_menus = render($page['footer_menus']);
       $sidebar_second = render($page['sidebar_second']);
     ?>
 
-    <?php if ($sidebar_first || $sidebar_second): ?>
+    <?php if ($sidebar_first || $sidebar_second || $section_menu): ?>
       <aside class="sidebars">
+        <?php print $section_menu; ?>
         <?php print $sidebar_first; ?>
         <?php print $sidebar_second; ?>
       </aside><!-- /.sidebars -->
