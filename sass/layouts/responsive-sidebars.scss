@@ -40,6 +40,7 @@ $zen-auto-include-item-base: false;
 #header,
 #site-menu .inner,
 #main,
+#section-identifier,
 .region-bottom,
 #footer_top,
 #footer_middle,
@@ -62,6 +63,8 @@ $zen-auto-include-item-base: false;
 .region-sidebar-second,
 .region-section-menu{
   @include zen-grid-item-base();
+  padding-left:20px;
+  padding-right:20px;
 }
 
 /*
@@ -86,69 +89,63 @@ $zen-auto-include-item-base: false;
 // Mobile first?
 //
 
-@include breakpoint(narrow){
-  #band{
-    display:none;
-  }
-  #header{
-    height:73px;
-    .block{
-      margin-bottom:0;
-    }
-  } // /#header
-  #header-left{
-    background-color:$purple_dark;
-  }
-  #patch{
-    height:35px;
-    width:47px;
-    span.graphics-uwt_logo_patch_narrow{
-      display:block;
-    }
-    span.graphics-uwt_logo_patch{
-      display:none;
-    }
-  } // /#patch
-
-  #wordmark{
-    .graphics-uwt_wordmark_narrow{
-      display:block;
-      position:absolute;
-      top:12px; // TODO: Get 35px tall, centered graphic from Brian
-      left:47px;
-    }
-    .graphics-uwt_wordmark{
-      display:none;
-    }
-  }
-  #header-right{
-    //position:absolute;
-    //top:45px;
-    //height:35px;
-  }
-  #global-search{
-    .form-item,
-    .form-actions,
-    .block,
-    h2{
-      margin:0;
-    }
-
-  }
-  #post-header{
-    //margin-top:10px;
-    display:none;
-  }
-  #site-menu{
-    //See navigation.scss
-  }
-  #page #main{
-  }
-
-  .graphics-uwt_logo_horiz_white{
-    display:none;
-  }
+#band{
+  display:none;
 }
+#header{
+  //height:73px;
+  .block{
+    margin-bottom:0;
+  }
+} // /#header
+#header-left{
+  background-color:$purple_dark;
+}
+#patch{
+  height:35px;
+  width:47px;
+  span.graphics-uwt_logo_patch_narrow{
+    display:block;
+  }
+  span.graphics-uwt_logo_patch{
+    display:none;
+  }
+} // /#patch
+
+#wordmark{
+  .graphics-uwt_wordmark_narrow{
+    display:block;
+    position:absolute;
+    top:12px; // TODO: Get 35px tall, centered graphic from Brian
+    left:47px;
+  }
+  .graphics-uwt_wordmark{
+    display:none;
+  }
+} // /#wordmark
+#header-right{
+}
+#global-search{
+  .form-item,
+  .form-actions,
+  .block,
+  h2{
+    margin:0;
+  }
+} // /#global-search
+#post-header{
+  display:none;
+}
+#site-menu{
+//See navigation.scss
+}
+#page #main{
+}
+
+.graphics-uwt_logo_horiz_white{
+  display:none;
+}
+
 
 //
 // Not full mobile, not full desktop
@@ -159,9 +156,7 @@ $zen-auto-include-item-base: false;
     background-color:maroon;
   }
   #patch{
-    span.graphics-uwt_logo_patch_narrow{
-      display:none;
-    }
+
     span.graphics-uwt_logo_patch{
 
     }
@@ -172,6 +167,10 @@ $zen-auto-include-item-base: false;
 // Below is 'laid out' for desktop
 //
 @include breakpoint(widest){
+  #band{
+    display:block;
+  }
+
   .one-sidebar.sidebar-first{
     .region-sidebar-first,
     .region-section-menu{

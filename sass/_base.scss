@@ -1,6 +1,4 @@
 //
-// "base" partial
-//
 // To make it easier to use all variables and mixins in any Sass file in this
 // theme, each .scss file has a @import "base" declaration. And this _base.scss
 // file is in charge of importing all the other partials needed for the theme.
@@ -126,28 +124,32 @@ $grey_dark : #424242;
 
 $gold_medium : #FFD300;
 
+$link_blue: #145F99;
+
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
 @mixin breakpoint($point) {
   @if $point == narrow {
-    @media only screen and (max-width: 550px) { 
+    @media only screen and (max-width: 650px) { 
    		$zen-column-count: 1;
     	$zen-gutter-width: 10px;
     	@content;
     }
   }
+
   @if $point == medium {
-    @media only screen and (max-width : 551px) and (min-width: 999px) { 
+    @media only screen and (min-width : 651px) { 
    		$zen-column-count: 40;
     	$zen-gutter-width: 10px;
     	@content;
     }
   }
+
   @if $point == widest {
-    @media only screen and (min-width: 1000px) { 
+    @media only screen and (min-width: 701px) { 
    		$zen-column-count: 40;
-    	$zen-gutter-width: 10px;
+    	$zen-gutter-width: 20px;
     	@content;
     }
   }

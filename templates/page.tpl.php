@@ -73,6 +73,7 @@ $audience_navigation = render($page['audience_navigation']);
 $global_search = render($page['global_search']);
 $global_secondary = render($page['global_secondary']);
 $post_header = render($page['post_header']);
+$section_identifier = render($page['section_identifier']);
 $site_menu = render($page['site_menu']);
 $section_menu = render($page['section_menu']);
 $footer_menus = render($page['footer_menus']);
@@ -133,6 +134,12 @@ $footer_menus = render($page['footer_menus']);
   <div id="post-header">
     <?php if($post_header){print $post_header;} ?>
   </div>
+
+  <?php if($section_identifier) { ?>
+    <div id="section-identifier">
+      <?php print $section_identifier; ?>
+    </div> <!-- /#section-identifier -->
+  <?php } ?>
 
   <?php if($site_menu){ ?>
     <div id="site-menu">

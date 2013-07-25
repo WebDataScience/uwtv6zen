@@ -12,7 +12,6 @@ environment = :development
 #environment = :production
 
 # In development, we can turn on the FireSass-compatible debug_info.
-firesass = false
 firesass = true
 
 
@@ -25,14 +24,8 @@ javascripts_dir = "js"
 
 
 # Require any additional compass plugins installed on your system.
-#require 'ninesixty'
 require 'zen-grids'
-#require 'susy'
-# Assuming this theme is in sites/*/themes/THEMENAME, you can add the partials
-# included with a module by uncommenting and modifying one of the lines below:
-#add_import_path "../../../default/modules/FOO"
-#add_import_path "../../../all/modules/FOO"
-#add_import_path "../../../../modules/FOO"
+
 
 ##
 ## You probably don't need to edit anything below this.

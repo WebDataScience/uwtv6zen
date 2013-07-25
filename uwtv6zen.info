@@ -100,6 +100,7 @@ regions[audience_navigation] = Audience navigation
 regions[global_secondary]    = Global secondary
 regions[global_search]       = Global search
 regions[post_header]         = Post header
+regions[section_identifier]  = Section identifier
 regions[site_menu]           = Site menu
 regions[section_menu]        = Section menu
 regions[highlighted]         = Highlighted
