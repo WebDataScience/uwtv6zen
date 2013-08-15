@@ -31,8 +31,15 @@ ul li.leaf {
   @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
     *list-style-image: url(../images/menu-leaf.png);
   }
-  list-style-image: inline-image("menu-leaf.png");
-  list-style-type: square;
+  list-style-image: none;
+  list-style-type: none;
+}
+.sidebar{
+  .item-list{
+    ul{
+      padding-left:0;
+    }
+  }
 }
 
 /*
@@ -172,7 +179,7 @@ body{
   .menus{
     ul{
       display:none;
-      height:100%;
+      height:auto;
       width:100%;
       padding:0;
       margin:0;

@@ -1,4 +1,5 @@
 @import "base";
+@import "fonts";
 @import "compass/css3";
 
 /* 
@@ -37,7 +38,7 @@ font-family:LindenHillRegular;
     color:$grey_dark;
   }
   .icons-W-home{
-    font-size:22px;
+    font-size:20px;
   }
   ol:first-child{
     height:34px;
@@ -66,6 +67,10 @@ text-decoration:underline;
 
 a.active {
     font-weight:bold;
+}
+.search-results-url a:link,
+.search-results-url a:visited{
+  color:$grey_dark;
 }
 
 /**
@@ -144,7 +149,7 @@ img {
  #footer,#footer-bottom{
     color:$grey_light;
     background-color:$grey_dark;
-    font-size: 75%;
+    //font-size: 75%;
     h2.block-title{
         font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
         font-weight: normal;
@@ -193,16 +198,21 @@ body{
     list-style-type:none;
     list-style-image: none;
     padding-left:0;
+    margin-top:0;
     li{
       min-height: 1.5em;
       padding:0.5em;
       margin-bottom:10px;
+      list-style-image:none;
+      a:link,a:visited{
+        color:white;
+      }
     }
   }
 }
 .gold-buttons{
   li{
-    background-color:$gold_medium;
+    background-color:$gold_dark;
     color:white;
   }
 }
@@ -213,6 +223,43 @@ body{
   }
 }
 
+.block-facetapi{
+  .item-list{
+    .collapsed{
+      list-style-image: url('../images/menu-plus.png');
+    }
+  }
+}
+
+//
+//  List classes
+//
+.horizontal-list{
+  ul{
+    li{
+      list-style-image:none;
+      list-style-type:none;
+      float:left;
+    }
+    li:after{
+      content: " | ";
+    }
+    li:last-child:after{
+      content:"";
+    }
+  }
+}
+
+.columns-list{
+  ul{
+    -webkit-column-count:2;
+    -webkit-column-width:auto;
+    -moz-column-count:2;
+    -moz-column-width:auto;
+    column-count:2;
+    column-width:auto;
+  }
+}
 
 //
 //  Breakpoints
@@ -223,20 +270,23 @@ body{
         display:none;
     }
     /* Search */
+    #header-right{
+      height:2.25em;
+    }
     #global-search{
         input[type="submit"]{
             text-indent:-999px;
             overflow:hidden;
-            position:absolute;
-            top:45px;
-            left:15px;
+            position:relative;
+            top:6px;
+            left:10px;
             background-color:$grey_light;
             border:none;
         }
         input[type="text"]{
-            position: absolute;
-            top:45px;
-            left:45px;
+            position: relative;
+            top:6px;
+            left:10px;
             height:20px;
             border:0;
         }
@@ -357,3 +407,210 @@ body{
   }
 } // /breakpoint(widest)
 
+/////// Homepage fancy stuff...organize into another file?
+.front{
+  #main{
+    background-color: $grey_light;
+  }
+  h1.title{
+    display:none;
+  }
+  #content{
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .none{display:none;height:0;}
+  .ie6 #persona{height:540px;}
+  #persona{
+    position:relative;
+    background:#000;
+    overflow:hidden;
+    width:100%;
+    padding:20px 0;
+
+  }
+  .ie7 #persona {padding:0;}
+  #slide{position:absolute;top:0;left:0;width:100%;z-index:0;height:100%;min-height:540px;}
+  #slideWrap{position:relative;width:1680px;overflow:hidden;height:100%;min-height:540px;box-shadow:inset 0 9px 9px -9px #000, inset 0 -9px 9px -9px #000;margin:auto;}
+  #slide img{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+    // removing this to work in new theme...
+    /*display:none;*/
+  }
+  #persona{
+    .inner{
+      max-width:1200px;
+      margin-left:auto;
+      margin-right:auto;
+      position:relative;
+    } 
+    h2{
+      font:31px/35px 'LindenHillRegular', Arial, sans-serif;
+      letter-spacing:0;
+    }
+  }
+  #blocks{width:960px;margin:0 auto;
+    list-style-type: none;
+    li {
+      a{
+        display:block;
+        width:300px;
+        height:250px;
+        background:transparent url('../images/home/bg-sprite.png') 0 -79px repeat-x;
+        position:relative;
+        color:#31224e;
+        margin:10px;
+        .img{
+          width:100%;
+          height:100%;
+          display:block;
+          cursor:pointer;
+        }
+
+      }
+    }
+  }
+
+  #blocks li a .current,.expanded #blocks li a .current.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -857px no-repeat;}
+  #blocks li a .freshmen,.expanded #blocks li a .freshmen.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -1359px no-repeat;}
+  #blocks li a .prospective,.expanded #blocks li a .prospective.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -1610px no-repeat;}
+  #blocks li a .faculty,.expanded #blocks li a .faculty.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -1108px no-repeat;}
+  #blocks li a .community,.expanded #blocks li a .community.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -606px no-repeat;}
+  #blocks li a .support,.expanded #blocks li a .support.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -1861px no-repeat;}
+  #blocks li a .set{display:block;cursor:pointer;position:absolute;bottom:15px;left:15px;background:#fff url('../images/home/bg-sprite.png') 0 0 repeat-x;height:55px;}
+  #blocks li a .set span{border:1px solid #dadade;display:block;text-shadow:0 1px 1px #fff;margin:5px;padding:5px;}
+  .expanded #blocks h2{font:16px/20px 'LindenHillRegular', Arial, sans-serif;letter-spacing:0;}
+  .expanded #blocks{float:left;margin-right:10px;}
+  .expanded #blocks li a .set{bottom:0;left:0;height:auto;letter-spacing:-1px;}
+  .expanded #blocks li a .set span{border:none;margin:0;}
+  .expanded #blocks li a .current, .expanded #blocks li a .current.activated{background:transparent url('../images/home/block-hovers.jpg') 0 0 no-repeat;}
+  .expanded #blocks li a .freshmen, .expanded #blocks li a .freshmen.activated{background:transparent url('../images/home/block-hovers.jpg') 0 -101px no-repeat;}
+  .expanded #blocks li a .prospective, .expanded #blocks li a .prospective.activated {background:transparent url('../images/home/block-hovers.jpg') 0 -505px no-repeat;}
+  .expanded #blocks li a .faculty,.expanded #blocks li a .faculty.activated{background:transparent url('../images/home/block-hovers.jpg') 0 -202px no-repeat;}
+  .expanded #blocks li a .community,.expanded #blocks li a .community.activated{background:transparent url('../images/home/block-hovers.jpg') 0 -303px no-repeat;}
+  .expanded #blocks li a .support,.expanded #blocks li a .support.activated{background:transparent url('../images/home/block-hovers.jpg') 0 -404px no-repeat;}
+  
+  .content-container{
+    margin-left:150px;
+    float:left;
+    width:780px;
+    background-image: url('../images/home/uwthomecontentbg.png');
+    background-repeat: repeat;
+    background-color:transparent;
+    margin-top:10px;
+    position:relative;
+    color:#fff;
+    padding:0 0 0 20px;
+    .inside{
+
+      $zen-column-count:10;
+      @include zen-grid-container();
+      .col60{
+        @include zen-grid-item(6,1);
+        .nth{
+          width:50%;
+          float:left;
+        }
+      }
+      .col40{
+        @include zen-grid-item(4,7);
+      }
+      ul{
+        padding:0;
+        li{
+          list-style-type:none;
+        }
+      }
+    }
+    h2{font-size:28px;line-height:28px;margin:30px 0 28px;}
+    h3{font-size:16px;font-weight:600;margin-bottom:10px;line-height:20px;}
+    a.close{
+      position:absolute;
+      float:left;
+      top:-7px;
+      right:-7px;
+      width:22px;
+      height:22px;
+      background-color:transparent;
+      span.icons-close-x{
+        display:inline-block;
+      }
+    }
+    a,a:visited{
+      color:$grey_light;
+      font-size:1em;
+    }
+    a:hover{background-color:#757ec0;}
+    .icon-links{
+      background-image: url('../images/home/bg-super-light-purple.png');
+      background-repeat: repeat;
+      background-color:transparent;
+      span {
+        float: left;
+        margin-right: 10px;
+      }
+      span.no-icon{
+        width:30px;
+      }
+      li {
+        border-bottom: 1px solid #554969;
+        font-size: 15px;
+        font-weight: 600;
+        clear: both;
+      }
+      .logo-catalyst{
+        padding-bottom:20px;
+      }
+      a {
+        line-height: 30px;
+        background: transparent;
+        display: block;
+        color: #fff;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+    .icon-links.admissions-list li a {
+      background-color: #F9F3D6;
+      color: #A68C40;
+    }
+  }
+
+
+
+  .actions{margin:0 30px;float:right;background:transparent url('../../../images/home/bg-sprite.png') 0 -1389px repeat-x;}
+  .ie7 .actions{padding-bottom:20px;}
+  .actions a.patch1,.actions a.patch2,.actions a.patch3{float:left;width:51px;height:57px;background:url('../../../images/home/bg-sprite.png') 0 -1331px repeat-x;font-size:10px;color:#8b7810;line-height:10px;text-align:center;font-weight:600;border-radius:3px;margin:20px 41px;}
+  .actions a span{width:22px;height:24px;display:block;margin:5px auto 0;}
+  .actions a.patch2{margin:20px 0;}
+  .actions a.patch1 span{background:url('../../../images/home/icon-sprite.png') -183px 0 no-repeat;}
+  .actions a.patch2 span{background:url('../../../images/home/icon-sprite.png') -205px 0 no-repeat;}
+  .actions a.patch3 span{background:url('../../../images/home/icon-sprite.png') -227px 0 no-repeat;}
+  .actions a:visited{color:#8b7810;}
+  .actions a:hover{color:#757ec0;}
+  .actions a:active{color:#000;}
+  #ProspectiveStudents,#Community,#Freshmen,#FacultyStaff,#CurrentStudents,#SupportUWTacoma,.content-container .more ul,#social strong,h3.subscribe a strong{display:none;}
+}
+#subpersona{
+  max-width:1200px;
+  margin-left:auto;
+  margin-right: auto;
+  $zen-column-count:4;
+  @include zen-grid-container();
+  .subfirst{
+    @include zen-grid-item(2,1);
+    background-color:#434256;
+  }
+  .subsecond{
+    @include zen-grid-item(1,3);
+    background-color:#3A3946;
+  }
+  .subthird{
+    @include zen-grid-item(1,4);
+    background-color:#8886A3;
+  }
+}
