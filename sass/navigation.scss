@@ -333,16 +333,9 @@ body{
       list-style-image: none;
 
       .outerContainer{
-        display: table;
-        height: 4em;
-        overflow: hidden;
-        width:100%;
+
         .innerContainer{
-          display: table-cell;
-          vertical-align: middle;
-          width: 100%;
-          margin: 0 auto;
-          text-align: center;
+
           .element {
             a{
               display:block;
@@ -412,10 +405,19 @@ body{
         }
         .outerContainer{
           max-width: 10em;
+          display: table;
+          height: 4em;
+          overflow: hidden;
+          width:100%;
           .innerContainer{
             //border colors match background on #site-menu
             border-top:1px solid $purple_dark;
             border-bottom:1px solid $purple_dark;
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
           }
         }
 

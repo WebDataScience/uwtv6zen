@@ -143,14 +143,13 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
     $wbid = reset($obj->workbench_access);
     $variables['classes_array'][] = 'section-' . $wbid;
   }
+  
   // make the 'section_menu' region turn the content into columns
   if (isset($variables['page']['section_menu'])) {
     $variables['classes_array'] = array_diff($variables['classes_array'], array('no-sidebars'));
     $variables['classes_array'][] = 'one-sidebar';
     $variables['classes_array'][] = 'sidebar-first';
-
   }
-  //dpm($variables);
 
   //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
 }
@@ -166,12 +165,15 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
  */
 
 function uwtv6zen_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
   // Get the Shibboleth authentication link
   $shiblink = _get_shiblink();
   $variables['shiblink'] = $shiblink;
   // Get the Home/site links for the current site
-  $sitelinks = _get_site_links();
+  $node = NULL;
+  if(isset($variables['node'])){
+    $node = $variables['node'];
+  }
+  $sitelinks = _get_site_links($node);
   
   // Send the Home/site links to the templates
   $variables['patch'] = $sitelinks['patch'];
@@ -179,6 +181,15 @@ function uwtv6zen_preprocess_page(&$variables, $hook) {
   if(isset($sitelinks['site_home'])) {
     $variables['site_home'] = $sitelinks['site_home'];
   }
+  
+  // Add the frontpage javascript to the frontpage.
+  if($variables['is_front'] === TRUE) {
+    $options = array(
+      'group' => JS_THEME,
+        );
+    drupal_add_js(drupal_get_path('theme', 'uwtv6zen'). '/js/uwt-frontpage.js', $options);
+  }
+
 }
 
 function _get_shiblink() {
@@ -222,7 +233,7 @@ function uwtv6zen_menu_link(array $variables) {
  * site home link.
  * 
  */
-function _get_site_links(){
+function _get_site_links($node){
   /**
   * The point of this custom template file is to insert the patch and 
   * textual site logo on any site that uses this theme, irrespective of
@@ -260,17 +271,31 @@ function _get_site_links(){
   $wordmark_link .= '</a>';
 
   $links['wordmark'] = $wordmark_link;
+  
   // Get the link to the site home
-  $site_home_link = '';
-  $active_menu_trail = menu_get_active_trail();
-  if(isset($active_menu_trail[1]['link_title']) && isset($active_menu_trail[1]['link_path'])){
-    $label = $active_menu_trail[1]['link_title'];
-    $href = $active_menu_trail[1]['link_path'];
-    $options = array('attributes' => array('class' => 'site-home-link'));
-    $site_home_link = '<span id="site-home-link">';
-    $site_home_link .= l($label, $href);
-    $site_home_link .= '</span>';
-    $links['site_home'] = $site_home_link;
+  if($node){
+    // Get the menu name for the site of this page.
+    $wrapper = entity_metadata_wrapper('node', $node);
+    // Make sure we have a term, then get the menu for the term
+    if(isset($wrapper->field_site->value()->tid)){
+      $siteid = $wrapper->field_site->value()->tid;
+      // Get the menu name as defined in the GUI at taxonomy/term/<tid>/edit
+      module_load_include('module', 'uwt_menu_admin');
+      $menu = _uwt_menu_admin_get_site_menu_by_tid($siteid);
+      // Get the menu tree 
+      $menu_tree = reset(menu_tree($menu));
+      // Create the site home link.
+      $site_home_link = '';
+      if(isset($menu_tree['#title']) && isset($menu_tree['#href'])){
+        $label = $menu_tree['#title'];
+        $href = $menu_tree['#href'];
+        $options = array('attributes' => array('class' => 'site-home-link'));
+        $site_home_link = '<span id="site-home-link">';
+        $site_home_link .= l($label, $href);
+        $site_home_link .= '</span>';
+        $links['site_home'] = $site_home_link;
+      }
+    }
   }
   return $links;
 }
@@ -389,8 +414,6 @@ function _is_menu_dupe($first, $second) {
 
 /**
  * Return a themed breadcrumb trail.
- * The whole pointe of this ganked-from-zen theme function is to wrap the
- *  "home" breadcrumb in a span that has a class for showing the home icon. 
  *
  * @param $variables
  *   - title: An optional string to be used as a navigational heading to give
@@ -460,3 +483,14 @@ function uwtv6zen_breadcrumb($variables) {
 
   return $output;
 }
+
+/**
+  *
+  * If we want to send additional variables to the search results we can just
+  *   uncomment this function and send them along.
+
+function uwtv6zen_preprocess_search_result(&$variables) {
+print "<pre>" . check_plain(print_r($variables, 1)) . "</pre>";
+
+}
+  */
