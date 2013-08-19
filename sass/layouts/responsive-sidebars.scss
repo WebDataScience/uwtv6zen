@@ -181,6 +181,11 @@ $zen-auto-include-item-base: false;
   #header {  
 
   } // /#header
+  .section-1336{
+    #post-header{
+      display:block;
+    }
+  }
   #header-left{
     @include zen-grid-item(3,1);
     #patch {

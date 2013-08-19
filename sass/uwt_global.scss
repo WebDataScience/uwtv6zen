@@ -25,6 +25,12 @@ h1,h2,h3,h4,h5,h6{
 font-family:LindenHillRegular;
 }
 
+.node-type-layout-page.no-sidebars{
+  h1#page-title{
+    display:none;
+  }
+}
+
 #main{
     background-color:white;
     padding-top:1.5em;
@@ -49,7 +55,7 @@ font-family:LindenHillRegular;
     overflow: hidden;
     text-indent:-9999px;
     display:inline-block;
-    height:22px;
+    height:21px;
     width:24px;
   }
 }
@@ -380,7 +386,7 @@ body{
   #post-header{
       position:relative;
       height:225px;
-      display:none;
+      //display:none;
   } // /#post-header
   #section-identifier{
       height:4em;
@@ -404,6 +410,33 @@ body{
       }
   } // /#section-identifier
   #site-menu{
+  }
+  //
+  //  Admissions
+  //
+  .section-1336{
+    #header{
+      #header-center{
+        #site-home-link-wrapper{
+          @include single-box-shadow(rgba(black, 0.5), 0px, 6px, 6px, 0px);
+          @include border-radius(2px);
+          @include transition-property(all);
+          @include transition-duration(0.5s);
+          position:absolute;
+          z-index:1;
+          top:13em;
+          padding-top:1em;
+          padding:1em;
+          background-color:$gold_light;
+          &:hover{
+            background-color:$gold_dark;
+          }
+          a:link,a:visited{
+            color:$purple_dark;
+          }
+        }
+      }
+    }
   }
 } // /breakpoint(widest)
 
@@ -584,7 +617,10 @@ body{
 
   .actions{margin:0 30px;float:right;background:transparent url('../../../images/home/bg-sprite.png') 0 -1389px repeat-x;}
   .ie7 .actions{padding-bottom:20px;}
-  .actions a.patch1,.actions a.patch2,.actions a.patch3{float:left;width:51px;height:57px;background:url('../../../images/home/bg-sprite.png') 0 -1331px repeat-x;font-size:10px;color:#8b7810;line-height:10px;text-align:center;font-weight:600;border-radius:3px;margin:20px 41px;}
+  .actions a.patch1,.actions a.patch2,.actions a.patch3{
+    float:left;width:51px;height:57px;background:url('../../../images/home/bg-sprite.png') 0 -1331px repeat-x;font-size:10px;color:#8b7810;line-height:10px;text-align:center;font-weight:600;margin:20px 41px;
+    @include border-radius(3px);
+  }
   .actions a span{width:22px;height:24px;display:block;margin:5px auto 0;}
   .actions a.patch2{margin:20px 0;}
   .actions a.patch1 span{background:url('../../../images/home/icon-sprite.png') -183px 0 no-repeat;}

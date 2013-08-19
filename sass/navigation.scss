@@ -118,11 +118,23 @@ li a.active {
  * Global secondary menu
  */
  #global-secondary{
-  font-size:75%;
+  font-size:100%;
   text-transform: uppercase;
   .menu{
+    font-size:0.85em;
     li{
-      float:left;
+      background-image: url("../images/menu-plus.png");
+      background-position: 0 8px;
+      background-repeat: no-repeat;
+      float: left;
+      margin-left: 10px;
+      padding-left: 10px;
+      .outerContainer{
+        height:1em;
+        .innerContainer{
+          vertical-align: bottom;
+        }
+      }
     }
   }
  }
