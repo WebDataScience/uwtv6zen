@@ -134,6 +134,14 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
   // Adding the trumba spud code for calendars  
   drupal_add_js('http://www.trumba.com/scripts/spuds.js','external');
 
+  // Adding jquery ui fanciness
+  drupal_add_library('system', 'ui.tabs');
+  drupal_add_library('system', 'ui.accordion');
+  drupal_add_js ( 'jQuery(document).ready(function(){
+                     jQuery(".tab-container").tabs();
+                     jQuery("#accordion").accordion();
+                   });' , 'inline' );
+
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
   

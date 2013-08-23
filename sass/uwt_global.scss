@@ -128,11 +128,20 @@ img {
     .block{
         margin-bottom: 0;
     }
+
     .post-header-image{
         height:225px;
         .view-content{
             position:relative;
             z-index:-1;
+            .views-field-node-gallery-media{
+              .field-content{
+                width:100%;
+                margin-right:auto;
+                margin-left:auto;
+                text-align: center;
+              }
+            }
         }
         img{
             position:relative;
@@ -441,6 +450,7 @@ body{
 } // /breakpoint(widest)
 
 /////// Homepage fancy stuff...organize into another file?
+@include breakpoint(widest){
 .front{
   #main{
     background-color: $grey_light;
@@ -631,22 +641,40 @@ body{
   .actions a:active{color:#000;}
   #ProspectiveStudents,#Community,#Freshmen,#FacultyStaff,#CurrentStudents,#SupportUWTacoma,.content-container .more ul,#social strong,h3.subscribe a strong{display:none;}
 }
+
 #subpersona{
-  max-width:1200px;
-  margin-left:auto;
-  margin-right: auto;
-  $zen-column-count:4;
+  $zen-column-count: 1;
   @include zen-grid-container();
-  .subfirst{
-    @include zen-grid-item(2,1);
-    background-color:#434256;
-  }
-  .subsecond{
-    @include zen-grid-item(1,3);
-    background-color:#3A3946;
-  }
+  .subfirst,
+  .subsecond,
   .subthird{
-    @include zen-grid-item(1,4);
-    background-color:#8886A3;
   }
+}
+
+  #subpersona{
+    max-width:1200px;
+    margin-left:auto;
+    margin-right: auto;
+    $zen-column-count:4;
+    @include zen-grid-container();
+    .subfirst{
+      @include zen-grid-item(2,1);
+      background-color:#434256;
+    }
+    .subsecond{
+      @include zen-grid-item(1,3);
+      background-color:#3A3946;
+    }
+    .subthird{
+      @include zen-grid-item(1,4);
+      background-color:#8886A3;
+    }
+  }
+}
+
+//
+//  jQuery UI style modifications
+//
+.ui-accordion .ui-accordion-header{
+  padding-left:1.5em;
 }

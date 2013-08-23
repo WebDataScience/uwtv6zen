@@ -548,6 +548,7 @@ body{
       }
       .outerContainer{
         height:auto;
+        overflow-x:hidden;
         .innerContainer{
           text-align: left;
           .element{
@@ -567,7 +568,12 @@ body{
 
         li{
           padding-right:0;
-          border-left:0.5em solid $grey_light;
+          //border-left:0.5em solid $grey_light;
+          border-left:0;
+          a:link, a:visited{
+            padding-left:1em;
+            padding-right:0.5em;
+          }
         }
       }
     }
