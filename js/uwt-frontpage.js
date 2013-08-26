@@ -11,11 +11,16 @@
 // - http://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
+var winwidth = $(window).width();
 
+if(winwidth >= 650){
 // 29th Drive's js
 Drupal.behaviors.frontpage = {
   attach: function (context, settings) {
-if ($(window).width() >= 650) {
+
+    // Disable the links on the homepage blocks in wide screen
+    $("#persona #blocks h2 a").attr({href: "#"});
+
   $('.date-display-single').each(function() {
 		$(this).html( $(this).html().replace('(All day)','') );
 	});
@@ -464,12 +469,24 @@ function deleteCookie(name) {
     setCookie(name,"",-1);
 }
 
-}
+
   },
 
   detach: function (context, settings) { }
 
 };
-
+} else{ // mobile homepage swooshiness
+  Drupal.behaviors.frontpage = {
+  attach: function (context, settings) {
+    //console.log('bobo wuz here');
+    //$(".current-students").click(function() {
+      //console.log('bobo clickey');
+      //$(".current-students").parent().append($("#CurrentStudents"));
+      //$("#CurrentStudents").slideToggle("slow");
+    //});
+  },
+  detach: function (context, settings) { }
+};
+}
 
 })(jQuery, Drupal, this, this.document);
