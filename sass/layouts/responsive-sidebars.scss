@@ -41,7 +41,7 @@ $zen-auto-include-item-base: false;
 #section-identifier,
 .region-bottom,
 #footer_top,
-#footer_middle,
+#footer-middle,
 #footer-bottom .inner {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
      by setting a max-width. */
@@ -73,7 +73,7 @@ $zen-auto-include-item-base: false;
 #main,
 #footer,
 #footer_top,
-#footer_middle,
+#footer-middle,
 #footer-bottom{
   @include zen-grid-container();
 }
