@@ -210,7 +210,7 @@ $footer_menus = render($page['footer_menus']);
       <div class="graphics-uwt_logo_horiz_white">&nbsp;</div>
     </div><!-- /#footer_top -->
 
-    <div id="footer_middle">
+    <div id="footer-middle">
       <?php if($footer_menus){print $footer_menus;} ?>
     </div><!-- /#footer_middle -->
 
