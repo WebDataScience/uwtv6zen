@@ -123,6 +123,9 @@ img {
 #header{
     //margin-bottom:1.5em;
 }
+#footer{
+  padding-top:2em;
+}
 
 #post-header {
 
@@ -179,6 +182,11 @@ img {
     .graphics-uwt_logo_horiz_white{
         margin-top: 20px;
     }
+ }
+ #footer-middle{
+  .block-title{
+    font-size:1.25em;
+  }
  }
  #footer-bottom{
     background-color:black;
@@ -537,7 +545,8 @@ body{
       position:relative;
     } 
     h2{
-      font:31px/35px 'LindenHillRegular', Arial, sans-serif;
+      font-size:1.75em;
+      //'LindenHillRegular', Arial, sans-serif;
       letter-spacing:0;
     }
   }
