@@ -219,7 +219,7 @@ $footer_menus = render($page['footer_menus']);
   <div id="footer-bottom">
     <div class="inner">
       <div class="left">
-        <span class="inner">&copy; <?php echo date('Y'); ?> University of Washignton Tacoma</span>
+        <span class="inner">&copy; <?php echo date('Y'); ?> University of Washington Tacoma</span>
       </div>
       <div class="right">
         <?php echo $shiblink; ?> <?php if(!user_is_logged_in()) {echo l('Non-UW login', 'user');}?>

@@ -137,9 +137,11 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
   // Adding jquery ui fanciness
   drupal_add_library('system', 'ui.tabs');
   drupal_add_library('system', 'ui.accordion');
+  drupal_add_library('system', 'ui.button');
   drupal_add_js ( 'jQuery(document).ready(function(){
                      jQuery(".tab-container").tabs();
-                     jQuery("#accordion").accordion();
+                     jQuery(".accordion-container").accordion();
+                     jQuery("a.faux-button").button();
                    });' , 'inline' );
 
   // The body tag's classes are controlled by the $classes_array variable. To
