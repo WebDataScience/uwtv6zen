@@ -68,6 +68,7 @@
  * @see zen_preprocess_page()
  * @see template_process()
  */
+$uwt_alerts = render($page['uwt_alerts']);
 $global_navigation = render($page['global_navigation']);
 $audience_navigation = render($page['audience_navigation']);
 $global_search = render($page['global_search']);
@@ -83,6 +84,13 @@ $footer_menus = render($page['footer_menus']);
 
 
 <div id="page">
+  
+  <?php if($uwt_alerts) { ?>
+  <div id="uwtalerts">
+    <?php print $uwt_alerts; ?>
+  </div>
+  <?php } ?>
+
   <div id="band"> </div> <!-- /band -->
   <header id="header" role="banner">  
     <div id="header-left">
@@ -222,7 +230,14 @@ $footer_menus = render($page['footer_menus']);
         <span class="inner">&copy; <?php echo date('Y'); ?> University of Washington Tacoma</span>
       </div>
       <div class="right">
-        <?php echo $shiblink; ?> <?php if(!user_is_logged_in()) {echo l('Non-UW login', 'user');}?>
+        <?php 
+          if(!user_is_logged_in()) {
+            echo $shiblink;
+            echo l('Non-UW login', 'user');
+          }else{
+            echo $userlink;
+          }
+        ?>
       </div>
     </div><!-- /.inner -->
   </div><!-- /#footer-bottom -->

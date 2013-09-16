@@ -178,6 +178,11 @@ function uwtv6zen_preprocess_page(&$variables, $hook) {
   // Get the Shibboleth authentication link
   $shiblink = _get_shiblink();
   $variables['shiblink'] = $shiblink;
+  
+  // Generate a link to the users page
+  $userlink = _get_userlink();
+  $variables['userlink'] = $userlink;
+
   // Get the Home/site links for the current site
   $node = NULL;
   if(isset($variables['node'])){
@@ -201,18 +206,42 @@ function uwtv6zen_preprocess_page(&$variables, $hook) {
   }
 
 }
-
+/**
+* Create a specially formateed Shibboleth link. This link points to the
+*   shibby login module and redirects to r.php, which then redirects to the
+*   location that the user was on when the shibby login link was clicked.
+*
+* This exists because there is bug in the Drupal Shibby module that doesn't
+*   set the session properly for the first page load.
+*   @see https://drupal.org/node/1430242#comment-7775603
+*/
 function _get_shiblink() {
-  if (module_exists('shib_auth')) {
-    $shibblock = module_invoke('shib_auth', 'block_view', 'login_box');
-    $shiblink = $shibblock['content'];
-    if(!user_is_logged_in()) {
-      $shiblink .= ' | ';
-    }
+  if (module_exists('shib_auth') && !user_is_logged_in()) {
+    $shibpath = $GLOBALS['base_secure_url'] . '/Shibboleth.sso/Login';
+    $shibpath = str_replace(base_path(), '/', $shibpath);
+    $options = array();
+    $options['query'] = array();
+    $options['query'][] = array('target' => $GLOBALS['base_url'] . '/r.php?r=' . $GLOBALS['base_url'] . '/' . current_path());
+    $shiblink = l('UWNetID login', $shibpath, $options);
+    $shiblink .= ' | ';
     return $shiblink;
   } else {
     return '';
   }
+}
+
+/**
+* Create a link to the users page. Also create a logout link.
+*/
+function _get_userlink() {
+  $userlink = '';
+  if(user_is_logged_in()) {
+    global $user;
+    $userlink = l($user->name, 'user/' . $user->uid);
+    $userlink .= '&nbsp;|&nbsp;';
+    $userlink .= l('Logout', 'user/logout');
+  }
+  return $userlink;
 }
 
 /**
