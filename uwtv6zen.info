@@ -95,6 +95,7 @@ stylesheets[all][] = css/uwt_global.css
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
+regions[uwt_alerts]          = UWT Alerts
 regions[global_navigation]   = Global navigation
 regions[audience_navigation] = Audience navigation
 regions[global_secondary]    = Global secondary

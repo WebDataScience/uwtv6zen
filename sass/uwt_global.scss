@@ -91,7 +91,27 @@ a.active {
 }
 
 
-
+/**
+  * Headings
+  */
+.strike-head{
+  h2{
+    border-top: 1px solid $grey_medium;
+    font-family: Georgia;
+    margin: 5px 0 10px;
+    text-align: center;
+    a{
+      display: block;
+      margin: -0.5em auto 0;
+      strong{
+        background-color: $grey_light;
+        color: #000000;
+        font-style: italic;
+        padding: 0 10px;
+      }
+    }
+  }
+}
 
 /* Flexslider */
 .flexslider{
@@ -706,6 +726,7 @@ body{
 }
 
   #subpersona{
+    margin-top:1em;
     max-width:1200px;
     margin-left:auto;
     margin-right: auto;
@@ -815,4 +836,40 @@ tbody{
     }
   }
 
+}
+
+// UWT Alerts
+.web_alert {
+  margin: 0 0 5px 0;
+  color: #ffffff;
+  background: $grey_medium;        /* -- same gray as navbar in footer */
+  font-weight: bold;        
+  padding: 5px;
+}
+.web_alert.red {
+  color: #ffffff;
+  background: #990000;
+}
+.web_alert.orange {
+  color: #ffffff;
+  background: #d2691e;
+}
+.web_alert.green {
+  color: #ffffff;
+  background: #336600;
+}.web_alert .timestamp, .no_alert .timestamp {
+  font-size: 85%;
+  font-weight: normal;
+}
+.web_alert h1, .web_alert .h1 {
+  display: inline;
+  margin: 0;
+  color: #ffffff;
+  background: transparent;
+  font-size: 150%;
+  border: 0;
+}
+.web_alert p, .web_alert .p {
+  margin: 0;
+  display: inline;
 }
