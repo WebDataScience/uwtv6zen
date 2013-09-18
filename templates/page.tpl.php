@@ -243,7 +243,9 @@ $footer_menus = render($page['footer_menus']);
             echo $shiblink;
             echo l('Non-UW login', 'user');
           }else{
-            echo $userlink;
+            if(isset($userlink)) {
+              echo $userlink;
+            }
           }
         ?>
       </div>
