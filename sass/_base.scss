@@ -98,7 +98,7 @@ $indent-amount: 30px;
 
 @mixin breakpoint($point) {
   @if $point == narrow {
-    @media only screen and (max-width: 650px) { 
+    @media only screen and (max-width: 801px) { 
    		$zen-column-count: 1;
     	$zen-gutter-width: 10px;
     	@content;
@@ -106,7 +106,7 @@ $indent-amount: 30px;
   }
 
   @if $point == medium {
-    @media only screen and (min-width : 651px) { 
+    @media only screen and (min-width : 802px) { 
    		$zen-column-count: 40;
     	$zen-gutter-width: 10px;
     	@content;
@@ -114,7 +114,7 @@ $indent-amount: 30px;
   }
 
   @if $point == widest {
-    @media only screen and (min-width: 701px) { 
+    @media only screen and (min-width: 803px) { 
    		$zen-column-count: 40;
     	$zen-gutter-width: 20px;
     	@content;
