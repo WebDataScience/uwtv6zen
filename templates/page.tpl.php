@@ -96,7 +96,7 @@ $footer_menus = render($page['footer_menus']);
     <div id="header-left">
       <div id="patch">
         <?php 
-          if(isset($patch) {
+          if(isset($patch)) {
             print $patch;
           }
         ?>
@@ -127,7 +127,7 @@ $footer_menus = render($page['footer_menus']);
 
       <div id="wordmark">
         <?php 
-          if(isset($wordmark){
+          if(isset($wordmark)){
             print $wordmark;
           }
       ?>
