@@ -312,7 +312,7 @@ function _get_site_links($node){
   $links['wordmark'] = $wordmark_link;
   
   // Get the link to the site home
-  if($node){
+  if($node && module_exists('entity')){
     // Get the menu name for the site of this page.
     $wrapper = entity_metadata_wrapper('node', $node);
     // Make sure we have a term, then get the menu for the term
