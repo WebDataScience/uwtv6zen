@@ -95,7 +95,11 @@ $footer_menus = render($page['footer_menus']);
   <header id="header" role="banner">  
     <div id="header-left">
       <div id="patch">
-        <?php if ($patch) {print $patch}; ?>
+        <?php 
+          if($patch) {
+            print $patch;
+          }
+        ?>
       </div>
     </div> <!-- /header-left -->
     <div id="header-center">
@@ -122,7 +126,11 @@ $footer_menus = render($page['footer_menus']);
       <?php } ?>
 
       <div id="wordmark">
-        <?php if($wordmark) {print $wordmark}; ?>
+        <?php 
+          if($wordmark){
+            print $wordmark;
+          }
+      ?>
       </div>
       <div id="site-home-link-wrapper">
         <?php if(isset($site_home)){echo $site_home; } ?>
