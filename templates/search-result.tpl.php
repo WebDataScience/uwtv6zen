@@ -76,6 +76,11 @@
     <?php if ($snippet): ?>
       <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
     <?php endif; ?>
+
+    <?php if ($search_result_sitelink): ?>
+      <p class="search-result-sitelink">Section: <?php print $search_result_sitelink; ?></p>
+    <?php endif; ?>
+
     <?php if ($info): ?>
       <p class="search-info">Updated: <?php print substr($info_split['date'], 0, 10); ?></p>
     <?php endif; ?>
