@@ -87,7 +87,8 @@ li a.active {
  * Global band menu
  */
  #global-menu {
-  font-size: 100%;
+  font-size: 90%;
+
   .menu{
     li{
       float:left;
@@ -95,17 +96,47 @@ li a.active {
       background-color:black;
       .outerContainer{
         height:35px;
+        .innerContainer{
+          padding-top:10px;
+
+        }
         a:link,a:visited{
           text-decoration: none;
-          color:white;
+          color:$grey_medium;
           background-color: black;
+          font-weight: bold;
+          line-height:1.15em;
+          border-right:1px solid $grey_medium;
+          padding-right:5px;
         }
       }
-      ul li{
+      ul li{ // Flyouts
         .outerContainer{
           height:auto;
+          .innerContainer{
+            padding-left:5px;
+            a:link,a:visited{
+              border-right:0;
+              background:none;
+            }
+          }
         }
       }
+      ul li.last{
+        padding-bottom:5px;
+      }
+    }
+    li.last{ // Last menu item on the top level
+      a:link,a:visited{
+        border-right:0;
+      }
+    }
+    li.expanded a:link,
+    li.expanded a:visited{ // Top level menu items with flyout children
+      background: url("../images/arrow_down_grey_light.png");
+      background-repeat:no-repeat;
+      background-position: 95% 60%;
+      padding-right:15px;
     }
     li:hover > div div ul{
       background-color:black;
