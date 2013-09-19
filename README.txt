@@ -1,3 +1,26 @@
+UW Tacoma Theme Version 6 theme (based on D7 Zen 5.x)
+
+Hard Dependencies:
+Zen 5.x base theme
+Entity module
+Menu Block module
+
+Soft Dependencies:
+Workbench Access
+
+
+Setup:
+Put the search block into the "Global Search region".
+Add menu blocks to the following regions:
+  * Global navigation
+  * Global secondary
+  * Site menu    \
+                  > Use menu blocks in these regions
+  * section menu /
+In the "Footer menus" region, add an address block first, then up to 4 menus
+
+
+
 BUILD A THEME WITH ZEN
 ----------------------
 
