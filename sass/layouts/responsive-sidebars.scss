@@ -206,7 +206,7 @@ $zen-auto-include-item-base: false;
     @include zen-nested-container;
   }
   #global-menu{
-    @include zen-grid-item(30,10);
+    @include zen-grid-item(32,7);
     .block{
       margin-bottom: 0; // Not totally sure why this is needed, but it is.
     }
@@ -235,20 +235,45 @@ $zen-auto-include-item-base: false;
 
 
   #footer{
-    .region-footer-menus{
-      $zen-column-count:5;
-      .block {
-        @for $i from 1 through 5 {
-          &:nth-child( #{$i}) {
-            @include zen-grid-item(1, $i);
+    #footer_top{
+      @include zen-grid-item(10,2);
+    }
+    #footer-middle{
+      @include zen-clear();
+
+      .region-footer-menus{
+        $zen-column-count:5;
+        .block {
+          @for $i from 1 through 5 {
+            &:nth-child( #{$i}) {
+              @include zen-grid-item(1, $i);
+            }
+          }
+
+        }
+        .block:nth-child(1){ 
+          ul { 
+            padding:0;
+            li{
+              list-style-type: none;
+              
+            }
+          }
+          p,ul{
+            padding-left:50px;
+            li a:link,
+            li a:visited{
+              text-decoration: underline;
+            }
+          }
+          p{
+            margin-top:0;
           }
         }
       }
-      .block:nth-child(1) p{
-        padding-left:40px;
-      }
-    }
-  }
+    }// /#footer-middle
+
+  } // /#footer
   #footer-bottom{
     $zen-column-count:10;
     @include zen-clear();

@@ -190,8 +190,8 @@ img {
     background-color:$grey_dark;
     //font-size: 75%;
     h2.block-title{
-        font-family: Verdana,Tahoma,"DejaVu Sans",sans-serif;
-        font-weight: normal;
+        font-family: Arial,​sans-serif;
+        font-weight: bold;
         text-transform: uppercase;
     }
     a:link,a:visited{
@@ -204,8 +204,29 @@ img {
     }
  }
  #footer-middle{
+  h2.block-title{
+    font-family:  Arial,​Helvetica,​"Nimbus Sans L",​sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:85%;
+  }
+  padding-top:2em;
+  font-weight: bold;
+  color:$grey_medium;
+  a:link,a:visited{
+    color:$grey_medium;
+    //font-size: 115%;
+    font-weight: normal;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
   .block-title{
-    font-size:1.25em;
+    padding-top:5px;
+  }
+  p,
+  ul#info{
+    font-size:0.75em;
   }
  }
  #footer-bottom{

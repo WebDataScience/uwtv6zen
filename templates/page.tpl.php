@@ -223,7 +223,7 @@ $footer_menus = render($page['footer_menus']);
 
   <div id="footer">
     <div id="footer_top">
-      <div class="graphics-uwt_logo_horiz_white">&nbsp;</div>
+      <div class="graphics-uwt_w_and_wordmark_horiz_white">&nbsp;</div>
     </div><!-- /#footer_top -->
 
     <div id="footer-middle">
