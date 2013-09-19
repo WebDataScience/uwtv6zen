@@ -398,18 +398,10 @@ body{
             position:relative;
             z-index:1;
         }
-        #wordmark{
-            .graphics-uwt_wordmark{
-              display:block;
-            }
-            .graphics-uwt_wordmark_narrow{
-                display:none;
-            }
-        } // /#wordmark
         #site-home-link-wrapper{
             font-family: nexa_boldregular;
             font-size:1.25em;
-            padding-top:50px;
+            padding-top:45px;
         }
     }// /#header-center
     #header-right{
@@ -872,4 +864,32 @@ tbody{
 .web_alert p, .web_alert .p {
   margin: 0;
   display: inline;
+}
+
+//
+// Wordmark front vs. not-front vs narrow
+@include breakpoint(widest){
+  .front #wordmark{
+    .graphics-uwt_wordmark_front{
+      display:block;
+      margin-top:12px;
+    }
+    .graphics-uwt_wordmark_not_front{
+      display:none;
+    }
+    .graphics-uwt_wordmark_narrow{
+        display:none;
+    }
+  }
+  .not-front #wordmark{
+      .graphics-uwt_wordmark_front{
+        display:none;
+      }
+      .graphics-uwt_wordmark_narrow{
+          display:none;
+      }
+      .graphics-uwt_wordmark_not_front{
+        display:block;
+      }
+  } // /#wordmark
 }

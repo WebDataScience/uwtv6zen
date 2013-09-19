@@ -275,14 +275,10 @@ function uwtv6zen_menu_link(array $variables) {
 function _get_site_links($node){
   /**
   * The point of this custom template file is to insert the patch and 
-  * textual site logo on any site that uses this theme, irrespective of
+  * wordmark on any site that uses this theme, irrespective of
   * the presence of a block of content or whatever.
-  * If a site uses the uwt_v6 theme, it will have the patch and textual
-  * site logo. Period.
-  *
-  * I guess we should have some logic that will determine which textual
-  * logo to display (the big or small one) and whether or not we have a
-  * a subsite link to display.
+  * If a site uses the uwt_v6 theme, it will have the patch and wordmark. 
+  * Period.
   */
 
   $links = array();
@@ -301,10 +297,17 @@ function _get_site_links($node){
 
   $links['patch'] = $patch_link;
 
+  // Front page wordmark
   $wordmark_link = '<a href="' . $href . '">';
-  $wordmark_link .= '<span class="graphics-uwt_wordmark"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $wordmark_link .= '<span class="graphics-uwt_wordmark_front"><span class="element-invisible">University of washington | Tacoma</span></span>';
   $wordmark_link .= '</a>';
 
+  // Sub page wordmark
+  $wordmark_link .= '<a href="' . $href . '">';
+  $wordmark_link .= '<span class="graphics-uwt_wordmark_not_front"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $wordmark_link .= '</a>';
+
+  // Wordmark for narrow screens (mobile)
   $wordmark_link .= '<a href="' . $href . '">';
   $wordmark_link .= '<span class="graphics-uwt_wordmark_narrow"><span class="element-invisible">University of washington | Tacoma</span></span>';
   $wordmark_link .= '</a>';
