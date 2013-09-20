@@ -259,7 +259,8 @@ body{
 //  Button classes
 //
 .gold-buttons,
-.purple-buttons{
+.purple-buttons,
+.grey-buttons{
   ul{
     list-style-type:none;
     list-style-image: none;
@@ -286,6 +287,12 @@ body{
   li{
     background-color:$purple_dark;
     color:white;
+  }
+}
+.grey-buttons{
+  li{
+    background-color:$grey_medium;
+    color:$purple_dark;
   }
 }
 
@@ -753,6 +760,12 @@ body{
     }
     .subthird{
       @include zen-grid-item(1,4);
+      .grey-buttons{
+        a:link,a:visited{
+          text-transform: uppercase;
+          color:$purple_dark;
+        }
+      }
     }
   }
 }
@@ -784,7 +797,7 @@ body{
       margin-bottom:1em;
     }
   }
-}
+} /////// /Homepage fancy stuff
 
 
 //
