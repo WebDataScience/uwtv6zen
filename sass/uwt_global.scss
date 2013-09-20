@@ -734,6 +734,15 @@ body{
   .actions a:hover{color:#757ec0;}
   .actions a:active{color:#000;}
   #ProspectiveStudents,#Community,#Freshmen,#FacultyStaff,#CurrentStudents,#SupportUWTacoma,.content-container .more ul,#social strong,h3.subscribe a strong{display:none;}
+  #social{
+    li{
+      display:inline;
+      a{
+        display:inline-block;
+      }
+    }
+  }
+
 }
 
 #subpersona{
@@ -935,5 +944,9 @@ tbody{
 .search-results{
   p{
     margin-bottom:0.25em;
+  }
+  .search-result-sectionlink,
+  .search-result-updated{
+    font-size:85%;
   }
 }
