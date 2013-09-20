@@ -271,9 +271,6 @@ body{
       padding:0.5em;
       margin-bottom:10px;
       list-style-image:none;
-      a:link,a:visited{
-        color:white;
-      }
     }
   }
 }
@@ -281,18 +278,27 @@ body{
   li{
     background-color:$gold_dark;
     color:white;
+    a:link,a:visited{
+      color:white;
+    }
   }
 }
 .purple-buttons{
   li{
     background-color:$purple_dark;
     color:white;
+    a:link,a:visited{
+      color:white;
+    }
   }
 }
 .grey-buttons{
   li{
     background-color:$grey_medium;
     color:$purple_dark;
+    a:link,a:visited{
+      color:$purple_dark;
+    }
   }
 }
 
@@ -506,8 +512,9 @@ body{
   }
 } // /breakpoint(widest)
 
-/////// Homepage fancy stuff...organize into another file?
-
+//
+//Homepage fancy stuff...organize into another file?
+//
 @include breakpoint(narrow){
   #content{
     padding-left:0;
@@ -772,12 +779,16 @@ body{
       .grey-buttons{
         a:link,a:visited{
           text-transform: uppercase;
-          color:$purple_dark;
+          font-weight: bold;
         }
       }
     }
   }
 }
+
+//
+//  End homepage fancy stuff
+//
 
 //
 //  News Article / News Widget styling

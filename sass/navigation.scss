@@ -149,22 +149,29 @@ li a.active {
  * Global secondary menu
  */
  #global-secondary{
-  font-size:100%;
+  
   text-transform: uppercase;
   .menu{
-    font-size:0.85em;
+    height:25px;
+    margin-top:10px;
     li{
       background-image: url("../images/menu-plus.png");
-      background-position: 0 8px;
+      background-position: 5px 50%;
       background-repeat: no-repeat;
       float: left;
       margin-left: 10px;
-      padding-left: 10px;
+      padding-left: 15px;
+      padding-top:0;
+      padding-bottom:0;
       .outerContainer{
-        height:1em;
+        //height:1em;
         .innerContainer{
-          vertical-align: bottom;
+          //vertical-align: bottom;
         }
+      }
+      a:link,a:visited{
+        font-size:90%;
+        font-weight: bold;
       }
     }
   }

@@ -141,7 +141,7 @@ $footer_menus = render($page['footer_menus']);
       <div id="global-search">
         <?php if($global_search){print $global_search;} ?>
       </div> <!-- /global-search -->
-      <div id="global-secondary">
+      <div id="global-secondary" class="grey-buttons">
         <?php if($global_secondary){print $global_secondary;} ?>
       </div>
     </div>
