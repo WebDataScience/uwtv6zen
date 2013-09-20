@@ -73,16 +73,18 @@
   <?php print '<span class="search-results-url">' . l(str_replace($base_url, '...', $url), $url) . '</span>'; ?>
   <?php print render($title_suffix); ?>
   <div class="search-snippet-info">
+
     <?php if ($snippet): ?>
       <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
     <?php endif; ?>
 
-    <?php if ($search_result_sitelink): ?>
-      <p class="search-result-sitelink">Section: <?php print $search_result_sitelink; ?></p>
-    <?php endif; ?>
+      <?php if ($search_result_sectionlink): ?>
+        <p class="search-result-sectionlink">Section: <?php print $search_result_sectionlink; ?></p>
+      <?php endif; ?>
 
-    <?php if ($info): ?>
-      <p class="search-info">Updated: <?php print substr($info_split['date'], 0, 10); ?></p>
-    <?php endif; ?>
+      <?php if ($info): ?>
+        <p class="search-result-updated">Updated: <?php print substr($info_split['date'], 0, 10); ?></p>
+      <?php endif; ?>
+
   </div>
 </li>

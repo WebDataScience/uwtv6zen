@@ -902,6 +902,7 @@ tbody{
 
 //
 // Wordmark front vs. not-front vs narrow
+//
 @include breakpoint(widest){
   .front #wordmark{
     .graphics-uwt_wordmark_front{
@@ -926,4 +927,13 @@ tbody{
         display:block;
       }
   } // /#wordmark
+}
+
+//
+// Search search-results
+//
+.search-results{
+  p{
+    margin-bottom:0.25em;
+  }
 }

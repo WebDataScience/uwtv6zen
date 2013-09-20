@@ -533,12 +533,13 @@ function uwtv6zen_breadcrumb($variables) {
   */
 
 function uwtv6zen_preprocess_search_result(&$variables) {
-  //print "<pre>" . check_plain(print_r($variables, 1)) . "</pre>";
-  //dpm($variables['result']['node'], 'node');
+  // Get the section of the search result
   $node = node_load($variables['result']['node']->entity_id);
   $section = field_get_items('node', $node, 'field_site');
   $term = taxonomy_term_load($section[0]['tid']);
-  //dpm($section, '$section');
-  //dpm($term, '$term');
-  $variables['search_result_sitelink'] = l($term->name, 'taxonomy/term/' . $term->tid);
+  if(is_object($term)){
+    $variables['search_result_sectionlink'] = l($term->name, 'taxonomy/term/' . $term->tid);
+  }else{
+    $variables['search_result_sectionlink'] = FALSE;
+  }
 }
