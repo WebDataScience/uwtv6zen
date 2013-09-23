@@ -62,8 +62,8 @@ font-family:LindenHillRegular;
 }
 
 /**
-* LINKS
-*/
+  * LINKS
+  */
 a:link,a:visited{
 color:$link_blue;
 text-decoration:none;
@@ -78,6 +78,23 @@ a.active {
 .search-results-url a:link,
 .search-results-url a:visited{
   color:$grey_dark;
+}
+// Download links
+
+a.icon{
+  padding-right:18px;
+  margin-right:4px;
+  background-position:100%;
+  background-repeat: no-repeat;
+}
+a.icon.pdf{
+  background-image: url('../images/icon-pdf.png');
+}
+a.icon.xls{
+  background-image: url('../images/icon-xls.gif');
+}
+a.icon.doc{
+  background-image: url('../images/icon-doc.gif');
 }
 
 /**
