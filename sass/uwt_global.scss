@@ -94,25 +94,27 @@ a.active {
 /**
   * Headings
   */
-.strike-head{
-  h2{
-    border-top: 1px solid $grey_medium;
-    font-family: Georgia;
-    margin: 5px 0 10px;
-    text-align: center;
-    a{
-      display: block;
-      margin: -0.5em auto 0;
-      strong{
-        background-color: $grey_light;
-        color: #000000;
-        font-style: italic;
-        padding: 0 10px;
+@include breakpoint(widest) {
+  .strike-head{
+    h2{
+      border-top: 1px solid $grey_medium;
+      font-family: $georgia;
+      font-size:80%;
+      margin: 5px 0 10px;
+      text-align: center;
+      a{
+        display: block;
+        margin: -0.5em auto 0;
+        strong{
+          background-color: $grey_light;
+          color: #000000;
+          font-style: italic;
+          padding: 0 10px;
+        }
       }
     }
   }
 }
-
 /* Flexslider */
 .flexslider{
   background:none;
@@ -190,7 +192,7 @@ img {
     background-color:$grey_dark;
     //font-size: 75%;
     h2.block-title{
-        font-family: Arial,​sans-serif;
+        font-family: $arial;
         font-weight: bold;
         text-transform: uppercase;
     }
@@ -205,7 +207,7 @@ img {
  }
  #footer-middle{
   h2.block-title{
-    font-family:  Arial,​Helvetica,​"Nimbus Sans L",​sans-serif;
+    font-family: $arial;
     font-weight: bold;
     text-transform: uppercase;
     font-size:85%;
@@ -766,16 +768,16 @@ body{
     max-width:1200px;
     margin-left:auto;
     margin-right: auto;
-    $zen-column-count:4;
+    $zen-column-count:10;
     @include zen-grid-container();
     .subfirst{
-      @include zen-grid-item(2,1);
+      @include zen-grid-item(5,1);
     }
     .subsecond{
-      @include zen-grid-item(1,3);
+      @include zen-grid-item(3,6);
     }
     .subthird{
-      @include zen-grid-item(1,4);
+      @include zen-grid-item(2,9);
       .grey-buttons{
         a:link,a:visited{
           text-transform: uppercase;
@@ -800,6 +802,8 @@ body{
 }
 @include breakpoint(widest) {
   .news-widget-container{
+    margin-top:20px;
+    font-size:75%;
     $zen-column-count: 10;
     @include zen-grid-container();
     .news-widget-left{
@@ -807,6 +811,18 @@ body{
     }
     .news-widget-right{
       @include zen-grid-item(7,3);
+      h2{
+        a:link,a:visited{
+          font-family: $helvetica;
+          color:$purple_dark;
+          font-size:70%;
+          font-weight: bold;
+        }
+      }
+      p{
+        margin-top:0;
+
+      }
     }
   }
   .node-type-news-article{
