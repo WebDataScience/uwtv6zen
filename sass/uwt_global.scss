@@ -45,7 +45,7 @@ font-family:LindenHillRegular;
     color:$grey_dark;
   }
   .icons-W-home{
-    font-size:20px;
+    font-size:19px;
   }
   ol:first-child{
     height:34px;
@@ -123,9 +123,16 @@ a.icon.doc{
       margin-bottom:0.25em;
     }
   }
-  #mini-panel-secondary_global_acacemics{
+  .menu-minipanels{
     h2.pane-title{
       font-size:85%;
+    }
+  }
+  #content{
+    .node-layout-page{
+      h1{
+        display:none;
+      }
     }
   }
 }
@@ -862,6 +869,11 @@ body{
   font-family:inherit;
 }
 
+// Faux Buttons
+.faux-button{
+    font-family:$nexa_boldregular;
+    text-transform: uppercase;
+}
 // Purple buttons
 .faux-button.purple.ui-button{
     background-image:none;
@@ -872,6 +884,7 @@ body{
 }
 .faux-button.purple.ui-button.ui-state-hover{
   background-color:$purple_medium;
+  color:$purple_dark;
 }
 // Gold buttons
 .faux-button.gold.ui-button{
@@ -884,6 +897,7 @@ body{
 }
 .faux-button.gold.ui-button.ui-state-hover{
   background-color:$gold_light;
+  color:$gold_dark;
 }
 
 //
@@ -910,6 +924,9 @@ tbody{
     }
     &:last-child{
       border-right:0;
+    }
+    p{ // Paragraphs in tables? Ugh!
+      margin:0;
     }
   }
 
@@ -1008,4 +1025,24 @@ tbody{
       margin-bottom:1em;
     }
   }
+}
+.menu-minipanels{
+  .menu{
+    li{
+      line-height: 1.1em;
+      margin-bottom:0.75em;
+    }
+  }
+}
+
+//
+// Blockquotes
+//
+blockquote{
+  font-family:$georgia;
+  font-style:italic;
+  //font-weight: bold;
+  font-size:120%;
+  //padding-left:5em;
+  //padding-right:5em;
 }
