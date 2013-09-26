@@ -862,7 +862,18 @@ body{
 //  jQuery UI style modifications
 //
 .ui-accordion .ui-accordion-header{
-  padding-left:1.5em;
+  padding-left:2.2em;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  font-family: $arial;
+  font-weight: bold;
+  background-image:none;
+  background-color:$grey_light;
+  color:$purple_dark;
+}
+.ui-accordion .ui-accordion-header.ui-state-hover{
+  background-color:$grey_medium;
+  color:$purple_dark;
 }
 .accordion-container.ui-widget{
   font-size:inherit;
@@ -932,7 +943,9 @@ tbody{
 
 }
 
+//
 // UWT Alerts
+//
 .web_alert {
   margin: 0 0 5px 0;
   color: #ffffff;
@@ -1045,4 +1058,11 @@ blockquote{
   font-size:120%;
   //padding-left:5em;
   //padding-right:5em;
+}
+
+//
+// Address (the tag)
+//
+address{
+  margin-left:2em;
 }
