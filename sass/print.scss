@@ -10,6 +10,53 @@
 
 @media print {
 
+//
+//  UWT custom print styles
+//
+  #band,
+  #global-menu,
+  #global-search,
+  #global-secondary,
+  #site-menu,
+  aside.sidebars,
+  #section-menu,
+  #footer,
+  #footer-bottom,
+  .print-none{
+    visibility: hidden !important;
+    display:none !important;
+  }
+
+.ui-tabs{
+  .ui-tabs-nav{
+    li{
+      display:block !important;
+      float:none !important;
+    }
+  }
+  .ui-tabs-panel,
+  .ui-tabs-panel > *{
+    display:block !important;
+  }
+}
+.ui-tabs.ui-corner-all,
+.ui-tabs-nav.ui-corner-all,
+.tab-container.ui-corner-all{
+  border:none !important;
+}
+
+table{
+  page-break-inside: avoid !important;
+}
+
+.print-only,
+.print-only > *{
+  display:block !important;
+  visibility: visible !important;
+}
+
+// End UWT custom print styles
+
   a:link,
   a:visited { /* underline all links */
     text-decoration: underline !important;
@@ -27,9 +74,11 @@
     }
 
     a[href^="javascript:"]:after,
+    a[href$="/d7uwt/"]:after, /* Hide links in jquery ui elements */
     a[href^="#"]:after { /* Only display useful links. */
       content: "";
     }
+
 
     abbr[title]:after { /* Add visible title after abbreviations. */
       content: " (" attr(title) ")";

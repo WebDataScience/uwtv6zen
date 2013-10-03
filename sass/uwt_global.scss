@@ -506,6 +506,7 @@ body{
   } // /#section-identifier
   #site-menu{
   }
+
   //
   //  Admissions
   //
@@ -529,6 +530,163 @@ body{
           }
           a:link,a:visited{
             color:$purple_dark;
+          }
+        }
+      }
+    }
+  }  // /Admissions
+  //
+  //  Admissions Two
+  //
+  .section-1450{ // Admissions Two General
+    #site-home-link{
+      display:none;
+    }
+    #post-header{
+      display:block;
+      height: 300px;
+      .post-header-image{
+        height:300px;
+        overflow:hidden;
+      }
+      #admissions-post-header-inner{
+        width:100%;
+        background-color:$gold_dark;
+        #admissions-home-tagline{
+          color:#fff;
+          font-family: $nexa_boldregular;
+          font-size:200%;
+          text-transform: uppercase;
+          padding-top:0.5em;
+          padding-bottom:0.5em;
+          padding-left:20px;
+          max-width:1200px;
+          margin-right:auto;
+          margin-left:auto;
+          font-weight: normal;
+          span{
+            font-weight: bold;
+            font-family: $nexa_xboldregular;
+          }
+        }
+      }
+    }
+    #site-menu{
+      background-color:$gold_dark;
+      padding-left:20px;
+      .menus{
+        h2.block-title{
+          display:block;
+          float:left;
+          margin-top:13px;
+          text-transform: uppercase;
+          font-family:$nexa_boldregular;
+          margin-right:1em;
+          a:link,a:visited{
+            color:#fff;
+          }
+        }
+      }
+      .menu li .outerContainer .innerContainer{
+        border-top: 1px solid $gold_dark;
+        border-bottom: 1px solid $gold_dark;
+        &:hover{
+          background-color:$gold_pale;
+          a:link,a:visited{
+            color:$purple_dark;
+          }
+        }
+        ul.menu{
+          background-color:$gold_pale;
+          border-top:1.25em solid $gold_pale;
+          li:hover{
+            background-color:$gold_pale;
+          }
+        }
+        a:link,a:visited{
+          padding-right:15px;
+          border-right:2px solid #fff;
+        }
+      }
+
+      li.active-trail{
+        background-color:$gold_pale;
+      }
+      .menu{
+        li:last-child{
+          .outerContainer{
+            .innerContainer{
+              a:link,a:visited{
+                border-right:0;
+              }
+            }
+          }
+
+        }
+        .outerContainer{
+          max-width:15em;
+        }
+      }
+
+    }
+  }
+  .section-1450.page-node-36538{ // Admissions Two Homepage
+    #post-header{
+      .post-header-image{
+        overflow:visible;
+      }
+    }
+    #main,#content{ // Allow homepage to left align tagline and content
+      padding-left:0;
+      padding-right:0;
+    }
+    #main{
+      background-color:transparent;
+      padding-top:75px;
+      .breadcrumb{
+        display:none;
+      }
+    }
+    #site-menu{
+      display:none;
+    }
+    .panel-col-first,
+    .panel-col-second,
+    .panel-col-third,
+    .panel-col-fourth{
+      .inside{
+        .panel-pane{
+          padding:10px;
+          min-height:10em;
+          h2.pane-title{
+            border-bottom:0;
+            font-size:125%;
+            a:link,a:visited{
+              color:#fff;
+            }
+          }
+        }
+      }
+    }
+    .panel-col-bottom{
+      margin-top:25px;
+      h2.pane-title{
+        float:left;
+        width:6em;
+        padding-top:5px;
+        padding-left:5px;
+        border-bottom:0;
+      }
+      .menu li{
+        float:left;
+        padding-right:1em;
+        font-size:125%;
+        a{
+          color:#fff;
+          @include transition-property(all);
+          @include transition-duration(0.5s);
+          &:hover{
+            color:$gold_dark;
           }
         }
       }
@@ -861,15 +1019,20 @@ body{
 //
 //  jQuery UI style modifications
 //
-.ui-accordion .ui-accordion-header{
-  padding-left:2.2em;
+body .ui-widget{
+  font-family: $arial;
+}
+.ui-accordion .ui-accordion-header,
+.ui-tabs li{
+  //padding-left:2.2em;
   padding-top:0.5em;
   padding-bottom:0.5em;
-  font-family: $arial;
+  font-family: $nexa_boldregular;
   font-weight: bold;
   background-image:none;
   background-color:$grey_light;
   color:$purple_dark;
+  text-transform: uppercase;
 }
 .ui-accordion .ui-accordion-header.ui-state-hover{
   background-color:$grey_medium;
@@ -1065,4 +1228,38 @@ blockquote{
 //
 address{
   margin-left:2em;
+}
+
+//
+// Backgrounds and Hovers 
+//
+.purple-to-gold-bg{
+  //background-image:url("../images/purple-bg-150x150.png");
+  background-color:rgba($purple_dark, 0.8);
+  color:#fff;
+  @include transition-property(all);
+  @include transition-duration(0.5s);
+  &:hover{
+    //background-image:url("../images/gold-bg-150x150.png");
+    background-color:rgba($gold_dark, 0.9);
+    color:white;
+  }
+  a:link,a:visited{
+    color: #fff;
+  }
+}
+.semi-opaque-purple-bg{
+  background-color:rgba($purple_dark, 0.8);
+  color:#fff;
+  a:link,a:visited,h2.pane-title{
+    color:#fff;
+  }
+}
+
+//
+//  Print help
+//
+.print-only{
+  display:none;
+  visibility:hidden;
 }

@@ -65,14 +65,14 @@ $helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 
 $nexa_boldregular: nexa_boldregular, sans-serif;
-
+$nexa_xboldregular: nexa_xboldregular, sans-serif;
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
 // Now create some variables for the font stacks we want to use on this site.
 $base-font-family: $arial; // The font family set on the html element.
-$font-body:        $verdana;
+$font-body:        $arial;
 $font-monospace:   $courier;
 
 
