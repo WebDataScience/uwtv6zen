@@ -536,19 +536,96 @@ function uwtv6zen_breadcrumb($variables) {
 }
 
 /**
-  *
-  * If we want to send additional variables to the search results we can just
-  *   uncomment this function and send them along.
-  */
+ *
+ * If we want to send additional variables to the search results we can just
+ *   uncomment this function and send them along.
+ */
 
 function uwtv6zen_preprocess_search_result(&$variables) {
   // Get the section of the search result
   $node = node_load($variables['result']['node']->entity_id);
+  // Get the term field for the section from the node
   $section = field_get_items('node', $node, 'field_site');
+  // Get the term id for the section term
+  $tid = $section[0]['tid'];
+  // Get the menu machine name associated with the section
+  $menu_name = _uwt_menu_admin_get_site_menu_by_tid($tid);
+  // Get the fully loaded term in case we need to create a link to it
   $term = taxonomy_term_load($section[0]['tid']);
-  if(is_object($term)){
+  // Get the parents of the link using the node path and menu 
+  $parents = NULL;
+  if(isset($node->path)){
+    $parents = _get_link_parents($node->path['source'], $menu_name);
+    //dpm($parents, '$parents');
+  }
+  $section_id_link = NULL;
+  // Only process links that have parents
+  if(is_array($parents) && count($parents) > 0){
+    foreach($parents as $parent){
+      // Only process links that have options
+      if(!empty($parent['options'])){
+        // If the link is a section id, set the link and stop processing
+        if($parent['options']['section_id'] == 1) {
+           $section_id_link = l($parent['link_title'], $parent['link_path']);
+           break;
+        }
+      }
+    }
+  }
+  
+  if(!is_null($section_id_link)) {
+    $variables['search_result_sectionlink'] = $section_id_link;
+  }else if(is_object($term)){
     $variables['search_result_sectionlink'] = l($term->name, 'taxonomy/term/' . $term->tid);
   }else{
     $variables['search_result_sectionlink'] = FALSE;
   }
+}
+
+function _get_mlid($path, $menu_name) {
+
+  $mlid = db_select('menu_links' , 'ml')
+    ->condition('ml.link_path' , $path)
+    ->condition('ml.menu_name',$menu_name)
+    ->fields('ml' , array('mlid'))
+    ->execute()
+    ->fetchField();
+  return $mlid;
+}
+
+
+/**
+ *  Ok, once we get the menu link, we'll have the depth and the parents, which
+ *    are in the p1-p9 elements.  Since these should be mlids, we can probably
+ *    loop over these and inspect the options, stopping when we get to a section
+ *    identifier and using that link title and path to make a link.
+ *
+ *  @param string $path A menu link path like 'node/123'.
+ *  @param string $menu_name The machine name for a menu.
+ *
+ *  @return An array of link ______ or an empty array.
+ */
+function _get_link_parents($path, $menu_name){
+  //dpm($path, $menu_name);
+  $parents = array();
+  $mlid = NULL;
+
+  if(!empty($path) && !empty($menu_name)){
+    $mlid = _get_mlid($path, $menu_name);
+    //dpm($mlid, '$mlid');
+    $menu_link = menu_link_load($mlid);
+    if(is_array($menu_link) && !empty($menu_link)){
+      //dpm($menu_link, '$menu_link');
+      $depth = $menu_link['depth'];
+      //dpm($depth, '$depth');
+      for($i = $depth; $i > 0; $i--) {
+        $parent_link = NULL;
+        //dpm($menu_link['p'.$i], 'link parent');
+        $parent_link = menu_link_load($menu_link['p'.$i]);
+        //dpm($parent_link['link_path'], $parent_link['link_title']);
+        $parents[] = $parent_link;
+      }
+    }
+  }
+  return $parents;
 }
