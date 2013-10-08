@@ -45,7 +45,7 @@ font-family:LindenHillRegular;
     color:$grey_dark;
   }
   .icons-W-home{
-    font-size:20px;
+    font-size:19px;
   }
   ol:first-child{
     height:34px;
@@ -112,22 +112,26 @@ a.icon.doc{
   * Headings
   */
 @include breakpoint(widest) {
-  .strike-head{
-    h2{
-      border-top: 1px solid $grey_medium;
-      font-family: $georgia;
-      font-size:80%;
-      margin: 5px 0 10px;
-      text-align: center;
-      a{
-        display: block;
-        margin: -0.5em auto 0;
-        strong{
-          background-color: $grey_light;
-          color: #000000;
-          font-style: italic;
-          padding: 0 10px;
-        }
+  .panel-pane{
+    h2.pane-title{
+      width:100%;
+      font-family: $nexa_boldregular;
+      text-transform: uppercase;
+      font-size:100%;
+      border-bottom:1px solid $grey_medium;
+      color:$purple_dark;
+      margin-bottom:0.25em;
+    }
+  }
+  .menu-minipanels{
+    h2.pane-title{
+      font-size:85%;
+    }
+  }
+  #content{
+    .node-layout-page{
+      h1{
+        display:none;
       }
     }
   }
@@ -858,13 +862,29 @@ body{
 //  jQuery UI style modifications
 //
 .ui-accordion .ui-accordion-header{
-  padding-left:1.5em;
+  padding-left:2.2em;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  font-family: $arial;
+  font-weight: bold;
+  background-image:none;
+  background-color:$grey_light;
+  color:$purple_dark;
+}
+.ui-accordion .ui-accordion-header.ui-state-hover{
+  background-color:$grey_medium;
+  color:$purple_dark;
 }
 .accordion-container.ui-widget{
   font-size:inherit;
   font-family:inherit;
 }
 
+// Faux Buttons
+.faux-button{
+    font-family:$nexa_boldregular;
+    text-transform: uppercase;
+}
 // Purple buttons
 .faux-button.purple.ui-button{
     background-image:none;
@@ -875,6 +895,7 @@ body{
 }
 .faux-button.purple.ui-button.ui-state-hover{
   background-color:$purple_medium;
+  color:$purple_dark;
 }
 // Gold buttons
 .faux-button.gold.ui-button{
@@ -887,6 +908,7 @@ body{
 }
 .faux-button.gold.ui-button.ui-state-hover{
   background-color:$gold_light;
+  color:$gold_dark;
 }
 
 //
@@ -914,11 +936,16 @@ tbody{
     &:last-child{
       border-right:0;
     }
+    p{ // Paragraphs in tables? Ugh!
+      margin:0;
+    }
   }
 
 }
 
+//
 // UWT Alerts
+//
 .web_alert {
   margin: 0 0 5px 0;
   color: #ffffff;
@@ -995,4 +1022,47 @@ tbody{
   .search-result-updated{
     font-size:85%;
   }
+}
+
+//
+// Lists
+//
+#content{
+  ul{
+    li{
+      margin-bottom:0.2em;
+    }
+  }
+  ul.extra-space{
+    li{
+      margin-bottom:1em;
+    }
+  }
+}
+.menu-minipanels{
+  .menu{
+    li{
+      line-height: 1.1em;
+      margin-bottom:0.75em;
+    }
+  }
+}
+
+//
+// Blockquotes
+//
+blockquote{
+  font-family:$georgia;
+  font-style:italic;
+  //font-weight: bold;
+  font-size:120%;
+  //padding-left:5em;
+  //padding-right:5em;
+}
+
+//
+// Address (the tag)
+//
+address{
+  margin-left:2em;
 }

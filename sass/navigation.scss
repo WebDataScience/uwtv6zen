@@ -460,6 +460,14 @@ body{
         }
 
       }
+      li.expanded{
+        a:visited, a:link{ // Top level menu items with flyout children
+          background: url("../images/arrow_down_grey_light.png");
+          background-repeat:no-repeat;
+          background-position: 95% 60%;
+          padding-right:15px;
+        }
+      }
       li.active-trail{ // Root menu items in the active trail
         background-color: $grey_light;
         a:link,a:visited{
@@ -499,6 +507,11 @@ body{
             }
           }
         }
+        li.is-parent,li.first,li.leaf{
+          a:link,a:visited{
+            background-image:none;
+          }
+        }
         li:hover{
           background-color:$purple_medium;
           a:link,a:visited{
@@ -520,18 +533,10 @@ body{
     }
     .menu li.expanded{
       .innerContainer{
-        a:after{
-          font-family:LindenHillRegular;
-          font-size:1em;
-          content:" \2193";
-        }
         li{
           .innerContainer{
             border-top:0;
             border-bottom:0;
-          }
-          a:after{
-            content:"";
           }
         }
       }
