@@ -142,11 +142,29 @@ a.icon.doc{
   border:none;
   border-radius:none;
   box-shadow: none;
+  ul{
+    li{
+      .views-field-title{
+        position:absolute;
+        bottom:0;
+        background-color: rgba($purple_dark, 0.8);
+        width:100%;
+        padding-top:0.5em;
+        padding-bottom:0.5em;
+        span{
+          color:#fff;
+          padding-left:0.5em;
+          display:inline-block;
+        }
+      }
+    }
+  }
 }
 .node ol.slides,
 .node ul.slides {
   padding-left:0;
 }
+
 
 
 .node-links ul li a{
