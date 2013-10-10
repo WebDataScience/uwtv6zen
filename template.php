@@ -140,7 +140,7 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
   drupal_add_library('system', 'ui.button');
   drupal_add_js ( 'jQuery(document).ready(function(){
                      jQuery(".tab-container").tabs();
-                     jQuery(".accordion-container").accordion();
+                     jQuery(".accordion-container").accordion({autoHeight:false});
                      jQuery("a.faux-button").button();
                    });' , 'inline' );
 
