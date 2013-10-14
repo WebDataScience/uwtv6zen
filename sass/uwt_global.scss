@@ -98,13 +98,18 @@ a.icon.doc{
 }
 
 /**
-  * Site home link (in header, below text logo)
+  * Site home link (in header, below wordmark)
   */
 #site-home-link a:link,
 #site-home-link a:visited{
     color:$purple_dark;
     text-transform: uppercase;
     text-decoration:none;
+}
+#site-home-link{
+  .active{
+    font-weight:normal;
+  }
 }
 
 
