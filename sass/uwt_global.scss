@@ -172,9 +172,13 @@ a.icon.doc{
           display:block;
           color:$grey_light;
         }
-        a{
+        a:first-child{
+          display:block;
           font-family: $nexa_boldregular;
           text-transform:uppercase;
+          color:$gold_dark;
+        }
+        a{
           color:$gold_dark;
         }
       }
@@ -394,12 +398,9 @@ body{
 
 .columns-list{
   ul{
-    -webkit-column-count:2;
-    -webkit-column-width:auto;
-    -moz-column-count:2;
-    -moz-column-width:auto;
-    column-count:2;
-    column-width:auto;
+    @include column-count(2);
+    @include column-break-after(always);
+    //margin-bottom: 20px;
   }
 }
 
@@ -548,9 +549,9 @@ body{
   }
 
   //
-  //  Admissions Two
+  //  Admissions
   //
-  .section-1450{ // Admissions Two General
+  .section-1450{ // Admissions  General
     #site-home-link{
       display:none;
     }
@@ -643,7 +644,7 @@ body{
 
     }
   }
-  .section-1450.page-node-36538{ // Admissions Two Homepage
+  .section-1450.page-node-36538{ // Admissions Homepage
     #post-header{
       .post-header-image{
         overflow:visible;
