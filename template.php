@@ -132,7 +132,14 @@ function uwtv6zen_preprocess_maintenance_page(&$variables, $hook) {
 function uwtv6zen_preprocess_html(&$variables, $hook) {
   
   // Adding the trumba spud code for calendars  
-  drupal_add_js('http://www.trumba.com/scripts/spuds.js','external');
+  $options = array();
+  $options['type'] = 'external';
+  $options['scope'] = 'header';
+  drupal_add_js('http://www.trumba.com/scripts/spuds.js', $options);
+
+  // Adding the GreenSock Animation Platform library.
+  // http://www.greensock.com/get-started-js/
+  drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js', $options);
 
   // Adding jquery ui fanciness
   drupal_add_library('system', 'ui.tabs');
