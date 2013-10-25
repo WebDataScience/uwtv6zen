@@ -636,3 +636,28 @@ function _get_link_parents($path, $menu_name){
   }
   return $parents;
 }
+
+/**
+* Overriding feed aggregator display
+*/
+function uwtv6zen_aggregator_block_item($variables){
+  $item = $variables['item'];
+  switch ($item->fid) {
+    case '2': // Trumba Academic Deadlines calendar feed
+      $output = '<span class="trumba-rss-title">';
+      $output .= l($item->title, $item->link);
+      $output .= '</span>';
+      $output .= '<span class="trumba-rss-description">';
+      $output .= ' ' . $item->description;
+      $output .= '</span>';
+      return $output;
+      break;
+    
+    default:
+      $output = '<span class="trumba-rss-title">';
+      $output .= l($item->title, $item->link);
+      $output .= '</span>';
+      return $output;
+      break;
+  }
+}

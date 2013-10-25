@@ -1324,3 +1324,21 @@ address{
     }
   }
 }
+//
+// Aggregator Styles
+//
+.pane-block.pane-aggregator-feed-2{
+  li{
+    list-style-type: none;
+    margin-bottom:0.85em;
+    span{
+      display:block;
+    }
+    .trumba-rss-description{
+      font-weight: bold;
+    }
+  }
+  li:nth-child(odd){
+    background-color:$grey_light;
+  }
+}
