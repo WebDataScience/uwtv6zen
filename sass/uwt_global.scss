@@ -22,7 +22,7 @@ background-color: $grey_light;
 }
 
 h1,h2,h3,h4,h5,h6{
-font-family:LindenHillRegular;
+//font-family:LindenHillRegular;
 }
 
 .node-type-layout-page.no-sidebars{
@@ -120,7 +120,7 @@ a.icon.doc{
   .panel-pane{
     h2.pane-title{
       width:100%;
-      font-family: $nexa_boldregular;
+      //font-family: $nexa_boldregular;
       text-transform: uppercase;
       font-size:100%;
       border-bottom:1px solid $grey_medium;
@@ -593,7 +593,7 @@ body{
           float:left;
           margin-top:13px;
           text-transform: uppercase;
-          font-family:$nexa_boldregular;
+          //font-family:$nexa_boldregular;
           margin-right:1em;
           a:link,a:visited{
             color:#fff;
@@ -618,7 +618,7 @@ body{
         }
         a:link,a:visited{
           padding-right:15px;
-          border-right:2px solid #fff;
+          //border-right:2px solid #fff;
           font-size:1.5em;
         }
       }
@@ -638,7 +638,7 @@ body{
 
         }
         .outerContainer{
-          max-width:15em;
+          max-width:17em;
         }
       }
 
@@ -682,8 +682,13 @@ body{
         }
       }
     }
-    .panel-col-bottom{
+    .panel-col-bottom{ // Below the 4 boxes, this is the bottom menu
       margin-top:25px;
+      background-color:rgba($gold_pale, 0.8);
+      .panel-pane{
+        margin-bottom:0.75em;
+        margin-top:0.75em;
+      }
       h2.pane-title{
         float:left;
         width:6em;
@@ -696,7 +701,8 @@ body{
         padding-right:1em;
         font-size:125%;
         a{
-          color:#fff;
+          font-weight: bold;
+          color:$purple_dark;
           @include transition-property(all);
           @include transition-duration(0.5s);
           &:hover{
@@ -823,7 +829,7 @@ body{
   #blocks li a .support,.expanded #blocks li a .support.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -1861px no-repeat;}
   #blocks li a .set{display:block;cursor:pointer;position:absolute;bottom:15px;left:15px;background:#fff url('../images/home/bg-sprite.png') 0 0 repeat-x;height:55px;}
   #blocks li a .set span{border:1px solid #dadade;display:block;text-shadow:0 1px 1px #fff;margin:5px;padding:5px;}
-  .expanded #blocks h2{font:16px/20px 'LindenHillRegular', Arial, sans-serif;letter-spacing:0;}
+  .expanded #blocks h2{font:16px/20px Arial, sans-serif;letter-spacing:0;}
   .expanded #blocks{float:left;margin-right:10px;}
   .expanded #blocks li a .set{bottom:0;left:0;height:auto;letter-spacing:-1px;}
   .expanded #blocks li a .set span{border:none;margin:0;}
@@ -886,7 +892,7 @@ body{
     }
     a:hover{background-color:#757ec0;}
     .icon-links{
-      background-image: url('../images/home/bg-super-light-purple.png');
+      background-image: url('images/home/bg-super-light-purple.png');
       background-repeat: repeat;
       background-color:transparent;
       span {
@@ -1007,7 +1013,7 @@ body{
       @include zen-grid-item(7,3);
       h2{
         a:link,a:visited{
-          font-family: $helvetica;
+          //font-family: $helvetica;
           color:$purple_dark;
           font-size:70%;
           font-weight: bold;
@@ -1328,17 +1334,20 @@ address{
 // Aggregator Styles
 //
 .pane-block.pane-aggregator-feed-2{
-  li{
-    list-style-type: none;
-    margin-bottom:0.85em;
-    span{
-      display:block;
+  ul{
+    padding-left:0;
+    li{
+      list-style-type: none;
+      margin-bottom:0.85em;
+      span{
+        display:block;
+      }
+      .trumba-rss-description{
+        font-weight: bold;
+      }
     }
-    .trumba-rss-description{
-      font-weight: bold;
+    li:nth-child(odd){
+      background-color:$grey_light;
     }
-  }
-  li:nth-child(odd){
-    background-color:$grey_light;
   }
 }
