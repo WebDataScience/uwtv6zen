@@ -117,10 +117,13 @@ a.icon.doc{
   * Headings
   */
 @include breakpoint(widest) {
+  h1#page-title{
+    margin-bottom:0.75em;
+  }
   .panel-pane{
     h2.pane-title{
       width:100%;
-      //font-family: $nexa_boldregular;
+      font-family: $nexa_boldregular;
       text-transform: uppercase;
       font-size:100%;
       border-bottom:1px solid $grey_medium;
@@ -794,8 +797,8 @@ body{
       position:relative;
     } 
     h2{
-      font-size:1.75em;
-      //'LindenHillRegular', Arial, sans-serif;
+      font-size:1.45em;
+      font-family: $nexa_boldregular;
       letter-spacing:0;
     }
   }
