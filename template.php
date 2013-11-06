@@ -570,8 +570,9 @@ function uwtv6zen_preprocess_search_result(&$variables) {
   if(is_array($parents) && count($parents) > 0){
     foreach($parents as $parent){
       // Only process links that have options
-      if(!empty($parent['options'])){
+      if(!empty($parent['options']) && !empty($parent['options']['section_id'])){
         // If the link is a section id, set the link and stop processing
+
         if($parent['options']['section_id'] == 1) {
            $section_id_link = l($parent['link_title'], $parent['link_path']);
            break;
