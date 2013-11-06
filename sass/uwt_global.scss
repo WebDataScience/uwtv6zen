@@ -895,7 +895,7 @@ body{
     }
     a:hover{background-color:#757ec0;}
     .icon-links{
-      background-image: url('images/home/bg-super-light-purple.png');
+      background-image: url('../images/home/bg-super-light-purple.png');
       background-repeat: repeat;
       background-color:transparent;
       span {
@@ -1045,8 +1045,9 @@ body{
 body .ui-widget{
   font-family: $arial;
 }
+
 .ui-accordion .ui-accordion-header,
-.ui-tabs li{
+.ui-tabs .ui-tabs-nav li{
   //padding-left:2.2em;
   padding-top:0.5em;
   padding-bottom:0.5em;
@@ -1056,6 +1057,11 @@ body .ui-widget{
   background-color:$grey_light;
   color:$purple_dark;
   text-transform: uppercase;
+}
+.ui-tabs .ui-tabs-nav li{
+  padding-top:inherit;
+  padding-bottom:inherit;
+  margin-bottom:0;
 }
 .ui-accordion .ui-accordion-header.ui-state-hover{
   background-color:$grey_medium;
