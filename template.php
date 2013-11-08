@@ -145,9 +145,8 @@ function uwtv6zen_preprocess_html(&$variables, $hook) {
   drupal_add_library('system', 'ui.tabs');
   drupal_add_library('system', 'ui.accordion');
   drupal_add_library('system', 'ui.button');
+  drupal_add_js('sites/all/themes/uwtv6zen/js/jqueryui.default.open.js', 'file');
   drupal_add_js ( 'jQuery(document).ready(function(){
-                     jQuery(".tab-container").tabs();
-                     jQuery(".accordion-container").accordion({autoHeight:false,collapsible:true,active:false});
                      jQuery("a.faux-button").button();
                    });' , 'inline' );
 
