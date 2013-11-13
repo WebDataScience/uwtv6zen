@@ -720,36 +720,55 @@ body{
 //
 //Homepage fancy stuff...organize into another file?
 //
-@include breakpoint(narrow){
-  #content{
-    padding-left:0;
-    padding-right:0;
-  }
-  // Hide the boxed content by default
-  #CurrentStudents,
-  #Freshmen,
-  #ProspectiveStudents,
-  #Community,
-  #FacultyStaff,
-  #SupportUWTacoma{
-    display:none;
-  }
-  #blocks{
-    width:100%;
-    padding-left:0;
+.front{
+  #social{
     li{
-      padding:1em;
-      list-style-image: none;
       list-style-type: none;
-      background-color:$purple_dark;
-      border-bottom:1px solid $grey_dark;
-      border-right:1px solid $grey_dark;
-      height:3em;
-      //@include single-box-shadow(inset);
-      a:link,a:visited{
-        font-size:0.75em;
-        font-family:nexa_boldregular;
-        color:$grey_light;
+    }
+    a{
+      display:block;
+      visibility: visible;
+      strong{
+        display:none;
+        visibility:hidden;
+      }
+    }
+  }
+}
+
+@include breakpoint(narrow){
+  .front{
+    #content{
+      padding-left:0;
+      padding-right:0;
+    }
+    // Hide the boxed content by default
+    #CurrentStudents,
+    #Freshmen,
+    #ProspectiveStudents,
+    #Community,
+    #FacultyStaff,
+    #SupportUWTacoma{
+      display:none;
+      visibility: hidden;
+    }
+    #blocks{
+      width:100%;
+      padding-left:0;
+      li{
+        padding:1em;
+        list-style-image: none;
+        list-style-type: none;
+        background-color:$purple_dark;
+        border-bottom:1px solid $grey_dark;
+        border-right:1px solid $grey_dark;
+        height:3em;
+        //@include single-box-shadow(inset);
+        a:link,a:visited{
+          font-size:0.75em;
+          font-family:nexa_boldregular;
+          color:$grey_light;
+        }
       }
     }
   }
@@ -945,7 +964,16 @@ body{
   .actions a:visited{color:#8b7810;}
   .actions a:hover{color:#757ec0;}
   .actions a:active{color:#000;}
-  #ProspectiveStudents,#Community,#Freshmen,#FacultyStaff,#CurrentStudents,#SupportUWTacoma,.content-container .more ul,#social strong,h3.subscribe a strong{display:none;}
+  #ProspectiveStudents,
+  #Community,
+  #Freshmen,
+  #FacultyStaff,
+  #CurrentStudents,
+  #SupportUWTacoma,
+  .content-container .more ul,
+  h3.subscribe a strong{
+    display:none;
+  }
   #social{
     li{
       display:inline;

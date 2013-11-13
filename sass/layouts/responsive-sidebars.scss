@@ -96,6 +96,9 @@ $zen-auto-include-item-base: false;
     margin-bottom:0;
   }
 } // /#header
+#global-menu{
+  //background-color:navy;
+}
 #header-left{
   background-color:$purple_dark;
 }
@@ -150,9 +153,12 @@ $zen-auto-include-item-base: false;
 // Not full mobile, not full desktop
 //
 @include breakpoint(medium){
+  #global-menu{
+    //background-color:white;
+  }
   #band{
     height:1.5em;
-    background-color:maroon;
+    //background-color:maroon;
   }
   #patch{
 
