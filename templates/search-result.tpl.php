@@ -70,7 +70,7 @@
   <h3 class="title"<?php print $title_attributes; ?>>
     <a href="<?php print $url; ?>"><?php print $title; ?></a>
   </h3>
-  <?php print '<span class="search-results-url">' . l(str_replace($base_url, '...', $url), $url) . '</span>'; ?>
+  
   <?php print render($title_suffix); ?>
   <div class="search-snippet-info">
 
@@ -81,6 +81,8 @@
       <?php if ($search_result_sectionlink): ?>
         <p class="search-result-sectionlink">Section: <?php print $search_result_sectionlink; ?></p>
       <?php endif; ?>
+
+      <?php print '<span class="search-results-url">' . l(str_replace($base_url, '...', $url), $url) . '</span>'; ?>
 
       <?php if ($info): ?>
         <p class="search-result-updated">Updated: <?php print substr($info_split['date'], 0, 10); ?></p>
