@@ -13,7 +13,7 @@
 (function ($, Drupal, window, document, undefined) {
 var winwidth = $(window).width();
 
-if(winwidth >= 650){
+if(winwidth >= 801){
 // 29th Drive's js
 Drupal.behaviors.frontpage = {
   attach: function (context, settings) {
