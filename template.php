@@ -210,7 +210,20 @@ function uwtv6zen_preprocess_page(&$variables, $hook) {
         );
     drupal_add_js(drupal_get_path('theme', 'uwtv6zen'). '/js/uwt-frontpage.js', $options);
   }
-
+  // Display the nid and link to this node for the convenience of publishers and contributors.
+  if(isset($node) && !empty($node)){
+    global $user;
+    $ur = array_values($user->roles);
+    $rtc = array('Publisher', 'Contributor', 'admin');
+    $check = array_intersect($ur, $rtc);
+    $show_link = empty($check) ? FALSE : TRUE;
+    if($show_link){
+      $link_info = array();
+      $link_info['nid'] = $node->nid;
+      $link_info['href'] = '/node/' . $node->nid;
+      $variables['link_info'] = $link_info;
+    }
+  }
 }
 /**
 * Create a specially formateed Shibboleth link. This link points to the

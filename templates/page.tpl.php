@@ -248,6 +248,11 @@ $footer_menus = render($page['footer_menus']);
             }
           }
         ?>
+        <?php
+          if(isset($link_info) && is_array($link_info)){
+            echo '<br />Node ID: ' .  $link_info['nid'] . ' href: ' . $link_info['href'];
+            }
+        ?>
       </div>
     </div><!-- /.inner -->
   </div><!-- /#footer-bottom -->
