@@ -196,7 +196,17 @@ $footer_menus = render($page['footer_menus']);
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <?php print render($page['content']); ?>
+      
+      <?php 
+        // content just says 'You are not authorized to access this page.'
+        print render($page['content']);
+        $dest = drupal_get_destination();
+        dpm($dest);
+        print "<p>You can log in with your $shiblink or ";
+        print l('Non-UW login', 'user', array('query' => $dest)) . "</p>"; 
+      ?>
+
+
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 

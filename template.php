@@ -224,7 +224,14 @@ function uwtv6zen_preprocess_page(&$variables, $hook) {
       $variables['link_info'] = $link_info;
     }
   }
+  // Specify custom 403 template.
+  $header = drupal_get_http_header("status");
+  if($header == "403 Forbidden") {
+    $variables['theme_hook_suggestions'][] = 'page__403';
+  }
 }
+
+
 /**
 * Create a specially formateed Shibboleth link. This link points to the
 *   shibby login module and redirects to r.php, which then redirects to the
@@ -242,7 +249,7 @@ function _get_shiblink() {
     $options['query'] = array();
     $options['query'][] = array('target' => $GLOBALS['base_url'] . '/r.php?r=' . $GLOBALS['base_url'] . '/' . current_path());
     $shiblink = l('UWNetID login', $shibpath, $options);
-    $shiblink .= ' | ';
+    //$shiblink .= ' | ';
     return $shiblink;
   } else {
     return '';
