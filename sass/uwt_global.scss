@@ -45,7 +45,7 @@ h1,h2,h3,h4,h5,h6{
     color:$grey_dark;
   }
   .icons-W-home{
-    font-size:19px;
+    font-size:18px;
   }
   ol:first-child{
     height:34px;
@@ -206,6 +206,12 @@ text-shadow:none;
 img {
   max-width:100%;
   height:auto;
+}
+/* images in tables shouldn't be resized...it's no bueno. */
+table{
+  img{
+    max-width:inherit;
+  }
 }
 
 
@@ -446,6 +452,12 @@ body{
     #header-right{
       #global-secondary{
         display:none;
+      }
+    }
+    #footer_top{
+      .graphics-uwt_w_and_wordmark_horiz_white{
+        max-width:100%;
+        width:100%;
       }
     }   
     #footer-bottom{
@@ -843,6 +855,8 @@ body{
     }
   }
 
+
+
   #blocks li a .current,.expanded #blocks li a .current.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -857px no-repeat;}
   #blocks li a .freshmen,.expanded #blocks li a .freshmen.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -1359px no-repeat;}
   #blocks li a .prospective,.expanded #blocks li a .prospective.selected{background:transparent url('../images/home/block-hovers.jpg') 0 -1610px no-repeat;}
@@ -890,12 +904,73 @@ body{
       ul{
         padding:0;
         li{
-          list-style-type:none;
+          //list-style-type:none;
         }
       }
     }
-    h2{font-size:28px;line-height:28px;margin:30px 0 28px;}
-    h3{font-size:16px;font-weight:600;margin-bottom:10px;line-height:20px;}
+    .col40,
+    .col60{
+      ul{
+        list-style-type: none;
+        li{
+          vertical-align: middle;
+          list-style:none;
+          padding:0 0 0 10px;
+          background: url("../images/menu-leaf.png") no-repeat 0% 50%;
+          a{
+            color:inherit;
+            padding:3px;
+            display:block;
+            width:85%;
+            @include transition-property(all);
+            @include transition-duration(0.5s);
+            background-color:transparent;
+            &:hover{
+              background-color:rgba(255,255,255,0.5);
+              text-decoration:none;
+            }
+          }
+        }
+      }
+    }
+    
+    .col40,
+    .col60{
+      ul.icon-links{
+        li{
+          background:none;
+        }
+      }
+    }
+    .col.nth{
+      width:50%;
+      float:left;
+      .icon-links{
+        li{
+          width:85%;
+        }
+      }
+    }
+
+    ul{
+      margin-top:0.25em;
+    }
+
+    h2{
+      font-size:28px;
+      line-height:28px;
+      margin:30px 0 28px;
+    }
+    h3{
+      font-family:$nexa_boldregular;
+      font-size:16px;
+      text-transform:uppercase;
+      border-bottom:1px solid #FFF;
+      font-weight:600;
+      margin-bottom:10px;
+      line-height:20px;
+      width:95%;
+    }
     a.close{
       position:absolute;
       float:left;
@@ -912,14 +987,47 @@ body{
       color:$grey_light;
       font-size:1em;
     }
-    a:hover{background-color:#757ec0;}
+    a:hover{
+    }
     .icon-links{
+      list-style-type:none;
       background-image: url('../images/home/bg-super-light-purple.png');
       background-repeat: repeat;
       background-color:transparent;
       span {
         float: left;
         margin-right: 10px;
+      }
+      .icons-logo-canvas{
+        margin-left:8px;
+        margin-right:24px;
+      }
+      .icons-logo-catalyst{
+        margin-right:21px;
+      }
+      .icons-envelope-large{
+        margin-left:7px;
+        margin-right:21px;
+      }
+      .icons-envelope-plus{
+        margin-left:7px;
+        margin-right:17px;
+      }
+      .icons-magnifying-glass{
+        margin-left:11px;
+        margin-right:20px;
+      }
+      .icons-pen-paper{
+        margin-left: 6px;
+        margin-right: 11px;
+      }
+      .icons-q-mark{
+        margin-left:8px;
+        margin-right:20px;
+      }
+      .icons-calendar{
+        margin-left:10px;
+        margin-right:22px;
       }
       span.no-icon{
         width:30px;
@@ -929,6 +1037,7 @@ body{
         font-size: 15px;
         font-weight: 600;
         clear: both;
+        background-color:rgba(255,255,255,0.05);
       }
       .logo-catalyst{
         padding-bottom:20px;
@@ -1090,6 +1199,10 @@ body .ui-widget{
   padding-top:inherit;
   padding-bottom:inherit;
   margin-bottom:0;
+}
+.accordion-container .accordion-container.ui-accordion{
+  max-width:100%;
+  width:auto;
 }
 .ui-accordion .ui-accordion-header.ui-state-hover{
   background-color:$grey_medium;
