@@ -201,7 +201,6 @@ $footer_menus = render($page['footer_menus']);
         // content just says 'You are not authorized to access this page.'
         print render($page['content']);
         $dest = drupal_get_destination();
-        dpm($dest);
         print "<p>You can log in with your $shiblink or ";
         print l('Non-UW login', 'user', array('query' => $dest)) . "</p>"; 
       ?>
