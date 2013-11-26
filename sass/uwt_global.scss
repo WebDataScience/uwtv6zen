@@ -1172,6 +1172,21 @@ body{
       margin-left:1em;
       margin-bottom:1em;
     }
+    .field-name-field-subhead{
+      font-size:1.1em;
+      font-style:italic;
+    }
+    .field-name-body{
+      padding-bottom:1.5em;
+      margin-bottom:1.5em;
+      border-bottom:2px solid $grey_dark;
+    }
+    .field-name-field-media-contacts{
+      p{
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
   }
 } /////// /Homepage fancy stuff
 
