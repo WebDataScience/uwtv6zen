@@ -24,6 +24,11 @@ jQuery(document).ready(function ($) {
                 }
             }
         }
-        return 0;
+        // No query has been detected, this is the default
+        if(name == 'tab') {
+          return 0;
+        }else{
+          return -1;
+        }
     }
 });
