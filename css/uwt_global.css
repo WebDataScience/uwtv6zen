@@ -1768,6 +1768,13 @@ body {
     display: inline-block;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031100}}
+  .not-front .icon-links a span {
+    height: 0px;
+    width: 0px;
+    background-image: none;
+  }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass-extensions\/zen-grids\/stylesheets\/zen\/_grids\.scss}line{font-family:\0000352}}
   #subpersona:before, #subpersona:after {
     content: "";
@@ -1778,7 +1785,7 @@ body {
     clear: both;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031119}}
   #subpersona {
     margin-top: 1em;
     max-width: 1200px;
@@ -1794,7 +1801,7 @@ body {
   #subpersona:after {
     clear: both;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031126}}
   #subpersona .subfirst {
     float: left;
     width: 50%;
@@ -1808,7 +1815,7 @@ body {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031129}}
   #subpersona .subsecond {
     float: left;
     width: 30%;
@@ -1822,7 +1829,7 @@ body {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031132}}
   #subpersona .subthird {
     float: left;
     width: 20%;
@@ -1836,14 +1843,14 @@ body {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031135}}
   #subpersona .subthird .grey-buttons a:link, #subpersona .subthird .grey-buttons a:visited {
     text-transform: uppercase;
     font-weight: bold;
   }
 }
 @media only screen and (min-width: 803px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031157}}
   .news-widget-container {
     margin-top: 20px;
     font-size: 75%;
@@ -1857,7 +1864,7 @@ body {
   .news-widget-container:after {
     clear: both;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031162}}
   .news-widget-container .news-widget-left {
     float: left;
     width: 20%;
@@ -1871,7 +1878,7 @@ body {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031165}}
   .news-widget-container .news-widget-right {
     float: left;
     width: 70%;
@@ -1885,47 +1892,47 @@ body {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031168}}
   .news-widget-container .news-widget-right h2 a:link, .news-widget-container .news-widget-right h2 a:visited {
     color: #3e2e5b;
     font-size: 70%;
     font-weight: bold;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031175}}
   .news-widget-container .news-widget-right p {
     margin-top: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031182}}
   .node-type-news-article .field-name-field-headline-image {
     width: auto;
     float: right;
     margin-left: 1em;
     margin-bottom: 1em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031188}}
   .node-type-news-article .field-name-field-subhead {
     font-size: 1.1em;
     font-style: italic;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031192}}
   .node-type-news-article .field-name-body {
     padding-bottom: 1.5em;
     margin-bottom: 1.5em;
     border-bottom: 2px solid #424242;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031185}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031198}}
   .node-type-news-article .field-name-field-media-contacts p {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031210}}
 body .ui-widget {
   font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031215}}
 .ui-accordion .ui-accordion-header,
 .ui-tabs .ui-tabs-nav li {
   padding-top: 0.5em;
@@ -1938,115 +1945,115 @@ body .ui-widget {
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031226}}
 .ui-tabs .ui-tabs-nav li {
   padding-top: inherit;
   padding-bottom: inherit;
   margin-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031230}}
 .ui-tabs .ui-tabs-nav li a {
   font-size: 0.8em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031234}}
 .accordion-container .accordion-container.ui-accordion {
   max-width: 100%;
   width: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031238}}
 .ui-accordion .ui-accordion-header.ui-state-hover {
   background-color: #cdcdcd;
   color: #3e2e5b;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031242}}
 .accordion-container.ui-widget {
   font-size: inherit;
   font-family: inherit;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031245}}
 .accordion-container.ui-widget h2, .accordion-container.ui-widget h3 {
   padding-left: 2.2em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031251}}
 .faux-button {
   font-family: nexa_boldregular, sans-serif;
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031243}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031256}}
 .faux-button.purple.ui-button {
   background-image: none;
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031260}}
 .faux-button.purple.ui-button.ui-state-default {
   background-color: #3e2e5b;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031250}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031263}}
 .faux-button.purple.ui-button.ui-state-hover {
   background-color: #ceccd7;
   color: #3e2e5b;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031268}}
 .faux-button.gold.ui-button {
   background-image: none;
   color: white;
   border: 1px solid #c89800;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031273}}
 .faux-button.gold.ui-button.ui-state-default {
   background-color: #c89800;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031276}}
 .faux-button.gold.ui-button.ui-state-hover {
   background-color: #ffde40;
   color: #c89800;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031284}}
 thead {
   background-color: #3e2e5b;
   color: #edeef1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031287}}
 thead th {
   padding-left: 1em;
   padding-right: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031280}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031293}}
 tbody tr:nth-child(2n) {
   background-color: #edeef1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031296}}
 tbody td {
   padding-left: 1em;
   padding-right: 1em;
   border: 1px solid #cdcdcd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031300}}
 tbody td:first-child {
   border-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031290}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031303}}
 tbody td:last-child {
   border-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031293}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031306}}
 tbody td p {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031303}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031316}}
 .web_alert {
   margin: 0 0 5px 0;
   color: #ffffff;
@@ -2056,31 +2063,31 @@ tbody td p {
   padding: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031323}}
 .web_alert.red {
   color: #ffffff;
   background: #990000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031327}}
 .web_alert.orange {
   color: #ffffff;
   background: #d2691e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031331}}
 .web_alert.green {
   color: #ffffff;
   background: #336600;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031334}}
 .web_alert .timestamp, .no_alert .timestamp {
   font-size: 85%;
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031338}}
 .web_alert h1, .web_alert .h1 {
   display: inline;
   margin: 0;
@@ -2090,78 +2097,78 @@ tbody td p {
   border: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031346}}
 .web_alert p, .web_alert .p {
   margin: 0;
   display: inline;
 }
 
 @media only screen and (min-width: 803px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031356}}
   .front #wordmark .graphics-uwt_wordmark_front {
     display: block;
     margin-top: 12px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031360}}
   .front #wordmark .graphics-uwt_wordmark_not_front {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031363}}
   .front #wordmark .graphics-uwt_wordmark_narrow {
     display: none;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031368}}
   .not-front #wordmark .graphics-uwt_wordmark_front {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031371}}
   .not-front #wordmark .graphics-uwt_wordmark_narrow {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031374}}
   .not-front #wordmark .graphics-uwt_wordmark_not_front {
     display: block;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031384}}
 .search-results p {
   margin-bottom: 0.25em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031386}}
 .search-results p strong {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031389}}
 .search-results .search-result-sectionlink,
 .search-results .search-result-updated {
   font-size: 85%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031404}}
 #content ul.extra-space li {
   margin-bottom: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031411}}
 .menu-minipanels .menu li {
   line-height: 1.1em;
   margin-bottom: 0.75em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031408}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031421}}
 blockquote {
   font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
   font-style: italic;
   font-size: 120%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031420}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031433}}
 address {
   margin-left: 2em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031427}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031440}}
 .purple-to-gold-bg {
   background-color: rgba(62, 46, 91, 0.8);
   color: #fff;
@@ -2174,94 +2181,94 @@ address {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031433}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031446}}
 .purple-to-gold-bg:hover {
   background-color: rgba(200, 152, 0, 0.9);
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031438}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031451}}
 .purple-to-gold-bg a:link, .purple-to-gold-bg a:visited {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031442}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031455}}
 .semi-opaque-purple-bg {
   background-color: rgba(62, 46, 91, 0.8);
   color: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031458}}
 .semi-opaque-purple-bg a:link, .semi-opaque-purple-bg a:visited, .semi-opaque-purple-bg h2.pane-title {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031466}}
 .print-only {
   display: none;
   visibility: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031461}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031474}}
 .important-note {
   background-color: #f9f3d6;
   color: #000;
   padding: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031474}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031487}}
 .panel-pane p:first-child,
 .panel-pane div:first-child {
   margin-top: 0;
   padding-top: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031478}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031491}}
 .panel-pane .ui-button-text:first-child {
   padding-top: 0.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031494}}
 .panel-pane .ui-accordion-header:first-child {
   padding-top: 0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031497}}
 .panel-pane .gold-buttons:first-child {
   padding-top: 0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031487}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031500}}
 .panel-pane {
   margin-bottom: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031492}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031505}}
 #content .pane-menu-tree.region-section-menu {
   padding-left: 0;
   padding-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031496}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031509}}
 #content .pane-menu-tree.region-section-menu ul li {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031505}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031518}}
 .pane-block.pane-aggregator-feed-2 ul {
   padding-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031507}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031520}}
 .pane-block.pane-aggregator-feed-2 ul li {
   list-style-type: none;
   margin-bottom: 0.85em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031510}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031523}}
 .pane-block.pane-aggregator-feed-2 ul li span {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031513}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031526}}
 .pane-block.pane-aggregator-feed-2 ul li .trumba-rss-description {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031517}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jamesini\/Sites\/uwtv6zen\/sass\/uwt_global\.scss}line{font-family:\000031530}}
 .pane-block.pane-aggregator-feed-2 ul li:nth-child(odd) {
   background-color: #edeef1;
 }

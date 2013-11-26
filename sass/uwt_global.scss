@@ -1092,6 +1092,19 @@ body{
     }
   }
 
+} // /.front
+
+.not-front{
+  .icon-links{
+    a{
+      span{
+        height:0px;
+        width:0px;
+        background-image:none;
+      }
+    }
+  }
+
 }
 
 #subpersona{
