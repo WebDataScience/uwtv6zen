@@ -247,13 +247,13 @@ function SetPositions(blocks) {
 /* fade */
 
 function newFade() {
-    var imgList = ['/~jamesini/d7uwt/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage1.jpg',
-                   '/~jamesini/d7uwt/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage2.jpg',
-                   '/~jamesini/d7uwt/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage3.jpg',
-                   '/~jamesini/d7uwt/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage4.jpg',
-                   '/~jamesini/d7uwt/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage5.jpg',
-                   '/~jamesini/d7uwt/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage6.jpg',
-                   '/~jamesini/d7uwt/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage7.jpg',],
+    var imgList = ['/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage1.jpg',
+                   '/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage2.jpg',
+                   '/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage3.jpg',
+                   '/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage4.jpg',
+                   '/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage5.jpg',
+                   '/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage6.jpg',
+                   '/sites/all/themes/uwtv6zen/images/home/backgrounds/HomePage7.jpg',],
 		img = '';
     $('#slide').append('<div id="slideWrap" />');
 	
