@@ -179,7 +179,7 @@ $zen-auto-include-item-base: false;
 //
 // Below is 'laid out' for desktop
 //
-@include breakpoint(widest){
+@include widest{
   #band{
     display:block;
   }

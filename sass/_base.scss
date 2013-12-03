@@ -105,6 +105,7 @@ $indent-amount: 30px;
     	$zen-gutter-width: 10px;
     	@content;
     }
+
   }
 
   @if $point == medium {
@@ -113,6 +114,7 @@ $indent-amount: 30px;
     	$zen-gutter-width: 10px;
     	@content;
     }
+
   }
 
   @if $point == widest {
@@ -121,10 +123,21 @@ $indent-amount: 30px;
     	$zen-gutter-width: 20px;
     	@content;
     }
+
   }
 
 
 }
+
+@mixin widest{
+  @include breakpoint(widest){
+    @content;
+  }
+  .lt-ie9 {
+    @content;
+  }
+}
+
 
 //
 // Partials to be shared with all .scss files.

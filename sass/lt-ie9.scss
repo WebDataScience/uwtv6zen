@@ -1,0 +1,29 @@
+html.lt-ie9{
+	@import "layouts/responsive-sidebars.scss";
+	
+	#header{
+		#patch{
+			.graphics-uwt_logo_patch_narrow{
+				display:none;
+			}
+			.graphics-uwt_logo_patch{
+				background-image:url("../images/graphics/uwt_logo_patch.png");
+				display:block;
+				background-position-x: 0%;
+			}
+		}
+		#wordmark{
+			.graphics-uwt_wordmark_narrow{
+				display:none;
+			}
+		}
+		#global-menu{
+			li{
+				.outerContainer{
+					padding-top:5px;
+					height:25px;
+				}
+			}
+		}
+	}
+}
