@@ -569,7 +569,9 @@ function uwtv6zen_breadcrumb($variables) {
 
 function uwtv6zen_preprocess_search_result(&$variables) {
   // Get the section of the search result
+  $variables['search_result_sectionlink'] = FALSE;
   $node = node_load($variables['result']['node']->entity_id);
+  if(isset($node) && !empty($node)){
   // Get the term field for the section from the node
   $section = field_get_items('node', $node, 'field_site');
   // Get the term id for the section term
@@ -606,6 +608,7 @@ function uwtv6zen_preprocess_search_result(&$variables) {
     $variables['search_result_sectionlink'] = l($term->name, 'taxonomy/term/' . $term->tid);
   }else{
     $variables['search_result_sectionlink'] = FALSE;
+  }
   }
 }
 
