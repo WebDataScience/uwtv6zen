@@ -50,8 +50,8 @@ Drupal.behaviors.frontpage = {
   
 //	transformDate(2011);
 	
-    var blocks = $('#blocks a'),b = blocks.length;
-
+    var blocks = $('#blocks h2 a');
+    var b = blocks.length;
     SetPositions(blocks);
 	
 	for(var i=0;i<b;i++) {
@@ -187,7 +187,6 @@ function personaLoadAnimation(blocks) {
         var it = $(this),
             originalPosition = it.data('originalPosition'),
             rand = Math.floor(Math.random() * 11) * 100;
-
         (index < 3) && (rand += 300);
 
         setTimeout(function () {
@@ -234,14 +233,36 @@ function toPosition(it) {
 }
 
 function SetPositions(blocks) {
-	var b=blocks.length;
-	for(var i=0;i<b;i++){
-	var currentBlock = blocks[i],left=currentBlock.offsetLeft - 10,top=currentBlock.offsetTop - 10;
-        $(currentBlock)
-			.data('originalPosition', [left, top])
-			.css({left: left,top: top});
+var b=blocks.length;
+  for(var i=0;i<b;i++){
+    var currentBlock = blocks[i],left=currentBlock.offsetLeft - 10,top=currentBlock.offsetTop - 10;
+
+    $(currentBlock)
+      .data('originalPosition', [left, top])
+      .css({left: left,top: top});
+
+    // Can you feel the ghettofabulusousness? Can you spell it? Neither can I.
+    if(checkVersion() == "ie8") {
+      $('a.current-students')
+      .data('originalPosition', [0, 0]);
+      
+      $('a.freshmen')
+        .data('originalPosition', [350, 0]);
+
+      $('a.prospective-students')
+        .data('originalPosition', [700, 0]);
+
+      $('a.community')
+        .data('originalPosition', [0, 270]);
+
+      $('a.faculty-staff')
+        .data('originalPosition', [350, 270]);
+
+      $('a.support-uw-tacoma')
+        .data('originalPosition', [700, 270]);
     }
-    blocks.css('position', 'absolute');
+  }
+  blocks.css('position', 'absolute');
 }
 
 /* fade */
@@ -470,6 +491,29 @@ function deleteCookie(name) {
 }
 
 
+function getInternetExplorerVersion() {
+  var rv = -1; // Return value assumes failure.
+  if (navigator.appName == 'Microsoft Internet Explorer') {
+    var ua = navigator.userAgent;
+    var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+    if (re.exec(ua) != null)
+      rv = parseFloat(RegExp.$1);
+  }
+  return rv;
+}
+function checkVersion() {
+  var msg = "You're not using Windows Internet Explorer.";
+  var ver = getInternetExplorerVersion();
+  if (ver > -1) {
+    if (ver >= 7.0)
+      msg = "ie8"
+    else
+      msg = "You should upgrade your copy of Windows Internet Explorer.";
+  }
+  return msg;
+}
+
+
   },
 
   detach: function (context, settings) { }
@@ -478,9 +522,7 @@ function deleteCookie(name) {
 } else{ // mobile homepage swooshiness
   Drupal.behaviors.frontpage = {
   attach: function (context, settings) {
-    //console.log('bobo wuz here');
     //$(".current-students").click(function() {
-      //console.log('bobo clickey');
       //$(".current-students").parent().append($("#CurrentStudents"));
       //$("#CurrentStudents").slideToggle("slow");
     //});
@@ -490,3 +532,5 @@ function deleteCookie(name) {
 }
 
 })(jQuery, Drupal, this, this.document);
+
+
