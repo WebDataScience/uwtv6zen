@@ -1140,10 +1140,13 @@ body{
     }
   }
 .lt-ie9{
-  .support-uw-tacoma{
-    position:absolute;
-    left:600px;
-    top:0px;
+  #footer-middle{
+    .region-footer-menus{
+      .block{
+        width:20%;
+        float:left;
+      }
+    }
   }
 }
 
