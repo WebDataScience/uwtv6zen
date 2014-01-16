@@ -344,6 +344,28 @@ body{
 //  Fauxbile (Not quite a phone, not quite a desktop)
 //
 
+@include breakpoint(medium){
+  #header{
+    #header-center{
+      #global-menu{
+        .menu{
+          li.expanded{
+            .menu{
+              display:none;
+              li{
+                float:none;
+              }
+            }
+          }
+          li:hover > div div div .menu{
+            display:block;
+          }
+        } 
+      }
+    }
+  }
+}
+
 //
 // Wide (Desktops and the like)
 //

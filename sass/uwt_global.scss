@@ -419,6 +419,9 @@ body{
 //
 
 @include breakpoint(narrow){
+  #page{
+    background-color:navy;
+  }
     .breadcrumb{
         display:none;
     }
@@ -470,8 +473,39 @@ body{
     } // /#footer-bottom
 } // /breakpoint(narrow)
 
+@include breakpoint(medium){
+  #page{
+    background-color:maroon;
+  }
+
+  #header{
+    #header-left{
+
+    } // /#header-left
+
+    #header-center{
+
+      .menus{
+        label.icons-main-menu-button-narrow{
+          display:none;
+          visibility:hidden;
+        }
+        ul.menu{
+          padding:0;
+          margin:0;
+        }
+      }
+    }// /#header-center
+
+  } // /#header
+
+
+} // /breakpoint(medium)
 
 @include breakpoint(widest){
+  #page{
+    background-color:white;
+  }
   .menus{
       label{
           display:none;

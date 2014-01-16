@@ -166,13 +166,27 @@ $zen-auto-include-item-base: false;
 
     }
   }
-    #header-center{
-    @include zen-grid-item(20,4);
+  #header-left{
+    @include zen-grid-item(40,1);
     @include zen-nested-container;
   }
-    #header-right{
-    @include zen-grid-item(13,25);
+  #header-center{
+    @include zen-clear();
+    @include zen-grid-item(40,1);
     @include zen-nested-container;
+  }
+   #header-right{
+    @include zen-clear();
+    @include zen-grid-item(40,1);
+    @include zen-nested-container;
+
+    #global-search{
+      @include zen-grid-item(20,1);
+    }
+
+    #global-secondary{
+      @include zen-grid-item(20,20);
+    }
   }
 }
 
