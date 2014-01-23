@@ -242,16 +242,11 @@ function uwtv6zen_preprocess_page(&$variables, $hook) {
 *   @see https://drupal.org/node/1430242#comment-7775603
 */
 function _get_shiblink() {
-  if (module_exists('shib_auth') && !user_is_logged_in()) {
-    $shibpath = $GLOBALS['base_secure_url'] . '/Shibboleth.sso/Login';
-    $shibpath = str_replace(base_path(), '/', $shibpath);
-    $options = array();
-    $options['query'] = array();
-    $options['query'][] = array('target' => $GLOBALS['base_url'] . '/r.php?r=' . $GLOBALS['base_url'] . '/' . current_path());
-    $shiblink = l('UWNetID login', $shibpath, $options);
-    //$shiblink .= ' | ';
+  if (module_exists('shib_auth') && module_exists('uwtloginmods') && !user_is_logged_in()) {
+    module_load_include('module', 'uwtloginmods');
+    $shiblink = _uwtloginmods_get_shiblink();
     return $shiblink;
-  } else {
+  }else{
     return '';
   }
 }

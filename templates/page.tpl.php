@@ -240,7 +240,7 @@ $footer_menus = render($page['footer_menus']);
       <div class="right">
         <?php 
           if(!user_is_logged_in()) {
-            echo $shiblink;
+            echo l('UWNetID login', $shiblink);
             echo " | ";
             echo l('Non-UW login', 'user');
           }else{
