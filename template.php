@@ -345,7 +345,9 @@ function _get_site_links($node){
   $links['wordmark'] = $wordmark_link;
   
   // Get the link to the site home
-  if($node && module_exists('entity')){
+  // Not all sites using the UWTv6Zen theme will use the field_site field,
+  //  so check for it.
+  if($node && module_exists('entity') && isset($node->field_site)){
     // Get the menu name for the site of this page.
     $wrapper = entity_metadata_wrapper('node', $node);
     // Make sure we have a term, then get the menu for the term
