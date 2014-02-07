@@ -80,13 +80,10 @@ $zen-auto-include-item-base: false;
 
 
 
-
-
-
 //
-// Mobile first?
+// Narrow
 //
-
+@include narrow{
 #band{
   display:none;
 }
@@ -97,7 +94,7 @@ $zen-auto-include-item-base: false;
   }
 } // /#header
 #global-menu{
-  //background-color:navy;
+
 }
 #header-left{
   background-color:$purple_dark;
@@ -117,7 +114,7 @@ $zen-auto-include-item-base: false;
   .graphics-uwt_wordmark_narrow{
     display:block;
     position:absolute;
-    top:12px; // TODO: Get 35px tall, centered graphic from Brian
+    top:12px;
     left:47px;
   }
   .graphics-uwt_wordmark{
@@ -139,56 +136,13 @@ $zen-auto-include-item-base: false;
 #site-menu{
 //See navigation.scss
 }
-#page #main{
-}
-
-
 
 .graphics-uwt_logo_horiz_white{
   display:none;
 }
-
-
-//
-// Not full mobile, not full desktop
-//
-@include breakpoint(medium){
-  #global-menu{
-    //background-color:white;
-  }
-  #band{
-    height:1.5em;
-    //background-color:maroon;
-  }
-  #patch{
-
-    span.graphics-uwt_logo_patch{
-
-    }
-  }
-  #header-left{
-    @include zen-grid-item(40,1);
-    @include zen-nested-container;
-  }
-  #header-center{
-    @include zen-clear();
-    @include zen-grid-item(40,1);
-    @include zen-nested-container;
-  }
-   #header-right{
-    @include zen-clear();
-    @include zen-grid-item(40,1);
-    @include zen-nested-container;
-
-    #global-search{
-      @include zen-grid-item(20,1);
-    }
-
-    #global-secondary{
-      @include zen-grid-item(20,20);
-    }
-  }
 }
+
+
 
 //
 // Below is 'laid out' for desktop
@@ -207,8 +161,8 @@ $zen-auto-include-item-base: false;
       @include zen-grid-item(30,11);
     }
   }
-  #header {  
-
+  #header {
+    //background-color:PaleGreen;
   } // /#header
   .section-1336{
     #post-header{
@@ -216,41 +170,56 @@ $zen-auto-include-item-base: false;
     }
   }
   #header-left{
+    //background-color:RoyalBlue;
     @include zen-grid-item(3,1);
     #patch {
-    }
+        span.graphics-uwt_logo_patch_narrow{
+          display:none;
+        }
+        span.graphics-uwt_logo_patch{
+          display:block;
+        }
+      }
   }
 
   #header-center{
-    @include zen-grid-item(23,4);
+    //background-color:MediumAquaMarine;
+    @include zen-grid-item(25,4);
     @include zen-nested-container;
   }
   #global-menu{
-    @include zen-grid-item(32,7);
+    @include zen-grid-item(38,3);
+    //background-color:lime;
     .block{
       margin-bottom: 0; // Not totally sure why this is needed, but it is.
     }
   }
   #wordmark {
-    padding-top:30px;
-    @include zen-clear();
-    @include zen-grid-item(30,1);
+    //background-color:SlateGray;
+    padding-top:40px;
+    //@include zen-clear();
+    @include zen-grid-item(38,3);
   }
-  #site_home_link {
+  #site-home-link-wrapper {
+    //background-color:Sienna;
     @include zen-clear();
-    @include zen-grid-item(30,1);
+    @include zen-grid-item(38,3);
   }
   #header-right{
-    @include zen-grid-item(13,27);
+    //background-color:MediumVioletRed;
+    @include zen-grid-item(12,29);
     @include zen-nested-container;
+    #global-search{
+      //background-color:Orange;
+      @include zen-grid-item(40,1);
+    }
+    #global-secondary{
+      //background-color:PaleVioletRed;
+      @include zen-clear();
+      @include zen-grid-item(40,1);
+    }
   }
-  #global-search{
-    @include zen-grid-item(40,1);
-  }
-  #global-secondary{
-    @include zen-clear();
-    @include zen-grid-item(40,1);
-  }
+
 
 
 
@@ -313,4 +282,4 @@ $zen-auto-include-item-base: false;
       }
     }
   }
-} // /breakpoint(widest)
+} // /@mixin widest

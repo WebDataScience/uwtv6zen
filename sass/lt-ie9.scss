@@ -1,29 +1,33 @@
-html.lt-ie9{
-	@import "layouts/responsive-sidebars.scss";
-	
+@import "base";
+//@import "layouts/responsive-sidebars.scss";
+
+
+
+@include narrow{
+#page{
+	#band{
+		
+	}
 	#header{
-		#patch{
-			.graphics-uwt_logo_patch_narrow{
-				display:none;
-			}
-			.graphics-uwt_logo_patch{
-				background-image:url("../images/graphics/uwt_logo_patch.png");
+		#header-left{
+		
+		}
+	}
+	#site-menu{
+		.menus{
+			background-color:darkcyan;
+			.menu{
 				display:block;
-				background-position-x: 0%;
-			}
-		}
-		#wordmark{
-			.graphics-uwt_wordmark_narrow{
-				display:none;
-			}
-		}
-		#global-menu{
-			li{
-				.outerContainer{
-					padding-top:5px;
-					height:25px;
-				}
 			}
 		}
 	}
+}	
+}
+
+@include widest{
+#page{
+	#band{
+		background-color:cyan;
+	}
+}
 }

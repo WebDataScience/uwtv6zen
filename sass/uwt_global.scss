@@ -117,7 +117,7 @@ body{
 /**
   * Headings
   */
-@include breakpoint(widest) {
+@include widest {
   h1#page-title{
     margin-bottom:0.75em;
   }
@@ -418,9 +418,9 @@ body{
 //  Breakpoints
 //
 
-@include breakpoint(narrow){
+@include narrow{
   #page{
-    background-color:navy;
+    
   }
     .breadcrumb{
         display:none;
@@ -473,38 +473,12 @@ body{
     } // /#footer-bottom
 } // /breakpoint(narrow)
 
-@include breakpoint(medium){
+
+
+
+@include widest{
   #page{
-    background-color:maroon;
-  }
-
-  #header{
-    #header-left{
-
-    } // /#header-left
-
-    #header-center{
-
-      .menus{
-        label.icons-main-menu-button-narrow{
-          display:none;
-          visibility:hidden;
-        }
-        ul.menu{
-          padding:0;
-          margin:0;
-        }
-      }
-    }// /#header-center
-
-  } // /#header
-
-
-} // /breakpoint(medium)
-
-@include breakpoint(widest){
-  #page{
-    background-color:white;
+    background-color:$grey_light;
   }
   .menus{
       label{
@@ -516,23 +490,12 @@ body{
       background-color:black;
   } // /#band
   #patch{
-      span.graphics-uwt_logo_patch_narrow{
-          display:none;
-      }
-      span.graphics-uwt_logo_patch{
-          display:block;
-      }
+
   }
   #header{
+    
     margin-bottom:2em;
-    a {
-        span{
-            display:block;
-        }
-        span.graphics-uwt_logo_patch_narrow{
-            display:none;
-        } 
-    }
+
     #header-left{
         margin-top:-35px;
         background-color:transparent;
@@ -549,7 +512,6 @@ body{
         #site-home-link-wrapper{
             font-family: nexa_boldregular;
             font-size:1.25em;
-            padding-top:45px;
         }
     }// /#header-center
     #header-right{
@@ -570,9 +532,9 @@ body{
     } // /#header-right
   } // /#header
   #post-header{
-      position:relative;
-      height:225px;
-      //display:none;
+      //position:relative;
+      //height:225px;
+      display:none;
   } // /#post-header
   #section-identifier{
       height:4em;
@@ -783,7 +745,7 @@ body{
   }
 }
 
-@include breakpoint(narrow){
+@include narrow{
   .front{
     #content{
       padding-left:0;
@@ -821,7 +783,7 @@ body{
   }
 }
 
-@include breakpoint(widest){
+@include widest{
 .front{
   #main{
     background-color: $grey_light;
@@ -1174,16 +1136,7 @@ body{
       }
     }
   }
-.lt-ie9{
-  #footer-middle{
-    .region-footer-menus{
-      .block{
-        width:20%;
-        float:left;
-      }
-    }
-  }
-}
+
 
 }
 
@@ -1194,12 +1147,12 @@ body{
 //
 //  News Article / News Widget styling
 //
-@include breakpoint(narrow){
+@include narrow{
   .news-widget-container{
     $zen-column-count:1;
   }
 }
-@include breakpoint(widest) {
+@include widest {
   .news-widget-container{
     margin-top:20px;
     font-size:75%;
@@ -1397,7 +1350,7 @@ tbody{
 //
 // Wordmark front vs. not-front vs narrow
 //
-@include breakpoint(widest){
+@include widest{
   .front #wordmark{
     .graphics-uwt_wordmark_front{
       display:block;
