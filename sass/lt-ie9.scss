@@ -4,30 +4,37 @@
 
 
 @include narrow{
-#page{
-	#band{
-		
-	}
-	#header{
-		#header-left{
-		
+.lt-ie9{
+	#page{
+		background-color:darkcyan;
+		#band{
+			
 		}
-	}
-	#site-menu{
-		.menus{
-			background-color:darkcyan;
-			.menu{
-				display:block;
+		#header{
+			#header-left{
+			
 			}
 		}
-	}
-}	
+		#site-menu{
+			.menus{
+				
+				.menu{
+					display:block;
+				}
+			}
+		}
+	}	
+}
 }
 
+
 @include widest{
+
 #page{
+	background-color:cyan;
 	#band{
-		background-color:cyan;
+		
 	}
 }
 }
+

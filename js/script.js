@@ -17,7 +17,7 @@ Drupal.behaviors.mobileMenuVisibility = {
   attach: function (context, settings) {
     var allMenuCheckBoxes = $('.menus input[type="checkbox"]');
     allMenuCheckBoxes.change(function(){
-      console.log('checkbox', this);
+      console.log('bobo');
       if($(this).is(':checked')) {
         $(allMenuCheckBoxes).attr('checked', false);
         $(this).attr('checked', true);

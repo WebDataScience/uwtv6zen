@@ -125,7 +125,7 @@ $indent-amount: 30px;
     @include breakpoint(narrow){
       @content;
     }
-    .lt-ie9 & {
+    &.lt-ie9 & {
       @content;
     }
   }
@@ -136,7 +136,7 @@ $indent-amount: 30px;
     @include breakpoint(widest){
       @content;
     }
-    .lt-ie9 & {
+    &.lt-ie9 & {
       @content;
     }
   }
