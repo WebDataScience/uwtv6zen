@@ -25,31 +25,14 @@
 }
 
 
-@include widest{
-	.lt-ie9{
-		#page{
-			#band{	
-			}
-		}
-		#footer{
-			//background-color:cyan;
-			#footer-middle{
-				.region-footer-menus{
-					.block{
-						width:19%;
-						float:left;
-					}
-				}
-			}
-		}
-	}
-}	
-}
+
 
 @include widest{
+
 #page{
+	background-color:cyan;
 	#band{
-		background-color:cyan;
+		
 	}
 }
 }
