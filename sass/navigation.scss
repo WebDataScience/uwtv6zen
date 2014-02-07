@@ -341,28 +341,6 @@ body{
 } // /breakpoint(narrow)
 
 
-@include breakpoint(medium){
-  #header{
-    #header-center{
-      #global-menu{
-        .menu{
-          li.expanded{
-            .menu{
-              display:none;
-              li{
-                float:none;
-              }
-            }
-          }
-          li:hover > div div div .menu{
-            display:block;
-          }
-        } 
-      }
-    }
-  }
-}
-
 //
 // Wide (Desktops and the like)
 //

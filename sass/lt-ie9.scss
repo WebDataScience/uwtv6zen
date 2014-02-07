@@ -43,5 +43,14 @@
 			}
 		}
 	}
+}	
+}
+
+@include widest{
+#page{
+	#band{
+		background-color:cyan;
+	}
+}
 }
 
