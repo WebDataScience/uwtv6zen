@@ -45,9 +45,7 @@
 <body class="lt-ie9 <?php print $classes; ?>" <?php print $attributes;?>>
 <![endif]-->
 
-<!--[if !IE]>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-<!--<![endif]--> 
 
 <?php if ($skip_link_text && $skip_link_anchor): ?>
     <p id="skip-link">
