@@ -28,11 +28,13 @@
 
 
 @include widest{
-
-#page{
-	background-color:cyan;
-	#band{
-		
+	.lt-ie9{
+		#page{
+			//background-color:cyan;
+			#band{
+				
+			}
+		}
 	}
 }
 }
