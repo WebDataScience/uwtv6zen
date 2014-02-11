@@ -1,12 +1,9 @@
 @import "base";
-//@import "layouts/responsive-sidebars.scss";
-
-
 
 @include narrow{
 .lt-ie9{
 	#page{
-		background-color:darkcyan;
+		//background-color:darkcyan;
 		#band{
 			
 		}
@@ -31,7 +28,7 @@
 @include widest{
 	.lt-ie9{
 		#page{
-			background-color:cyan;
+			//background-color:cyan;
 			#band{
 				
 			}
