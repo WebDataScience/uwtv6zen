@@ -28,9 +28,18 @@
 @include widest{
 	.lt-ie9{
 		#page{
+			#band{	
+			}
+		}
+		#footer{
 			//background-color:cyan;
-			#band{
-				
+			#footer-middle{
+				.region-footer-menus{
+					.block{
+						width:19%;
+						float:left;
+					}
+				}
 			}
 		}
 	}
