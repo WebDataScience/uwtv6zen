@@ -3,7 +3,7 @@
 @include narrow{
 .lt-ie9{
 	#page{
-		//background-color:darkcyan;
+		
 		#band{
 			
 		}
@@ -16,7 +16,7 @@
 			.menus{
 				
 				.menu{
-					//display:block;
+					
 				}
 			}
 		}
@@ -28,14 +28,20 @@
 
 
 @include widest{
-	.lt-ie9{
-		#page{
-			//background-color:cyan;
-			#band{
-				
+.lt-ie9{
+	#page{
+		
+		#band{
+			
+		}
+	}
+	#footer{
+		#footer-middle{
+			.block{
+					width:19%;
+					float:left;
 			}
 		}
 	}
 }
 }
-
