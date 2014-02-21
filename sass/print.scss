@@ -7,7 +7,6 @@
 
 @import "base";
 
-
 @media print {
 
 //
@@ -27,23 +26,6 @@
     display:none !important;
   }
 
-.ui-tabs{
-  .ui-tabs-nav{
-    li{
-      display:block !important;
-      float:none !important;
-    }
-  }
-  .ui-tabs-panel,
-  .ui-tabs-panel > *{
-    display:block !important;
-  }
-}
-.ui-tabs.ui-corner-all,
-.ui-tabs-nav.ui-corner-all,
-.tab-container.ui-corner-all{
-  border:none !important;
-}
 
 table{
   page-break-inside: avoid !important;
@@ -53,6 +35,22 @@ table{
 .print-only > *{
   display:block !important;
   visibility: visible !important;
+}
+
+/* Hide jQuery UI Tab nav */
+.ui-tabs .ui-tabs-nav{
+  display:none !important;
+  visibility:hidden !important;
+}
+/* Print jQuery UI Tab content */
+.ui-tabs .ui-tabs-hide {
+  display:block !important;
+}
+
+
+/* Print jQuery UI Accordion container content */
+.ui-accordion .ui-accordion-content{
+  display:block !important;
 }
 
 // End UWT custom print styles

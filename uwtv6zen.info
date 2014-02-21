@@ -79,7 +79,7 @@ stylesheets[all][] = css/lt-ie9.css
 
 ; Optionally add some JavaScripts to your theme.
 
-;scripts[] = js/script.js
+scripts[] = js/script.js
 scripts[] = js/analytics.js
 
 
