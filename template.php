@@ -325,6 +325,18 @@ function _get_site_links($node){
   $patch_link .= '<span class="graphics-uwt_logo_patch_narrow"><span class="element-invisible">UW Tacoma patch icon</span></span>';
   $patch_link .= '</a>';
 
+  // Printed page patch
+  $patchvars = array(
+    'path' => path_to_theme() . '/images/graphics/uwt_logo_patch.png',
+    'alt' => 'UWT Home Link',
+    'attributes' => array(
+      'class' => 'print-only'),
+  );
+  
+  $patch_link .= '<a href="' . $href . '">';
+  $patch_link .= theme('image', $patchvars);
+  $patch_link .= '</a>';
+
   $links['patch'] = $patch_link;
 
   // Front page wordmark
@@ -335,6 +347,18 @@ function _get_site_links($node){
   // Sub page wordmark
   $wordmark_link .= '<a href="' . $href . '">';
   $wordmark_link .= '<span class="graphics-uwt_wordmark_not_front"><span class="element-invisible">University of washington | Tacoma</span></span>';
+  $wordmark_link .= '</a>';
+
+  // Printed page patch
+  $wordmarkhvars = array(
+    'path' => path_to_theme() . '/images/graphics/uwt_wordmark_not_front.png',
+    'alt' => 'University of Washington | Tacoma',
+    'attributes' => array(
+      'class' => 'print-only'),
+  );
+  
+  $wordmark_link .= '<a href="' . $href . '">';
+  $wordmark_link .= theme('image', $wordmarkhvars);
   $wordmark_link .= '</a>';
 
   // Wordmark for narrow screens (mobile)
