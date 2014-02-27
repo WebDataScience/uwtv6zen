@@ -24,26 +24,20 @@
 // Add the title of a jQuery UI tab to the top of the content when printing.
 Drupal.behaviors.tabPrintTitles = {
   attach: function (context, settings) {
-   console.log('Begin tabPrintTitles.');
    $(".tab-container ul li a").each(function(index){
       // If the href attribute starts with a #
-      if ($(this).attr("href").search("#") === 0) {
-        //console.log( $(this) );
-        var href = $(this).attr("href");
-        var id = href.replace("#","");
-        var text = $(this).text();
-        var heading = '<h2 class="print-only">' + text + '</h2>';
-
-        console.log("href: " + href);
-        console.log("id: " + id);
-        console.log("text: " + text);      
-        console.log("heading: " + heading);
-        $("#"+id).prepend(heading);
+      if($(this).attr("href")) {
+        if ($(this).attr("href").search("#") === 0) {
+          var href = $(this).attr("href");
+          var id = href.replace("#","");
+          var text = $(this).text();
+          var heading = '<h2 class="print-only">' + text + '</h2>';
+          $("#"+id).prepend(heading);
+        }
       }
      
 
    });
-   console.log('End tabPrintTitles.');
   },
   detach: function (context, settings) { }
 };
