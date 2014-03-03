@@ -64,6 +64,7 @@ stylesheets[all][] = css/fields.css
 stylesheets[all][] = css/print.css
 stylesheets[all][] = css/uwt_global.css
 stylesheets[all][] = css/lt-ie9.css
+stylesheets[all][] = css/directory.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
