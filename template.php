@@ -653,7 +653,7 @@ function _get_search_result_icon($url) {
         break;
 
       case 'http://directory.tacoma.uw.edu/':
-        $return_value = 'uwt-directory';
+        $return_value = 'icons-search_result_directory';
         break;
 
       default:
