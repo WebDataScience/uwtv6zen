@@ -68,7 +68,7 @@
 <li class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
   <h3 class="title"<?php print $title_attributes; ?>>
-    <a href="<?php print $url; ?>"><?php print $title; ?></a>
+    <a href="<?php print $url; ?>"><span style="display:inline-block;" class="<?php print $sr_class; ?>"></span> <?php print $title; ?></a>
   </h3>
   
   <?php print render($title_suffix); ?>

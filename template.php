@@ -592,7 +592,8 @@ function uwtv6zen_preprocess_search_result(&$variables) {
 //dpm($variables, '$variables');
 //dpm($variables['classes_array'], '$classes before');
 if(isset($variables['result']['fields']['site']) && !empty($variables['result']['fields']['site'])) {
-  $variables['classes_array'][] = _get_search_result_icon($variables['result']['fields']['site']);
+  //$variables['classes_array'][] = _get_search_result_icon($variables['result']['fields']['site']);
+  $variables['sr_class'] = _get_search_result_icon($variables['result']['fields']['site']);
   //dpm($variables['classes_array'], '$classes after');
 }
 $section_field = field_info_field('field_site');
@@ -649,7 +650,7 @@ function _get_search_result_icon($url) {
     switch ($url) {
 
       case 'http://uwtdev1.tacoma.uw.edu/':
-        $return_value =  'uwt-main';
+        $return_value =  'icons-globe';
         break;
 
       case 'http://directory.tacoma.uw.edu/':
