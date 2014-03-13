@@ -589,48 +589,79 @@ function uwtv6zen_breadcrumb($variables) {
  */
 
 function uwtv6zen_preprocess_search_result(&$variables) {
+//dpm($variables, '$variables');
+//dpm($variables['classes_array'], '$classes before');
+if(isset($variables['result']['fields']['site']) && !empty($variables['result']['fields']['site'])) {
+  $variables['classes_array'][] = _get_search_result_icon($variables['result']['fields']['site']);
+  //dpm($variables['classes_array'], '$classes after');
+}
+$section_field = field_info_field('field_site');
+if(!is_null($section_field)) {
   // Get the section of the search result
   $variables['search_result_sectionlink'] = FALSE;
   $node = node_load($variables['result']['node']->entity_id);
   if(isset($node) && !empty($node)){
-  // Get the term field for the section from the node
-  $section = field_get_items('node', $node, 'field_site');
-  // Get the term id for the section term
-  $tid = $section[0]['tid'];
-  // Get the menu machine name associated with the section
-  $menu_name = _uwt_menu_admin_get_site_menu_by_tid($tid);
-  // Get the fully loaded term in case we need to create a link to it
-  $term = taxonomy_term_load($section[0]['tid']);
-  // Get the parents of the link using the node path and menu 
-  $parents = NULL;
-  if(isset($node->path)){
-    $parents = _get_link_parents($node->path['source'], $menu_name);
-    //dpm($parents, '$parents');
-  }
-  $section_id_link = NULL;
-  // Only process links that have parents
-  if(is_array($parents) && count($parents) > 0){
-    foreach($parents as $parent){
-      // Only process links that have options
-      if(!empty($parent['options']) && !empty($parent['options']['section_id'])){
-        // If the link is a section id, set the link and stop processing
+    // Get the term field for the section from the node
+    $section = field_get_items('node', $node, 'field_site');
+    // Get the term id for the section term
+    $tid = $section[0]['tid'];
+    // Get the menu machine name associated with the section
+    $menu_name = _uwt_menu_admin_get_site_menu_by_tid($tid);
+    // Get the fully loaded term in case we need to create a link to it
+    $term = taxonomy_term_load($section[0]['tid']);
+    // Get the parents of the link using the node path and menu 
+    $parents = NULL;
+    if(isset($node->path)){
+      $parents = _get_link_parents($node->path['source'], $menu_name);
+      //dpm($parents, '$parents');
+    }
+    $section_id_link = NULL;
+    // Only process links that have parents
+    if(is_array($parents) && count($parents) > 0){
+      foreach($parents as $parent){
+        // Only process links that have options
+        if(!empty($parent['options']) && !empty($parent['options']['section_id'])){
+          // If the link is a section id, set the link and stop processing
 
-        if($parent['options']['section_id'] == 1) {
-           $section_id_link = l($parent['link_title'], $parent['link_path']);
-           break;
+          if($parent['options']['section_id'] == 1) {
+            $section_id_link = l($parent['link_title'], $parent['link_path']);
+            break;
+          }
         }
       }
     }
+
+    if(!is_null($section_id_link)) {
+      $variables['search_result_sectionlink'] = $section_id_link;
+    }else if(is_object($term)){
+      $variables['search_result_sectionlink'] = l($term->name, 'taxonomy/term/' . $term->tid);
+    }else{
+      $variables['search_result_sectionlink'] = FALSE;
+    }
   }
-  
-  if(!is_null($section_id_link)) {
-    $variables['search_result_sectionlink'] = $section_id_link;
-  }else if(is_object($term)){
-    $variables['search_result_sectionlink'] = l($term->name, 'taxonomy/term/' . $term->tid);
-  }else{
-    $variables['search_result_sectionlink'] = FALSE;
+}
+}
+
+function _get_search_result_icon($url) {
+  if(isset($url) && !empty($url)) {
+    $return_value = '';
+    //dpm($url, 'the $url sent to _get_...');
+    switch ($url) {
+
+      case 'http://uwtdev1.tacoma.uw.edu/':
+        $return_value =  'uwt-main';
+        break;
+
+      case 'http://directory.tacoma.uw.edu/':
+        $return_value = 'uwt-directory';
+        break;
+
+      default:
+        $return_value =  '';
+
+    }
   }
-  }
+  return $return_value;
 }
 
 function _get_mlid($path, $menu_name) {
