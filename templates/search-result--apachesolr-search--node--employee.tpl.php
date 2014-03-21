@@ -64,12 +64,20 @@
  * @ingroup themeable
  */
  global $base_url;
+ $employee_wrapper = entity_metadata_wrapper('node', $node);
+
+try{
+  $firstname = $employee_wrapper->field_givenname->value();
+  $lastname = $employee_wrapper->field_familyname->value();
+} catch (EntityMetadataWrapperException $e) {
+	dpm($e->getMessage());
+}
 ?>
-Default, bro!
+Employee, bro!
 <li class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
   <h3 class="title"<?php print $title_attributes; ?>>
-    <a href="<?php print $url; ?>"><span style="display:inline-block;" class="<?php print $sr_class; ?>"></span> <?php print $title; ?></a>
+    <a href="<?php print $url; ?>"><span style="display:inline-block;" class="<?php print $sr_class; ?>"></span> <?php print $firstname . ' ' . $lastname; ?></a>
   </h3>
   
   <?php print render($title_suffix); ?>
@@ -82,8 +90,6 @@ Default, bro!
       <?php if ($search_result_sectionlink): ?>
         <p class="search-result-sectionlink">Section: <?php print $search_result_sectionlink; ?></p>
       <?php endif; ?>
-
-      <?php print '<span class="search-results-url">' . l(str_replace($base_url, '...', $url), $url) . '</span>'; ?>
 
       <?php if ($info): ?>
         <p class="search-result-updated">Updated: <?php print substr($info_split['date'], 0, 10); ?></p>

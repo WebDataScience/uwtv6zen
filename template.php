@@ -591,6 +591,8 @@ function uwtv6zen_breadcrumb($variables) {
 function uwtv6zen_preprocess_search_result(&$variables) {
 //dpm($variables, '$variables');
 //dpm($variables['classes_array'], '$classes before');
+  $node = node_load($variables['result']['node']->entity_id);
+  $variables['node'] = $node;
 if(isset($variables['result']['fields']['site']) && !empty($variables['result']['fields']['site'])) {
   //$variables['classes_array'][] = _get_search_result_icon($variables['result']['fields']['site']);
   $variables['sr_class'] = _get_search_result_icon($variables['result']['fields']['site']);
@@ -600,7 +602,6 @@ $section_field = field_info_field('field_site');
 if(!is_null($section_field)) {
   // Get the section of the search result
   $variables['search_result_sectionlink'] = FALSE;
-  $node = node_load($variables['result']['node']->entity_id);
   if(isset($node) && !empty($node)){
     // Get the term field for the section from the node
     $section = field_get_items('node', $node, 'field_site');

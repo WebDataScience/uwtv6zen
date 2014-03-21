@@ -1,0 +1,197 @@
+thead > tr > th > a {
+  &:link, &:visited {
+    color: #8ca9c7;
+    text-decoration: none;
+  }
+}
+
+﻿.footable {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  font-size: 14px;
+  color: #444;
+}
+
+.footable {
+  &.breakpoint {
+    > tbody > tr.footable-row-detail {
+      background: #eee;
+    }
+    > tbody > tr:hover:not(.footable-row-detail) {
+      cursor: pointer;
+    }
+  }
+  > tbody > tr:hover {
+    background: #F3ECC2;
+  }
+  > {
+    tbody > tr > td {
+      border-left: 0px solid #ccc;
+      border-top: 0px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    thead > tr {
+      > {
+        th {
+          border-left: 0px solid #ccc;
+          border-top: 0px solid #ccc;
+          padding: 10px;
+          text-align: left;
+          background-color: #39275B;
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#39275b), to(#39275b));
+          background-image: -webkit-linear-gradient(top, #39275b, #39275b);
+          background-image: -moz-linear-gradient(top, #39275b, #39275b);
+          background-image: -ms-linear-gradient(top, #39275b, #39275b);
+          background-image: -o-linear-gradient(top, #39275b, #39275b);
+          background-image: linear-gradient(to bottom, #39275b, #39275b);
+          -webkit-box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+          -moz-box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+          box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+          border-top: none;
+          text-shadow: 0 0px 0 rgba(255, 255, 255, 0.5);
+        }
+        td {
+          background-color: #39275B;
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#39275b), to(#39275b));
+          background-image: -webkit-linear-gradient(top, #39275b, #39275b);
+          background-image: -moz-linear-gradient(top, #39275b, #39275b);
+          background-image: -ms-linear-gradient(top, #39275b, #39275b);
+          background-image: -o-linear-gradient(top, #39275b, #39275b);
+          background-image: linear-gradient(to bottom, #39275b, #39275b);
+          -webkit-box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+          -moz-box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+          box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+          border-top: none;
+          text-shadow: 0 0px 0 rgba(255, 255, 255, 0.5);
+        }
+      }
+      &:first-child > {
+        th.footable-first-column, td.footable-first-column {
+          -moz-border-radius: 0px 0 0 0;
+          -webkit-border-radius: 0px 0 0 0;
+          border-radius: 0px 0 0 0;
+        }
+        th.footable-last-column, td.footable-last-column {
+          -moz-border-radius: 0 0px 0 0;
+          -webkit-border-radius: 0 0px 0 0;
+          border-radius: 0 0px 0 0;
+        }
+        th.footable-first-column.footable-last-column, td.footable-first-column.footable-last-column {
+          -moz-border-radius: 0px 0px 0 0;
+          -webkit-border-radius: 0px 0px 0 0;
+          border-radius: 0px 0px 0 0;
+        }
+      }
+    }
+    tbody > tr:last-child > td {
+      &.footable-first-column {
+        -moz-border-radius: 0 0 0 0px;
+        -webkit-border-radius: 0 0 0 0px;
+        border-radius: 0 0 0 0px;
+      }
+      &.footable-last-column {
+        -moz-border-radius: 0 0 0px 0;
+        -webkit-border-radius: 0 0 0px 0;
+        border-radius: 0 0 0px 0;
+      }
+      &.footable-first-column.footable-last-column {
+        -moz-border-radius: 0 0 0px 0px;
+        -webkit-border-radius: 0 0 0px 0px;
+        border-radius: 0 0 0px 0px;
+      }
+    }
+    thead > tr > {
+      th.footable-first-column, td.footable-first-column {
+        border-left: none;
+      }
+    }
+    tbody {
+      > tr > td.footable-first-column {
+        border-left: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+    }
+    tfoot > tr > {
+      th, td {
+        background-color: #39275B;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#39275b), to(#39275b));
+        background-image: -webkit-linear-gradient(top, #39275b, #39275b);
+        background-image: -moz-linear-gradient(top, #39275b, #39275b);
+        background-image: -ms-linear-gradient(top, #39275b, #39275b);
+        background-image: -o-linear-gradient(top, #39275b, #39275b);
+        background-image: linear-gradient(to bottom, #39275b, #39275b);
+        -webkit-box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+        -moz-box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+        box-shadow: 0 0px 0 rgba(255, 255, 255, 0.8) inset;
+        border-top: 0px solid #ccc;
+        text-shadow: 0 0px 0 rgba(255, 255, 255, 0.5);
+        padding: 10px;
+      }
+    }
+    thead > tr > th a {
+      &:link, &:visited {
+        color: #8ca9c7;
+      }
+    }
+    tbody > tr > td.footable-last-column {
+      border-right: 0 none;
+    }
+  }
+  border: 0 none;
+}
+
+td {
+  &.footable-cell-detail div.field-collection-item-field-location {
+    display: inline;
+    float: left;
+    margin-left: 3px;
+    position: absolute;
+    width: 50%;
+  }
+  &.views-field-field-location .field-name-field-locationbuilding, &.footable-cell-detail div.field-name-field-locationbuilding {
+    padding-right: 2px;
+  }
+}
+
+body {
+  &.node-type-employee div.field-name-field-locationbuilding, &.node-type-department div.field-name-field-locationbuilding {
+    padding-right: 2px;
+  }
+}
+
+td {
+  &.views-field-field-location .field-name-field-locationbuilding, &.footable-cell-detail div.field-name-field-locationbuilding {
+    float: left;
+  }
+}
+
+body {
+  &.node-type-employee div.field-name-field-locationbuilding, &.node-type-department div.field-name-field-locationbuilding {
+    float: left;
+  }
+}
+
+td {
+  &.views-field-field-location .field-name-field-locationroom, &.footable-cell-detail div.field-name-field-locationroom {
+    float: left;
+  }
+}
+
+body {
+  &.node-type-employee div.field-name-field-locationroom, &.node-type-department div.field-name-field-locationroom {
+    float: left;
+  }
+  &.node-type-employee div {
+    &.field-name-field-givenname, &.field-name-field-familyname, &.field-name-field-honorificsuffix {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}

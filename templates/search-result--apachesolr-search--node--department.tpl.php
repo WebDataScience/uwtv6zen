@@ -63,9 +63,84 @@
  *
  * @ingroup themeable
  */
- global $base_url;
 ?>
-Default, bro!
+
+<?php
+global $base_url;
+//dpm($node, '$node');
+$dept_wrapper = entity_metadata_wrapper('node', $node);
+
+//dpm($dept_wrapper->getPropertyInfo(), 'getPropertyInfo()');
+
+//dpm('do we get here? 1');
+$dept_summary = '';
+
+if(!empty($node->field_departmentsummary)){
+  $dept_summary = $dept_wrapper->field_departmentsummary->value->value();
+}
+
+//dpm('do we get here? 2');
+$dept_box = $dept_wrapper->field_departmentmailbox->value();
+//dpm('do we get here? 3');
+$dept_box_display = theme_item_list(array('items' => $dept_box, 'type' => 'ul', 'title' => 'Campus box'));
+
+$phone = $dept_wrapper->field_departmentphonenumber->value();
+$phone_display = theme_item_list(array('items' => $phone, 'type' => 'ul', 'title' => 'Phone Number'));
+$dept_url = $dept_wrapper->field_departmentwebsite->value();
+$dept_url_link = l($dept_url, $dept_url);
+$dept_url_display = theme_item_list(
+	array(
+		'items' => array($dept_url_link), 
+		'type' => 'ul', 
+		'title' => 'Web site')
+	);
+//dpm($dept_wrapper, '$dept_wrapper');
+
+$location_room = 'Room not specified.';
+try {
+$location_room = $dept_wrapper->field_location->field_locationroom->value();
+} catch (EntityMetadataWrapperException $e){
+	//dpm($e->getMessage());
+}
+//dpm($location_room, '$location_room');
+
+$location_building_name = 'Building not specified';
+try {
+$location_building_name = $dept_wrapper->field_location->field_locationbuilding->field_buildingname->value();
+} catch (EntityMetadataWrapperException $e) {
+	//dpm($e->getMessage(), 'exception caught');
+}
+
+
+//dpm($location_building_name, '$location_building_name');
+
+try {
+$location = $dept_wrapper->field_location->field_locationbuilding->value();
+} catch (EntityMetadataWrapperException $e) {
+	//dpm($e->getMessage());
+}
+
+
+//dpm($location, '$location');
+$building_url = $location->field_buildingwebsite['und'][0]['value'];
+//dpm($building_url, '$building_url');
+
+$location_link = l("$location_building_name $location_room", $building_url);
+
+$location_display = theme_item_list(array('items' => array($location_link), 'type' => 'ul', 'title' => 'Location'));
+
+/*
+dpm($phone_display, '$phone_display');
+dpm($dept_url, '$dept_url');
+dpm($dept_url_link, '$dept_url_link');
+dpm($dept_url_display, '$dept_url_display');
+dpm($dept_summary, '$dept_summary');
+dpm($dept_box_display, '$dept_box_display');
+*/
+
+
+?>
+
 <li class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
   <h3 class="title"<?php print $title_attributes; ?>>
@@ -75,15 +150,23 @@ Default, bro!
   <?php print render($title_suffix); ?>
   <div class="search-snippet-info">
 
-    <?php if ($snippet): ?>
+    <?php /* if ($snippet): ?>
       <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
+    <?php endif; */ ?>
+
+    <?php if ($result): ?>
+       <div class="search-result department quarters">
+         <div class="summary"><?php print $dept_summary; ?></div>
+         <div class="detail one-quarter-first"><?php print $phone_display;?></div>
+         <div class="detail one-quarter-second"><?php print $location_display;?></div>
+         <div class="detail one-quarter-third"><?php print $dept_url_display;?></div>
+         <div class="detail one-quarter-fourth"><?php print $dept_box_display;?></div>
+       </div>
     <?php endif; ?>
 
       <?php if ($search_result_sectionlink): ?>
         <p class="search-result-sectionlink">Section: <?php print $search_result_sectionlink; ?></p>
       <?php endif; ?>
-
-      <?php print '<span class="search-results-url">' . l(str_replace($base_url, '...', $url), $url) . '</span>'; ?>
 
       <?php if ($info): ?>
         <p class="search-result-updated">Updated: <?php print substr($info_split['date'], 0, 10); ?></p>
