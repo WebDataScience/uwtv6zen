@@ -593,10 +593,10 @@ function uwtv6zen_preprocess_search_result(&$variables) {
 //dpm($variables['classes_array'], '$classes before');
   $node = node_load($variables['result']['node']->entity_id);
   $variables['node'] = $node;
-if(isset($variables['result']['fields']['site']) && !empty($variables['result']['fields']['site'])) {
-  //$variables['classes_array'][] = _get_search_result_icon($variables['result']['fields']['site']);
-  $variables['sr_class'] = _get_search_result_icon($variables['result']['fields']['site']);
-  //dpm($variables['classes_array'], '$classes after');
+  $bundle = $variables['result']['node']->bundle;
+$variables['sr_class'] = '';
+if(isset($bundle) && !empty($bundle)) {
+  $variables['sr_class'] = 'icons-search-results-ct-' . $bundle;
 }
 $section_field = field_info_field('field_site');
 if(!is_null($section_field)) {
@@ -644,27 +644,6 @@ if(!is_null($section_field)) {
 }
 }
 
-function _get_search_result_icon($url) {
-  if(isset($url) && !empty($url)) {
-    $return_value = '';
-    //dpm($url, 'the $url sent to _get_...');
-    switch ($url) {
-
-      case 'http://uwtdev1.tacoma.uw.edu/':
-        $return_value =  'icons-globe';
-        break;
-
-      case 'http://directory.tacoma.uw.edu/':
-        $return_value = 'icons-search_result_directory';
-        break;
-
-      default:
-        $return_value =  '';
-
-    }
-  }
-  return $return_value;
-}
 
 function _get_mlid($path, $menu_name) {
 
