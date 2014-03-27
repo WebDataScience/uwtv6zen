@@ -34,9 +34,11 @@ $zen-gutter-width: 20px;
 
 .quarters{
 	$zen-column-count: 4;
+	$zen-gutter-method: 'margin';
 	@include zen-grid-container();
 	.one-quarter-first{
 		@include zen-grid-item(1,1);
+		padding-left:0;
 	}
 	.one-quarter-second{
 		@include zen-grid-item(1,2);
@@ -46,11 +48,14 @@ $zen-gutter-width: 20px;
 	}
 	.one-quarter-fourth{
 		@include zen-grid-item(1,4);
+		padding-right:0;
 	}
 	.three-quarters-first{
 		@include zen-grid-item(3,1);
+		padding-left:0;
 	}
 	.three-quarters-second{
 		@include zen-grid-item(3,2);
+		padding-right:0;
 	}
 }
