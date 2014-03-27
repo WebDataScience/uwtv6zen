@@ -1,4 +1,12 @@
+@import "base";
 @import "zen";
+
+@include narrow{
+	$zen-column-count:1;
+}
+
+@include widest{
+
 $zen-gutter-width: 20px;
 
 .halves{
@@ -58,4 +66,6 @@ $zen-gutter-width: 20px;
 		@include zen-grid-item(3,2);
 		padding-right:0;
 	}
+}
+
 }
